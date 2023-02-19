@@ -241,7 +241,12 @@
     </div>
 </div> --}}
 @endsection
-
+<style>
+.toasting {
+  color: white !important;
+  background-color: green !important;
+}
+</style>
 
 @push('addon-script')
    <script src="/vendor/vue/vue.js"></script>
@@ -269,8 +274,8 @@
                       self.$toasted.show(
                         "Email Anda Tersedia,Silahkan lanjutkan langkah pendaftaran.",
                         {
+                          className: ["success","rounded"],
                           position: "top-center",
-                          className: "rounded",
                           duration: 5000,
                         }
                       );
