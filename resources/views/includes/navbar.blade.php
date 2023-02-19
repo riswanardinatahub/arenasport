@@ -226,7 +226,7 @@
           <a href="{{ route('categories') }}" class="nav-link">Kategori</a>
         </li>
         <li class="nav-item">
-          <a href="{{ route('store-page-search') }}" class="nav-link">Toko</a>
+          <a href="{{ route('store-page-search') }}" class="nav-link">TokoKK</a>
         </li>
        
         @guest
