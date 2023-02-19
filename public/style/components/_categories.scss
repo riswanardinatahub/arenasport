@@ -1,0 +1,28 @@
+.component-categories {
+  border-radius: 8px;
+  padding: 0;
+  margin-bottom: 20px;
+  transition: all 0.2s ease-in-out;
+
+  img {
+    border-radius: 8px;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+    text-decoration: none;
+    background-color: rgb(87, 212, 114);
+  }
+}
+
+nav {
+  .navbar-nav {
+    .nav-item {
+      a {
+        &:hover {
+          color: #29a867 !important;
+        }
+      }
+    }
+  }
+}
