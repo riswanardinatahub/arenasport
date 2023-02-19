@@ -271,7 +271,7 @@
                         {
                           position: "top-center",
                           className: "rounded",
-                          duration: 1000,
+                          duration: 5000,
                         }
                       );
                       self.email_unavailable = false ;
@@ -282,7 +282,7 @@
                         {
                           position: "top-center",
                           className: "rounded",
-                          duration: 1000,
+                          duration: 5000,
                         }
                       );
                       self.email_unavailable = true;
