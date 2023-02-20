@@ -3,7 +3,7 @@
       <div class="row ">
         <div class="col-12 text-center">
           <p class="pt-3 pb-3 bg-success rounded">
-            2021 Copyright Desaku Desastore.
+            2023 Copyright Arena Sports.
           </p>
         </div>
       </div>

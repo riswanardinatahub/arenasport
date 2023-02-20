@@ -95,6 +95,9 @@ Route::prefix('admin')
     Route::resource('user', 'UserController');
     Route::resource('admin-store-user', 'AdminStoreController');
     Route::resource('product', 'ProductController');
+    Route::get('/admin/pending', 'ProductController@pending')->name('admin-product-pending');
+    Route::get('/admin/terima/{id}', 'ProductController@terima')->name('admin-product-terima');
+    Route::get('/admin/tolak/{id}', 'ProductController@tolak')->name('admin-product-tolak');
     Route::resource('transaction', 'TransactionController');
     Route::resource('product-gallery', 'ProductGalleryController');
     Route::get('delete/{id}','UserController@destroy')->name('delete-user');

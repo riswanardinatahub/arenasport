@@ -154,6 +154,68 @@ class ProductController extends Controller
         return redirect()->route('product.index');
     }
 
+    public function pending(){
+
+        if(request()->ajax()){
+           
+
+            $query = Product::where('status','PENDING')->with(['user.villages','category','galleries'])->get(); //->withTrashed(); untuk memanggil data yang telah dihapus
+
+            //dd($query);
+
+            return DataTables::of($query)
+            ->addIndexColumn()
+            ->addColumn('action', function($item){
+                return '
+                        <a href="" class="btn terimaproduk btn-success" data-nama="'.$item->name.'" data-id="'.$item->id.'">
+                                Terima
+                                </a>
+                                <a href="" class="btn tolakproduk btn-danger" data-nama="'.$item->name.'" data-id="'.$item->id.'">
+                                Tolak
+                                </a>
+                        ';
+            // })->addColumn('photos', function($item){
+            //      return $item->galleries->first()->photos ? '<img src="'.  Storage::url($item->galleries->first()->photos)  .'" style="max-height: 40px;"/>' : '';
+            })->addColumn('image', function ($query) { 
+            $url= Storage::url($query->galleries->first()->photos ?? '/assets/product/no-photo.png');
+
+            //dd($url);
+            return '<img src="'.$url.'" border="0" width="60" class="img-rounded" align="center" />';
+        })
+            ->rawColumns(['image','action'])->make();  
+         }
+        return view('pages.admin.product.pending');
+    }
+
+
+
+
+    public function terima($id){
+        $data = Product::find($id);
+
+        if($data->status == 'PENDING'){
+            $data->update(['status' => 'APPROVE']); 
+        }else{
+            $data->update(['status' => 'NOTAPPROVE']); 
+        }
+
+        $data->save();
+        return redirect()->back();
+
+    }
+
+     public function tolak($id){
+        $data = Product::find($id);
+
+        if($data->status == 'PENDING'){
+            $data->update(['status' => 'NOTAPPROVE']); 
+        }
+
+        $data->save();
+        return redirect()->back();
+
+    }
+
     
 
    

@@ -27,6 +27,7 @@
         <div class="list-group list-group-flush">
           <a href="{{ route('admin-dashboard') }}" class="list-group-item list-group-item-action">Dashboard</a>
           <a href="{{ route('product.index') }}" class="list-group-item list-group-item-action {{ (request()->is('admin/product')) ? 'active' : ''}}  ">Produk</a>
+          <a href="{{ route('admin-product-pending') }}" class="list-group-item list-group-item-action {{ (request()->is('admin/admin/pending*')) ? 'active' : ''}}  ">Produk Pending</a>
            <a href="{{ route('product-gallery.index') }}" class="list-group-item list-group-item-action {{ (request()->is('admin/product-gallery*')) ? 'active' : ''}}"> Gallery Produk</a>
           <a href="{{ route('category.index') }}" class="list-group-item list-group-item-action {{ (request()->is('admin/category*')) ? 'active' : ''}}">Kategori</a>
           <a href="{{ route('transaction.index') }}" class="list-group-item list-group-item-action {{ (request()->is('admin/transaction*')) ? 'active' : ''}}">Transaksi</a>
