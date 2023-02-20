@@ -40,7 +40,7 @@ Desaku
 
     <section class="store-name">
         <div class="container mt-5">
-            <div class="row justify-content-center">
+            {{-- <div class="row justify-content-center">
                 <div class="col-12 text-center">
                     <div class="d-flex justify-content-center flex-row bd-highlight">
                         <div class="p-2 bd-highlight"><img src="/images/ceklis.svg" alt=""></div>
@@ -50,7 +50,7 @@ Desaku
                     </div>
 
 
-                </div>
+                </div> --}}
             </div>
         </div>
     </section>
