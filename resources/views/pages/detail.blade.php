@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-Desaku Detail Page
+Detail Page
 @endsection
 
 @section('content')
@@ -61,7 +61,7 @@ Desaku Detail Page
                 <a href="{{ route('home') }}">Home</a>
               </li>
               <li class="breadcrumb-item active">
-                Product Details
+                Detail Arena
               </li>
             </ol>
           </nav>
@@ -102,12 +102,12 @@ Desaku Detail Page
               <div>
                     @if ($product->stock >= 1)
                       <span style="font-size:17px; color:#29a867; ">
-                         Produk Tersedia
+                         Arena Tersedia
 
                       </span>
                       @else
                       <span style="font-size:17px; color:red; ">
-                          Produk Tidak Tersedia
+                          Arena Tidak Tersedia
 
                       </span>
                     @endif
@@ -117,7 +117,7 @@ Desaku Detail Page
                 <div class="card-body py-0">
                   <div class="row">
                     <img src="/images/icon-store.svg" alt="" class="mr-2">
-                    <p class="text-muted"> Store : {{ $product->user->store_name }}</p>
+                    <p class="text-muted"> Arena : {{ $product->user->store_name }}</p>
                    
                   </div>
                 </div>

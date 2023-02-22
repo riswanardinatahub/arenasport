@@ -52,7 +52,7 @@ Desaku Category Page
     <div class="container">
       <div class="row">
         <div class="col-12" data-aos="fade-up">
-          <h5>Produk</h5>
+          <h5>Arena</h5>
         </div>
       </div>
       <div class="row">

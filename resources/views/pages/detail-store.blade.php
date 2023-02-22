@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-Detail Store
+Detail Arena
 @endsection
 
 @section('content')
@@ -23,10 +23,10 @@ Detail Store
                   </a>
                   <div class="row">
                     <div class="col-6 col-md-6">
-                      Jumlah Produk : <span> {{ $products_count }} </span>
+                      Jumlah Arena : <span> {{ $products_count }} </span>
                     </div>
                     <div class="col-6 col-md-6">
-                      Status Toko :  
+                      Status Arena :  
                       @if ($user->store_status == 1)
                       <span class="text-success">Buka</span>
                       @else
@@ -46,7 +46,7 @@ Detail Store
         <div class="container">
           <div class="row">
             <div class="col-12" data-aos="fade-up">
-              <h5>Produk </h5>
+              <h5>Arena </h5>
             </div>
           </div>
           <div class="row">

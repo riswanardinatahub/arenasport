@@ -95,13 +95,13 @@ Desaku
     </section>
 
     <!-- Store new Produk -->
-    <section class="store-new-products">
+    <section class="store-new-products mt-3">
         <div class="container">
-        <div class="row">
+            <div class="row">
                 <div class="col-12">
                     <div class="row">
                         <div class="col-12" data-aos="fade-up">
-                            <h5>LapanganTerbaru</h5>
+                            <h5>Arena Terbaru</h5>
                 
                         </div>
                     </div>
@@ -110,8 +110,8 @@ Desaku
                         $incrementProduct = 0
                         @endphp
                         @forelse ( $products as $product)
-                        <div class="col-6 col-md-4 col-lg-4" data-aos="fade-up" data-aos-delay="{{ $incrementProduct+=100 }}">
-                            @if($product->stock >= 1)
+                        <div class="col-12 col-md-4 col-lg-4" data-aos="fade-up" data-aos-delay="{{ $incrementProduct+=100 }}">
+                            @if($product->user->store_status == 1)
                             <a href="{{ route('detail', $product->slug) }}" class="component-products d-block">
                                 <div class="products-thumbnail">
                                     <div class="products-image" style="
@@ -145,7 +145,7 @@ Desaku
                                     <div class="col-9">
                                         <div class="d-flex justify-content-start">
                                             <span style="font-size:13px; color:#29a867; ">
-                                                Store : {{ $product->user->store_name }}
+                                                Arena : {{ $product->user->store_name }}
                                             </span>
                                         </div>
                                     </div>
@@ -180,7 +180,9 @@ Desaku
                                         <div class="d-flex justify-content-end">
                                             
                                             <span style="font-size:13px; color:#29a867; ">
-                                             Stok : {{ $product->stock }}
+                                             {{-- Stok : {{ $product->stock }} --}}
+
+                                             60 Menit
                     
                                             </span>
                                            
@@ -223,14 +225,14 @@ Desaku
                     
                                 </div>
                                 <span style="font-size:15px; color:#050505; ">
-                                    Desa : {{ $product->user->villages->name }}
+                                    Lokasi : {{ $product->user->villages->name }}
                                 </span>
                     
                                 <div class="row">
                                     <div class="col-9">
                                         <div class="d-flex justify-content-start">
                                             <span style="font-size:13px; color:#29a867; ">
-                                                Store : {{ $product->user->store_name }}
+                                                Arena : {{ $product->user->store_name }}
                                             </span>
                                         </div>
                                     </div>
@@ -265,7 +267,8 @@ Desaku
                                         <div class="d-flex justify-content-end">
                                             
                                             <span style="font-size:13px; color:#29a867; ">
-                                             Stok : {{ $product->stock }}
+                                             {{-- Stok : {{ $product->stock }} --}}
+                                             60 Menit
                     
                                             </span>
                                            
@@ -278,11 +281,34 @@ Desaku
                                 
                             @endif
                         </div>
+
+
+                        <!-- Modal -->
+                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Informasi Produk</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h3> Mohon Maaf Toko Sedang Tutup </h3>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
                     
                         @empty
                     
                         @endforelse
                     </div>
+
                 </div>
 
 

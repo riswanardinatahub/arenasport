@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-Cari Store
+Cari Arena
 @endsection
 
 @section('content')
@@ -16,7 +16,7 @@ Cari Store
           <div class="card">
             <div class="card-body">
               <div class="row justify-content-center">
-                <div class="col-6">
+                <div class="col-12 col-md-6 col-lg-6">
                   <form action="/stores" class="mt-3" id="locations" method="GET">
                     <div class="form-group">
                       <div class="form-group">
@@ -70,15 +70,15 @@ Cari Store
 
               <div class="row mt-5">
                 <div class="col-12 mt-2">
-                  <h5 class="mb-3 text-center">List All Store</h5>
+                  <h5 class="mb-3 text-center">List Arena</h5>
 
-                  <div class="row justify-content-center mx-5 ">
-                    <div class="col-8">
+                  <div class="row justify-content-center  ">
+                    <div class="col-12 col-md-8 col-md-8">
                       <table class="table table-bordered">
                         <thead class="border-0">
                           <tr>
                             {{-- <th scope="col">No</th> --}}
-                            <th scope="col">Store Name</th>
+                            <th scope="col">Nama Arena</th>
                             <th scope="col">Desa</th>
                             <th scope="col">Detail</th>
                           </tr>
@@ -95,10 +95,10 @@ Cari Store
 
                                 <td>
                                   <a href="{{ route('store-page-detail', $raw->id) }}"
-                                    class="btn btn-success btn-sm">Cek Toko</a>
+                                    class="btn btn-success btn-sm m-2 p-2">Cek Arena</a>
 
-                                    <a href="{{ route('store-page-area', $raw->villages_id) }}"
-                                    class="btn btn-success btn-sm">Store Area</a>
+                                    {{-- <a href="{{ route('store-page-area', $raw->villages_id) }}"
+                                    class="btn btn-success btn-sm m-2 p-2">Store Area</a> --}}
                                 </td>
                               </tr>
                             @endif
