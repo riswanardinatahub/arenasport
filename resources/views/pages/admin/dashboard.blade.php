@@ -12,7 +12,7 @@ Store Admin Dashboard
                       Admin  Dashboard
                     </h2>
                     <p class="dashboard-subtitle">
-                        Halaman ini di akses oleh super admin Desaku
+                        Halaman ini di akses oleh super admin Arena
                     </p>
                     </div>
                     <div class="dashboard-content">
@@ -166,7 +166,7 @@ Store Admin Dashboard
             text: 'Pengguna Baru, {{ \Carbon\Carbon::now()->year }}'
         },
         subtitle: {
-            text: 'Desaku'
+            text: 'Arena'
         },
          xAxis: {
             categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']

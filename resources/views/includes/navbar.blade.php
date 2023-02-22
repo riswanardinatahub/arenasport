@@ -97,19 +97,7 @@
       </ul>
 
       @auth
-      <!-- Desktop Menu -->
-       {{-- <li class="nav-item active">
-            <a href="http://desaku-desacuss.masuk.id/autoLogin/{{ Auth::user()->email }}/12345678" class="nav-link">Tembak Akun Login Muqny  </a>
-             <a href="https://marketpalcedesaku.masuk.web.id/autoLogin" onclick="event.preventDefault();
-                document.getElementById('login-form').submit();" class="dropdown-item">Auto Login</a>
-                 <form id="login-form" action="https://marketpalcedesaku.masuk.web.id/autoLogin" method="POST" class="d-none">
-                 
-                  <input type="hidden" name="email" value="{{ Auth::user()->email }}">
-                  <input type="hidden" name="id_desa" value="{{ Auth::user()->villages_id }}">
-                </form>
-
-                
-        </li> --}}
+     
       <ul class="navbar-nav d-none d-lg-flex">
         <li class="nav-item dropdown">
           <a href="" class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown">

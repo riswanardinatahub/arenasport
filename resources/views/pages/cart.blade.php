@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-Desaku Cart Page
+Arena Cart Page
 @endsection
 
 @section('content')

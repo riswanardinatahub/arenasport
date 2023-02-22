@@ -12,7 +12,7 @@ Admin Store Dashboard
                 Admin Dashboard
             </h2>
             <p class="dashboard-subtitle">
-                Dashboard ini di akses admin Desaku {{ Auth::user()->villages->name }}
+                Dashboard ini di akses admin Arena {{ Auth::user()->villages->name }}
             </p>
         </div>
         <div class="dashboard-content">

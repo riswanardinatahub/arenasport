@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-Desaku
+Arena
 @endsection
 
 @section('content')

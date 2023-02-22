@@ -1,7 +1,7 @@
 @extends('layouts.success')
 
 @section('title')
-    Desaku Success Page
+    Arena Success Page
 @endsection
 
 @section('content')
