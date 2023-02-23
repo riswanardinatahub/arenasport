@@ -1,7 +1,7 @@
 @extends('layouts.dashboard')
 
 @section('title')
-Store Dashboard Transactions Pages
+Dashboard Transactions Pages
 @endsection
 
 @section('content')
@@ -12,12 +12,12 @@ Store Dashboard Transactions Pages
                 Transaksi
               </h2>
               <p class="dashboard-subtitle">
-                Perbanyak transaksi mu untuk desamu
+                Perbanyak transaksi untuk toko mu
               </p>
             </div>
             <div class="dashboard-content">
 
-              <div class="row">
+              {{-- <div class="row">
                 <div class="col-12 mt-2">
 
                   <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
@@ -90,7 +90,7 @@ Store Dashboard Transactions Pages
 
 
                 </div>
-              </div>
+              </div> --}}
             </div>
           </div>
         </div>

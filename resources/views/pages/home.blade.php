@@ -110,7 +110,7 @@ Arena
                         $incrementProduct = 0
                         @endphp
                         @forelse ( $products as $product)
-                        <div class="col-12 col-md-4 col-lg-4" data-aos="fade-up" data-aos-delay="{{ $incrementProduct+=100 }}">
+                        <div class="col-12 col-md-3 col-lg-3" data-aos="fade-up" data-aos-delay="{{ $incrementProduct+=100 }}">
                             @if($product->user->store_status == 1)
                             <a href="{{ route('detail', $product->slug) }}" class="component-products d-block">
                                 <div class="products-thumbnail">

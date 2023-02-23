@@ -12,7 +12,7 @@ class CategoryController extends Controller
     {
 
         $categories = Category::all();
-        $products = Product::with(['galleries'])->paginate(32);
+        $products = Product::where('status','APPROVE')->latest()->with(['galleries'])->paginate(32);
         return view('pages.category',
             [
                 'categories'=> $categories,
