@@ -117,7 +117,7 @@ Detail Page
                 <div class="card-body py-0">
                   <div class="row">
                     <img src="/images/icon-store.svg" alt="" class="mr-2">
-                    <p class="text-muted"> Arena : {{ $product->user->store_name }}</p>
+                    <p class="text-muted">{{ $product->user->store_name }}</p>
                    
                   </div>
                 </div>
@@ -131,7 +131,7 @@ Detail Page
           </div>
 
 
-          <div class="col-lg-2" data-aos="zoom-in">
+          {{-- <div class="col-lg-2" data-aos="zoom-in">
             @auth
             <form action="{{ route('detail-add', $product->id) }}" method="POST" enctype="multipart/form-data">
               @csrf
@@ -148,7 +148,7 @@ Detail Page
             <a href="{{ route('login') }}" class="btn btn-warning px-4 text-white btn-block mb-3"> Sign In To Add</a>
             @endauth
 
-          </div>
+          </div> --}}
         </div>
       </div>
     </section>

@@ -56,7 +56,7 @@ Product
 
                                      <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Category Produk</label>
+                                            <label>Kategory Produk</label>
                                             <select name="categories_id" class="form-control">
                                             <option value="{{ $item->categories_id }}" selected>{{ $item->category->name }}</option>
                                                  @foreach ( $categories as $category)
