@@ -44,7 +44,9 @@ class DashboardSettingController extends Controller
     }
 
     public function update(Request $request, $redirect){
+
         $data = $request->all();
+        $data['images'] = $request->file('images')->store('assets/product','public');
         $item = Auth::user();
         $item->update($data);
 

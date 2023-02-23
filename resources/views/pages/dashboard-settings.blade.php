@@ -60,7 +60,7 @@ Store Dashboard Setiing
                         <div class="row">
                           <div class="col text-right">
                             <button type="submit" class="btn btn-success px-5 mt-3">
-                              Save Now
+                              Simpan
                             </button>
                           </div>
                         </div>

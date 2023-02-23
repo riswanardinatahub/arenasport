@@ -21,7 +21,7 @@ class ProductController extends Controller
     public function index()
     {
        if(request()->ajax()){
-            $query = Product::with(['user','category','galleries']); //->withTrashed(); untuk memanggil data yang telah dihapus
+            $query = Product::where('status','APPROVE')->with(['user','category','galleries']); //->withTrashed(); untuk memanggil data yang telah dihapus
 
             return DataTables::of($query)
             ->addColumn('action', function($item){
@@ -159,14 +159,20 @@ class ProductController extends Controller
         if(request()->ajax()){
            
 
-            $query = Product::where('status','PENDING')->with(['user.villages','category','galleries'])->get(); //->withTrashed(); untuk memanggil data yang telah dihapus
+            $query = Product::where('status', '<>', 'APPROVE')
+                                    ->with(['user.villages','category','galleries'])->get(); //->withTrashed(); untuk memanggil data yang telah dihapus
 
             //dd($query);
 
             return DataTables::of($query)
             ->addIndexColumn()
             ->addColumn('action', function($item){
-                return '
+                if($item->status == 'NOTAPPROVE' ){
+                        return ' 
+                               
+                        ';
+                }else{
+                    return ' 
                         <a href="" class="btn terimaproduk btn-success" data-nama="'.$item->name.'" data-id="'.$item->id.'">
                                 Terima
                                 </a>
@@ -174,6 +180,8 @@ class ProductController extends Controller
                                 Tolak
                                 </a>
                         ';
+                }
+                
             // })->addColumn('photos', function($item){
             //      return $item->galleries->first()->photos ? '<img src="'.  Storage::url($item->galleries->first()->photos)  .'" style="max-height: 40px;"/>' : '';
             })->addColumn('image', function ($query) { 

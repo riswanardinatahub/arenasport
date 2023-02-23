@@ -41,7 +41,7 @@ class UserController extends Controller
                                 Edit
                                 </a>
                         <a href="javascript:void(0)" data-toggle="tooltip" onClick="Delete(this.id)" id="'.$item->id.'" data-original-title="Delete"
-                        class="btn btn-danger btn-sm"> hapus </a>
+                        class="btn btn-danger"> hapus </a>
                         
                          ';
 
@@ -92,23 +92,23 @@ class UserController extends Controller
     public function store(UserRequest $request)
     {
 
-        Http::post('https://desaku-desacuss.masuk.id/api/register', [
-                        'email' => $request->email,
-                        'password' => Hash::make($request->password),
-                        'id_desa' => $request->villages_id,
-                        'name' => $request->name,
-                        'role' => 2,
-                        'from' => 'desastore',
-                        'action' => 'createadmindesa',
-                        'desc' => Auth::user()->email,
-                    ])->json();
+        // Http::post('https://desaku-desacuss.masuk.id/api/register', [
+        //                 'email' => $request->email,
+        //                 'password' => Hash::make($request->password),
+        //                 'id_desa' => $request->villages_id,
+        //                 'name' => $request->name,
+        //                 'role' => 2,
+        //                 'from' => 'desastore',
+        //                 'action' => 'createadmindesa',
+        //                 'desc' => Auth::user()->email,
+        //             ])->json();
 
-        Http::post('https://desaku-desatour.masuk.id/api/register', [
-                    'name'     =>  $request->name,
-                    'password' =>  Hash::make($request->password),
-                    'desa'     =>  $request->villages_id,
-                    'email'    =>  $request->email,
-                ])->json();
+        // Http::post('https://desaku-desatour.masuk.id/api/register', [
+        //             'name'     =>  $request->name,
+        //             'password' =>  Hash::make($request->password),
+        //             'desa'     =>  $request->villages_id,
+        //             'email'    =>  $request->email,
+        //         ])->json();
 
         $data = $request->all();
 

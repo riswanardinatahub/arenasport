@@ -101,7 +101,12 @@
       <ul class="navbar-nav d-none d-lg-flex">
         <li class="nav-item dropdown">
           <a href="" class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown">
-            <img src="/images/icon-store.svg" alt="" class="rounded-circle mr-2 profile-picture">
+                    @if (Auth::user()->images)
+                    <img src="{{ Storage::url(Auth::user()->images) }}" alt="" class="rounded-circle mr-2 profile-picture">
+                    @else
+                    <img src="/images/icon-store.svg" alt="" class="rounded-circle mr-2 profile-picture">
+                    @endif
+           
             Hi, {{ Auth::user()->name }}
           </a>
           <div class="dropdown-menu">

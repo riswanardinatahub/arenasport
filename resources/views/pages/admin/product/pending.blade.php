@@ -30,6 +30,7 @@ Produk
                                             <th>Lokasi</th>
                                             <th>Kategori</th>
                                             <th>Harga</th>
+                                            <th>Status</th>
                                             <th>Foto</th>
                                             <th>Action</th>
                                         </tr>
@@ -63,6 +64,7 @@ Produk
             { data: 'user.villages.name', name: 'user.villages.name' },
             { data: 'category.name', name: 'category.name' },
             { data: 'price', name: 'price' },
+            { data: 'status', name: 'status' },
             { data: 'image', name: 'image' },
             
             {

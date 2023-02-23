@@ -116,7 +116,11 @@ Detail Page
               <a href="{{ route('store-page-detail', $product->user->id) }}" class="card-list d-block">
                 <div class="card-body py-0">
                   <div class="row">
+                    @if ($product->user->images)
+                    <img src="{{ Storage::url($product->user->images) }}" alt="" class="mr-2">
+                    @else
                     <img src="/images/icon-store.svg" alt="" class="mr-2">
+                    @endif
                     <p class="text-muted">{{ $product->user->store_name }}</p>
                    
                   </div>

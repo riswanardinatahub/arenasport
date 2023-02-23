@@ -36,13 +36,13 @@ Dashboard Products Details Pages
                           <div class="col-md-6">
                             <div class="form-group">
                               <label for="">Nama Produk</label>
-                              <input type="text" class="form-control" name="name">
+                              <input type="text" class="form-control" name="name" required>
                             </div>
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
                               <label for="">Harga</label>
-                              <input type="number" class="form-control" name="price">
+                              <input type="number" class="form-control" name="price" required>
                             </div>
                           </div>
                           {{-- <div class="col-md-6">
@@ -54,7 +54,7 @@ Dashboard Products Details Pages
                           <div class="col-md-12">
                             <div class="form-group">
                               <label>Kategori Produk</label>
-                                <select name="categories_id" class="form-control">
+                                <select name="categories_id" class="form-control" required>
                                       @foreach ( $categories as $category)
                                         <option value="{{ $category->id }}">{{ $category->name }}</option>
                                       @endforeach
@@ -65,14 +65,14 @@ Dashboard Products Details Pages
                           <div class="col-md-12">
                             <div class="form-group">
                               <label for="">Deskirpsi</label>
-                              <textarea name="description" id="editor"></textarea>
+                              <textarea name="description" id="editor" required></textarea>
                             </div>
                           </div>
 
                           <div class="col-md-12">
                             <div class="form-group">
                               <label for="">Thumbnails</label>
-                              <input type="file" class="form-control" name="photo">
+                              <input type="file" class="form-control" name="photo" required>
                               <p class="text-muted">
                                 kamu dapat memilih lebih dari satu file
                               </p>
@@ -85,7 +85,7 @@ Dashboard Products Details Pages
                         <div class="row">
                           <div class="col-12">
                             <button type="submit" class="btn btn-success px-5 mt-3">
-                              Save Now
+                              Simpan
                             </button>
                           </div>
                         </div>

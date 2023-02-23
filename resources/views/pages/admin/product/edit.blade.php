@@ -86,8 +86,10 @@ Product
                                 <div class="row">
                                     <div class="col text-right">
                                         <button type="submit" class="btn btn-success px-5">
-                                            Save
+                                            Simpan
                                         </button>
+
+                                        
                                     </div>
                                 </div>
                             </form>

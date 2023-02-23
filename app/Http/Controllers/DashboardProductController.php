@@ -74,7 +74,7 @@ class DashboardProductController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(ProductRequest $request)
     {
         $data = $request->all(); 
         $data['slug'] = Str::slug($request->name);

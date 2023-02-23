@@ -101,6 +101,25 @@ Store Dashboard Account
                     </div>
                   </div>
 
+
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="images">Upload Foto</label>
+                      <input type="file" class="form-control" id="images" name="images">
+                    </div>
+
+                    <img src="{{ Storage::url($user->images) }}" alt="" height="100" class="mr-2">
+
+                  </div>
+
+
+
+
+
+
+
+
+
                 </div>
                 <div class="row">
                   <div class="col text-right">
