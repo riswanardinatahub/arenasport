@@ -12,7 +12,7 @@ Store Dashboard
                 Dashboard
             </h2>
             <p class="dashboard-subtitle">
-                Selalu semangat dan kembangkan desamu.
+                Promosikan Bisnis mu di Arena Sport.
             </p>
         </div>
         <div class="dashboard-content">
@@ -21,7 +21,7 @@ Store Dashboard
                     <div class="card mb-2">
                         <div class="card-body">
                             <div class="dashboard-card-title">
-                                Customers
+                                Users
                             </div>
                             <div class="dashboard-card-subtitle">
 
@@ -45,7 +45,7 @@ Store Dashboard
                     <div class="card mb-2">
                         <div class="card-body">
                             <div class="dashboard-card-title">
-                                Revenue
+                                Penghasilan
                             </div>
                             <div class="dashboard-card-subtitle">
                                 {{ number_format($revenue) }}
@@ -57,7 +57,7 @@ Store Dashboard
                     <div class="card mb-2">
                         <div class="card-body">
                             <div class="dashboard-card-title">
-                                Transaction
+                                Transaksi
                             </div>
                             <div class="dashboard-card-subtitle">
                                 {{ number_format($trasaction_count) }}
@@ -69,7 +69,7 @@ Store Dashboard
                     <div class="card mb-2">
                         <div class="card-body">
                             <div class="dashboard-card-title">
-                                Total Product
+                                Total Produk
                             </div>
                             <div class="dashboard-card-subtitle">
                                 {{ $totalproduct }}
@@ -80,7 +80,7 @@ Store Dashboard
             </div>
             <div class="row mt-3">
                 <div class="col-12 mt-2">
-                    <h5 class="mb-3"> Recent Transaction</h5>
+                    <h5 class="mb-3"> Transaksi Terakhir</h5>
 
                     @foreach ($trasaction_data as $transaction)
                     <a href="{{ route('dashboard-transaction-details', $transaction->id) }}"

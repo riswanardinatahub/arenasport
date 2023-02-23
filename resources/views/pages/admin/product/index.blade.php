@@ -9,7 +9,7 @@ Product
     <div class="container-fluid">
         <div class="dashboard-heading">
             <h2 class="dashboard-title">
-                produk
+                Produk
             </h2>
             <p class="dashboard-subtitle">
                 List produk
@@ -28,10 +28,10 @@ Product
                                     <thead>
                                         <tr>
                                             <th>ID</th>
-                                            <th>Name</th>
+                                            <th>Nama</th>
                                             <th>Pemilik</th>
                                             <th>Kategori</th>
-                                            <th>price</th>
+                                            <th>Harga</th>
                                             <th>Foto</th>
                                             <th>Action</th>
                                         </tr>

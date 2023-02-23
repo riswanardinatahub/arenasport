@@ -9,10 +9,10 @@ Product
     <div class="container-fluid">
         <div class="dashboard-heading">
             <h2 class="dashboard-title">
-                Product
+                Produk
             </h2>
             <p class="dashboard-subtitle">
-                Edit Product
+                Edit Produk
             </p>
         </div>
         <div class="dashboard-content">
@@ -35,7 +35,7 @@ Product
                              <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Nama Product</label>
+                                            <label>Nama Produk</label>
                                             <input type="text" name="name" class="form-control" value="{{ $item->name }}" required>
                                         </div>
                                     </div>
@@ -43,7 +43,7 @@ Product
 
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Pemilik Product</label>
+                                            <label>Pemilik Produk</label>
                                             <select name="users_id" class="form-control">
                                             <option value="{{ $item->users_id }}" selected>{{ $item->user->name }}</option>
                                                 @foreach ( $users as $user)
@@ -56,7 +56,7 @@ Product
 
                                      <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Category Product</label>
+                                            <label>Category Produk</label>
                                             <select name="categories_id" class="form-control">
                                             <option value="{{ $item->categories_id }}" selected>{{ $item->category->name }}</option>
                                                  @foreach ( $categories as $category)
@@ -70,7 +70,7 @@ Product
 
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Harga Product</label>
+                                            <label>Harga Produk</label>
                                             <input type="number" name="price" class="form-control" value="{{ $item->price }}" required>
                                         </div>
                                     </div>
@@ -78,7 +78,7 @@ Product
                                     
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Deskirpsi Product</label>
+                                            <label>Deskirpsi Produk</label>
                                             <textarea name="description" id="editor"> {!! $item->description !!}</textarea>
                                         </div>
                                     </div>

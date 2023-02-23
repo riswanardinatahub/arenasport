@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-Category
+Kategori
 @endsection
 
 @section('content')
@@ -9,10 +9,10 @@ Category
     <div class="container-fluid">
         <div class="dashboard-heading">
             <h2 class="dashboard-title">
-                Category
+                Kategori
             </h2>
             <p class="dashboard-subtitle">
-                Edit Category
+                Edit Kategori
             </p>
         </div>
         <div class="dashboard-content">
@@ -35,7 +35,7 @@ Category
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Category Name</label>
+                                            <label>Nama Kategori</label>
                                             <input type="text" name="name" class="form-control" required value="{{ $item->name }}">
                                         </div>
                                     </div>

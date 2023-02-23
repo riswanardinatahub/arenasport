@@ -28,10 +28,10 @@ User
                                     <thead>
                                         <tr>
                                             <th>ID</th>
-                                            <th>Name</th>
+                                            <th>Nama</th>
                                             <th>Email</th>
                                             <th>Roles</th>
-                                            <th>Location</th>
+                                            <th>Lokasi</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>

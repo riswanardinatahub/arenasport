@@ -1,7 +1,7 @@
 @extends('layouts.dashboard')
 
 @section('title')
-Store Dashboard Products Details Pages
+Dashboard Products Details Pages
 @endsection
 
 @section('content')
@@ -9,10 +9,10 @@ Store Dashboard Products Details Pages
           <div class="container-fluid">
             <div class="dashboard-heading">
               <h2 class="dashboard-title">
-                Create New Product
+                Tambah Produk
               </h2>
               <p class="dashboard-subtitle">
-                Create your own product
+                Ayok Tambahkan Produk Kamu
               </p>
             </div>
             <div class="dashboard-content">
@@ -35,25 +35,25 @@ Store Dashboard Products Details Pages
                         <div class="row">
                           <div class="col-md-6">
                             <div class="form-group">
-                              <label for="">Product Name</label>
+                              <label for="">Nama Produk</label>
                               <input type="text" class="form-control" name="name">
                             </div>
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
-                              <label for="">Price</label>
+                              <label for="">Harga</label>
                               <input type="number" class="form-control" name="price">
                             </div>
                           </div>
-                          <div class="col-md-6">
+                          {{-- <div class="col-md-6">
                             <div class="form-group">
                               <label for="">Stok</label>
                               <input type="number" class="form-control" name="stock">
                             </div>
-                          </div>
-                          <div class="col-md-6">
+                          </div> --}}
+                          <div class="col-md-12">
                             <div class="form-group">
-                              <label>Category Product</label>
+                              <label>Kategori Produk</label>
                                 <select name="categories_id" class="form-control">
                                       @foreach ( $categories as $category)
                                         <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -64,7 +64,7 @@ Store Dashboard Products Details Pages
 
                           <div class="col-md-12">
                             <div class="form-group">
-                              <label for="">Description</label>
+                              <label for="">Deskirpsi</label>
                               <textarea name="description" id="editor"></textarea>
                             </div>
                           </div>

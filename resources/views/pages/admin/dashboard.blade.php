@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-Store Admin Dashboard
+Admin Dashboard
 @endsection
 
 @section('content')
@@ -21,7 +21,7 @@ Store Admin Dashboard
                         <div class="card mb-2">
                             <div class="card-body">
                             <div class="dashboard-card-title">
-                                Customers
+                                Users
                             </div>
                             <div class="dashboard-card-subtitle">
                                 {{ $customer }}
@@ -33,7 +33,7 @@ Store Admin Dashboard
                         <div class="card mb-2">
                             <div class="card-body">
                             <div class="dashboard-card-title">
-                                Transaction
+                                Transaksi
                             </div>
                             <div class="dashboard-card-subtitle">
                                 {{ $transaction }}
@@ -45,7 +45,7 @@ Store Admin Dashboard
                         <div class="card mb-2">
                             <div class="card-body">
                             <div class="dashboard-card-title">
-                                Revenue
+                                Penghasilan
                             </div>
                             <div class="dashboard-card-subtitle">
                                 {{ $revenue }}
@@ -72,7 +72,7 @@ Store Admin Dashboard
                     </div>
                     <div class="row mt-3">
                         <div class="col-12 mt-2">
-                        <h5 class="mb-3"> Recent Transaction</h5>
+                        <h5 class="mb-3"> Transaksi Terakhir </h5>
                          @foreach ($transaction_data as $transaction)
                     <a href="{{ route('dashboard-transaction-details', $transaction->id) }}"
                         class="card card-list d-block">

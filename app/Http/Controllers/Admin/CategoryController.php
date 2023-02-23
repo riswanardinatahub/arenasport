@@ -30,7 +30,7 @@ class CategoryController extends Controller
                             </button>
                             <div class="dropdown-menu">
                                 <a href="'.route('category.edit', $item->id).'" class="dropdown-item">
-                                Sunting
+                                Edit
                                 </a>
                                 <form action="'. route('category.destroy', $item->id).'" method="POST">
                                 '.method_field('delete'). csrf_field() .'

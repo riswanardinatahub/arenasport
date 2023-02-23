@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-Product
+Produk
 @endsection
 
 @section('content')
@@ -27,7 +27,7 @@ Product
                                             <th>No</th>
                                             <th>Nama</th>
                                             <th>Pemilik</th>
-                                            <th>Desa</th>
+                                            <th>Lokasi</th>
                                             <th>Kategori</th>
                                             <th>Harga</th>
                                             <th>Foto</th>

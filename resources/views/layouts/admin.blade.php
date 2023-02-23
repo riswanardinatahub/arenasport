@@ -22,7 +22,7 @@
       <!-- Sidebar -->
       <div class="border-right" id="sidebar-wrapper">
         <div class="sidebar-heading text-center">
-          <img src="/images/dashboard-store-logo.png" alt="" class="my-4">
+          <img src="/images/dashboard-store-logo.svg" height="150" alt="" class="my-4">
         </div>
         <div class="list-group list-group-flush">
           <a href="{{ route('admin-dashboard') }}" class="list-group-item list-group-item-action">Dashboard</a>
@@ -32,7 +32,7 @@
           <a href="{{ route('category.index') }}" class="list-group-item list-group-item-action {{ (request()->is('admin/category*')) ? 'active' : ''}}">Kategori</a>
           <a href="{{ route('transaction.index') }}" class="list-group-item list-group-item-action {{ (request()->is('admin/transaction*')) ? 'active' : ''}}">Transaksi</a>
           <a href="{{ route('user.index') }}" class="list-group-item list-group-item-action {{ (request()->is('admin/user*')) ? 'active' : ''}} ">Users</a>
-          <a href="{{ route('admin-store-user.index') }}" class="list-group-item list-group-item-action {{ (request()->is('admin/admin-store-user*')) ? 'active' : ''}} ">Admin Store</a>
+          {{-- <a href="{{ route('admin-store-user.index') }}" class="list-group-item list-group-item-action {{ (request()->is('admin/admin-store-user*')) ? 'active' : ''}} ">Admin Store</a> --}}
           <a href="{{ route('logout') }}" onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();" 
              class="list-group-item list-group-item-action">Keluar</a>

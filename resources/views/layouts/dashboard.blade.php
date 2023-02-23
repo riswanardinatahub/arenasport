@@ -21,7 +21,7 @@
       <!-- Sidebar -->
       <div class="border-right" id="sidebar-wrapper">
         <div class="sidebar-heading text-center">
-          <img src="/images/dashboard-store-logo.svg" alt="" class="my-4">
+          <img src="/images/dashboard-store-logo.svg" alt="" height="150" class="my-4">
         </div>
         <div class="list-group list-group-flush">
           <a href="{{ route('dashboard') }}" 
@@ -36,7 +36,7 @@
           <a href="{{ route('dashboard-transaction') }}" 
              class="list-group-item list-group-item-action {{ Request::is('dashboard/transactions') ? 'active' : '' }}">Transaksi</a>
           <a href="{{ route('dashboard-settings-store') }}" 
-             class="list-group-item list-group-item-action {{ Request::is('dashboard/settings') ? 'active' : '' }}">Store Setting</a>
+             class="list-group-item list-group-item-action {{ Request::is('dashboard/settings') ? 'active' : '' }}">Toko Setting</a>
           <a href="{{ route('dashboard-settings-account') }}" 
              class="list-group-item list-group-item-action {{ Request::is('dashboard/account') ? 'active' : '' }}">Akun</a>
           <a href="{{ route('logout') }}" onclick="event.preventDefault();

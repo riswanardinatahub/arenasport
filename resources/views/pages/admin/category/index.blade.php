@@ -9,7 +9,7 @@ Category
     <div class="container-fluid">
         <div class="dashboard-heading">
             <h2 class="dashboard-title">
-                kategori
+                Kategori
             </h2>
             <p class="dashboard-subtitle">
                 List kategori
@@ -28,8 +28,8 @@ Category
                                     <thead>
                                         <tr>
                                             <th>ID</th>
-                                            <th>Name</th>
-                                            <th>Photo</th>
+                                            <th>Nama</th>
+                                            <th>Foto</th>
                                             <th>Slug</th>
                                             <th>Action</th>
                                         </tr>

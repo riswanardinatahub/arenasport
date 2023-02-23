@@ -7,13 +7,16 @@
         <div class="container">
             <div class="row justify-content-center">
                 {{-- <div class="col-lg-6 d-sm-none d-md-none d-lg-block text-center">
-                    <img src="/images/login-placeholder.png" alt="" class="w-50 mb-4 mb-lg-none">
+                    <img src="/images/dashboard-store-logo.svg" alt="" height="300" class="w-50 mb-4 mb-lg-none">
                 </div> --}}
-                <div class="row justify-content-center mt-5">
-                    <div class="col-12">
-                        <h2>Belanja kebutuhan utama, <br>
-                            menjadi lebih mudah</h2>
-                        <form method="POST" action="{{ route('login') }}" class="mt-5">
+                <div class="row justify-content-center">
+                    <div class="col-12 text-center">
+                        <img src="/images/dashboard-store-logo.svg" alt="" height="300" class="w-50 mb-lg-none">
+                    </div>
+                    <div class="col-8">
+                  
+                        <h2></h2>
+                        <form method="POST" action="{{ route('login') }}" class="mt-2">
                             @csrf
 
                             <div class="form-group">

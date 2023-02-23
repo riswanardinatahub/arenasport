@@ -9,10 +9,10 @@ Store Dashboard Setiing
           <div class="container-fluid">
             <div class="dashboard-heading">
               <h2 class="dashboard-title">
-                Store Settings
+                Toko Settings
               </h2>
               <p class="dashboard-subtitle">
-                Make store that profitable
+                Buatlah toko yang menguntungkan!
               </p>
             </div>
             <div class="dashboard-content">
