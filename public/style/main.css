@@ -107,6 +107,18 @@ p {
     margin-bottom: 1rem;
 }
 
+@media only screen and (max-width: 379px) {
+    .navbar-brand img {
+        height: 36px !important;
+    }
+}
+
+@media only screen and (max-width: 289px) {
+    .navbar-brand img {
+        height: 26px !important;
+    }
+}
+
 abbr[title],
 abbr[data-original-title] {
     text-decoration: underline;

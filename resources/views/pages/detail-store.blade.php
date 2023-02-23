@@ -16,7 +16,12 @@ Detail Arena
                   <a href="store.html" class="card-list d-block mb-0">
                     <div class="card-body py-0">
                       <div class="row align-items-center">
-                        <img src="/images/icon-store.svg" alt="" class="mr-3" style="max-height: 65px;">
+                      @if ($user->images)
+                    <img src="{{ Storage::url($user->images) }}" alt="" class="mr-2">
+                    @else
+                    <img src="/images/icon-store.svg" alt="" class="mr-2">
+                    @endif
+                        {{-- <img src="/images/icon-store.svg" alt="" class="mr-3" style="max-height: 65px;"> --}}
                         <p class="text-bold mt-4" style="font-size: 20px;">{{ $user->store_name }}</p>
                       </div>
                     </div>

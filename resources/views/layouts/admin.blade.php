@@ -62,8 +62,8 @@
                     {{ Auth::user()->name }}
                   </a>
                   <div class="dropdown-menu">
-                    <a href="/dashboard.html" class="dropdown-item">Dashborad</a>
-                    <a href="/dashboard-account.html" class="dropdown-item">Settings</a>
+                    {{-- <a href="/dashboard.html" class="dropdown-item">Dashborad</a>
+                    <a href="/dashboard-account.html" class="dropdown-item">Settings</a> --}}
                     <div class="dropdown-divider"></div>
                     <a href="{{ route('logout') }}" onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();" class="dropdown-item">Logout</a>

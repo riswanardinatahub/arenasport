@@ -36,7 +36,7 @@ Store Dashboard Account
                       <input type="email" class="form-control" id="email" name="email" value="{{ $user->email }}">
                     </div>
                   </div>
-                  <div class="col-md-6">
+                  {{-- <div class="col-md-6">
                     <div class="form-group">
                       <label for="address_one">Lokasi 1</label>
                       <input type="text" class="form-control" id="address_one" name="address_one"
@@ -49,8 +49,8 @@ Store Dashboard Account
                       <input type="text" class="form-control" id="address_two" name="address_two"
                         value="{{ $user->address_two }}">
                     </div>
-                  </div>
-                  <div class="col-md-4">
+                  </div> --}}
+                  <div class="col-md-6">
                     <div class="form-group">
                       <label for="provinces_id">Provinsi</label>
                       <select name="provinces_id" id="provinces_id" class="form-control" v-if="provinces"
@@ -64,7 +64,7 @@ Store Dashboard Account
 
                   
 
-                  <div class="col-md-4">
+                  <div class="col-md-6">
                     <div class="form-group">
                       <label for="regencies_id">Kota</label>
                       <select name="regencies_id" id="regencies_id" class="form-control" v-if="regencies"

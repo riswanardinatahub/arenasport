@@ -1,19 +1,7 @@
 <style type="text/css">
 
 
-@media only screen and (max-width:379px) {
-  .navbar-brand img {
-    height: 36px !important;
-  }
 
-}
-
-@media only screen and (max-width:289px) {
-  .navbar-brand img {
-    height: 26px !important;
-  }
-
-}
 
 
 .navbar .megamenu{ padding: 1rem; }
@@ -121,7 +109,8 @@
           </div>
         </li>
         <li class="nav-item">
-          <a href="{{ route('cart') }}" class="nav-link d-inline-block mt-2 pl-0">
+        {{-- {{ route('cart') }} --}}
+          <a href="#" class="nav-link d-inline-block mt-2 pl-0">
             @php
             $cart = \App\Cart::where('users_id', Auth::user()->id)->count();
             @endphp
@@ -148,6 +137,27 @@
           <a href="" class="nav-link d-inline-block">
             Keranjang
           </a>
+          
+        </li>
+        <li class="nav-item">
+          <a href="{{ route('dashboard') }}" class="nav-link d-inline-block">
+            Dashboard
+          </a>
+          
+        </li>
+        <li class="nav-item">
+          <a href="{{ route('dashboard-settings-account') }}" class="nav-link d-inline-block">
+            Setting
+          </a>
+          
+        </li>
+        <li class="nav-item">
+          <a class="nav-link d-inline-block" href="{{ route('logout') }}" onclick="event.preventDefault(); 
+                document.getElementById('logout-form').submit();" class="dropdown-item">Keluar</a>
+                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                  @csrf
+                </form>
+          
         </li>
       </ul>
       @endauth

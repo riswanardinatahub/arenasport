@@ -6,14 +6,14 @@
       <div class="container">
         <div class="row align-items-center justify-content-center row-login ">
           <div class="col-12 col-lg-8">
-            <h2>Silahkan Daftarkan Diri Anda</h2>
+            <h2 class="text-center">Silahkan Daftarkan Diri Anda</h2>
             
             <form class="mt-3" method="POST" action="{{ route('register') }}">
                @csrf
               <div class="row">
                 <div class="col-lg-6" id="register">
                       <div class="form-group">
-                        <label for="">Full Name</label>
+                        <label for="">Nama Lengkap</label>
                         <input id="name" v-model="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name"
                           value="{{ old('name') }}" required autocomplete="name" autofocus>
                         @error('name')
@@ -34,7 +34,7 @@
                       </div>
                       
                       <div class="form-group">
-                        <label for="">Email Address</label>
+                        <label for="">Email</label>
                         <input type="email" name="email" @change="checkForEmail()" class="form-control  @error('email') is-invalid @enderror"
                           :class="{ 'is-invalid' : this.email_unavailable }" aria-describedby="emailHelp" placeholder="Masukan Email"
                           v-model="email" autocomplete="email" />
@@ -68,15 +68,15 @@
                         @enderror
                       </div>
                        <button type="submit" :disabled="this.email_unavailable" class="btn btn-success btn-block mt-4">
-                  Sign Up Now
+                  Register
                 </button>
 
               <a href="{{ route('login') }}" class="btn btn-signup btn-block  mt-2">
-                Back To Sign In
+                Login
               </a>
                       
                       <div class="form-group">
-                        <label for="">Store</label>
+                        <label for="">Toko</label>
                         <p class="text-muted">Apakah anda juga ingin membuka toko?</p>
                         <div class="custom-control custom-radio custom-control-inline">
                           <input type="radio" class="custom-control-input" name="is_store_open" id="openStoreTrue" v-model="is_store_open"
@@ -115,7 +115,7 @@
                 <div class="col-lg-6" id="locations">
                     <div class="form-group">
                       <div class="form-group">
-                        <label for="provinces_id">Province</label>
+                        <label for="provinces_id">Provinsi</label>
                         <select name="provinces_id" id="provinces_id" class="form-control" v-if="provinces" v-model="provinces_id">
                           <option v-for="province in provinces" :value="province.id">@{{ province.name }}</option>
                         </select>

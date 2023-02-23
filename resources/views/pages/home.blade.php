@@ -138,7 +138,7 @@ Arena
                     
                                 </div>
                                 <span style="font-size:15px; color:#050505; ">
-                                    Desa : {{ $product->user->villages->name }}
+                                    {{ $product->user->villages->name }}
                                 </span>
                     
                                 <div class="row">
@@ -172,14 +172,14 @@ Arena
                                     <div class="col-7">
                                         <div class="d-flex justify-content-start">
                                             <div class="products-price">
-                                    <span class="text-dark">RP.</span> {{ number_format($product->price) }}
+                                    <span class="text-dark"></span>RP. {{ number_format($product->price) }}
                                 </div>
                                         </div>
                                     </div>
                                     <div class="col-5">
                                         <div class="d-flex justify-content-end">
                                             
-                                            <span style="font-size:13px; color:#29a867; ">
+                                            <span style="font-size:13px; color:#bc2929; ">
                                              {{-- Stok : {{ $product->stock }} --}}
 
                                              60 Menit
@@ -259,14 +259,14 @@ Arena
                                     <div class="col-8">
                                         <div class="d-flex justify-content-start">
                                             <div class="products-price">
-                                    <span class="text-dark">RP.</span> {{ number_format($product->price) }}
+                                    <span class="text-dark"></span>RP. {{ number_format($product->price) }}
                                 </div>
                                         </div>
                                     </div>
                                     <div class="col-4">
                                         <div class="d-flex justify-content-end">
                                             
-                                            <span style="font-size:13px; color:#29a867; ">
+                                            <span style="font-size:13px; color:#bc2929; ">
                                              {{-- Stok : {{ $product->stock }} --}}
                                              60 Menit
                     
@@ -298,7 +298,6 @@ Arena
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            
                                         </div>
                                         </div>
                                     </div>

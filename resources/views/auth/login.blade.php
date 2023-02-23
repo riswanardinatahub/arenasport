@@ -20,7 +20,7 @@
                             @csrf
 
                             <div class="form-group">
-                                <label for="">Email Address</label>
+                                <label for="">Email</label>
                                 <input id="email" type="email"
                                     class="form-control w-100 @error('email') is-invalid @enderror" name="email"
                                     value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -45,11 +45,11 @@
                             </div>
 
                             <button type="submit" class="btn btn-success btn-block w-100 mt-4">
-                                Sign In to My Account
+                                Login
                             </button>
 
                             <a href="{{ route('register') }}" class="btn btn-signup btn-block w-100 mt-2">
-                                Sign Up
+                                Register
                             </a>
                         </form>
                     </div>

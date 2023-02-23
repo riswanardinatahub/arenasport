@@ -77,7 +77,7 @@ class StoreController extends Controller
 
        $user = User::find($id);
 
-      $products = Product::with(['galleries'])->where('users_id',$id);
+      $products = Product::with(['galleries'])->where('users_id',$id)->where('status','APPROVE');
         //dd($user);
 
        

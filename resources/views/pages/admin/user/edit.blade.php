@@ -41,7 +41,7 @@ User
 
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>email</label>
+                                            <label>Email</label>
                                             <input type="email" name="email" class="form-control" value="{{ $item->email }}" required>
                                         </div>
                                     </div>
