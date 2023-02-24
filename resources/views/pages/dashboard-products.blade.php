@@ -1,7 +1,7 @@
 @extends('layouts.dashboard')
 
 @section('title')
-Store Dashboard Products Pages
+Store Dashboard Arena Pages
 @endsection
 
 @section('content')
@@ -9,10 +9,10 @@ Store Dashboard Products Pages
           <div class="container-fluid">
             <div class="dashboard-heading">
               <h2 class="dashboard-title">
-                Produk
+                Arena
               </h2>
               <p class="dashboard-subtitle">
-                Upload lebih banyak produkmu
+                Upload lebih banyak Arena mu
               </p>
 
             </div>
@@ -23,7 +23,7 @@ Store Dashboard Products Pages
                 $product = App\Product::with('user')->where('users_id',Auth::user()->id)->count()     
                 @endphp
                 @if (Auth::user()->store_name)
-                  <a href="{{ route('dashboard-product-create') }}" class="btn btn-success">Tambah Produk</a>
+                  <a href="{{ route('dashboard-product-create') }}" class="btn btn-success">Tambah Arena</a>
                 @else
                   <a href="{{ route('dashboard-settings-store') }}" class="btn btn-warning text-white">Buat Toko</a>
                 @endif     

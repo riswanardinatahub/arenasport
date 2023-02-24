@@ -1,7 +1,7 @@
 @extends('layouts.adminstore')
 
 @section('title')
-Product
+Arena
 @endsection
 
 @section('content')
@@ -9,10 +9,10 @@ Product
     <div class="container-fluid">
         <div class="dashboard-heading">
             <h2 class="dashboard-title">
-                Produk
+                Arena
             </h2>
             <p class="dashboard-subtitle">
-                + Tambah Produk
+                + Tambah Arena
             </p>
         </div>
         <div class="dashboard-content">
@@ -39,7 +39,7 @@ Product
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Nama Produk</label>
+                                            <label>Nama Arena</label>
                                             <input type="text" name="name" class="form-control" required>
                                         </div>
                                     </div>
@@ -47,7 +47,7 @@ Product
 
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Pemilik Produk</label>
+                                            <label>Pemilik Arena</label>
                                             <select name="users_id" class="form-control">
                                                 @foreach ( $users as $user)
                                                     <option value="{{ $user->id }}">{{ $user->name }}</option>
@@ -59,7 +59,7 @@ Product
 
                                      <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Kategori Produk</label>
+                                            <label>Kategori Arena</label>
                                             <select name="categories_id" class="form-control">
                                                  @foreach ( $categories as $category)
                                                     <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -72,7 +72,7 @@ Product
 
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Harga Produk</label>
+                                            <label>Harga Arena</label>
                                             <input type="number" name="price" class="form-control" required>
                                         </div>
                                     </div>
@@ -80,7 +80,7 @@ Product
                                     
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Deskirpsi Produk</label>
+                                            <label>Deskirpsi Arena</label>
                                             <textarea name="description" id="editor"> </textarea>
                                         </div>
                                     </div>

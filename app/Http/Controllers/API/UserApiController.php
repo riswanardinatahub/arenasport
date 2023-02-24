@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 
 class UserApiController extends Controller
@@ -24,11 +25,11 @@ class UserApiController extends Controller
         $array["categories_id"] = NULL;
         $array["store_status"] = 0;
         
-        $mail = User::where('email',"=",$request->email)->get();
+        $mail = DB::tabel('users')->where('email',"=",$request->email)->get();
         if($mail->count()>0){
             return response()->json([
                 'error'=>1,
-                'message'=>'Email sudah terdaftar, silahkan gunakan email lainaaaa.'
+                'message'=>'Email sudah terdaftar, silahkan gunakan email lainnya.'
             ],200);
         }else{
  

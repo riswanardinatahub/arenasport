@@ -24,7 +24,7 @@ Route::post('register', 'API\UserApiController@register');
 Route::post('updateuser/{id}', 'API\UserApiController@update');
 
 Route::get('provinces', 'API\LocationController@provinces')->name('api-provinces');
-Route::get('regencies/{provinces_id}', 'API\LocationController@regencies')->name('api-regencies');
+Route::get('regencies', 'API\LocationController@regencies')->name('api-regencies');
 Route::get('districts/{regencies_id}', 'API\LocationController@districts')->name('api-districts');
 Route::get('villages/{districts_id}', 'API\LocationController@villages')->name('api-villages');
 

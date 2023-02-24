@@ -9,10 +9,10 @@ Product Gallery
     <div class="container-fluid">
         <div class="dashboard-heading">
             <h2 class="dashboard-title">
-                Gallery Produk
+                Gallery Arena
             </h2>
             <p class="dashboard-subtitle">
-                List Gallery Produk
+                List Gallery Arena
             </p>
         </div>
         <div class="dashboard-content">
@@ -28,7 +28,7 @@ Product Gallery
                                     <thead>
                                         <tr>
                                             <th>ID</th>
-                                            <th>Produk</th>
+                                            <th>Arena</th>
                                             <th>Foto</th>
                                             <th>Action</th>
                                         </tr>

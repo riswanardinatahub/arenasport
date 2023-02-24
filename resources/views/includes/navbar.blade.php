@@ -66,12 +66,12 @@
         </li>
 
        
-        <li class="nav-item">
+        {{-- <li class="nav-item">
           <a href="{{ route('categories') }}" class="nav-link">Kategori</a>
         </li>
         <li class="nav-item">
           <a href="{{ route('store-page-search') }}" class="nav-link">Arena</a>
-        </li>
+        </li> --}}
        
         @guest
         <li class="nav-item">

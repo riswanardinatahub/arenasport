@@ -9,10 +9,10 @@ Product
     <div class="container-fluid">
         <div class="dashboard-heading">
             <h2 class="dashboard-title">
-                Produk
+                Arena
             </h2>
             <p class="dashboard-subtitle">
-                List Produk
+                List Arena
             </p>
         </div>
         <div class="dashboard-content">
@@ -90,7 +90,7 @@ $('body').on('click','.terimaproduk',function(event){
                     var nama = $(this).attr('data-nama');
                     swal({
                         title: "Yakin?",
-                        text: "Akan Menerima Produk Ini "+ nama +" ??",
+                        text: "Akan Menerima Arena Ini "+ nama +" ??",
                         icon: "warning",
                         buttons: true,
                         dangerMode: true,
@@ -100,13 +100,13 @@ $('body').on('click','.terimaproduk',function(event){
                         if (willDelete) {
                            
                             window.location = "terima/" + id + ""
-                            swal("Data Produk :  "+ nama +" telah berhasil Di Terima", {
+                            swal("Data Arena :  "+ nama +" telah berhasil Di Terima", {
                             icon: "success",
                         
                             });
                         
                         } else {
-                            swal("Data Produk "+ name + " Tidak Jadi Di Terima ");
+                            swal("Data Arena "+ name + " Tidak Jadi Di Terima ");
                         }
                     });
         });
@@ -122,7 +122,7 @@ $('body').on('click','.tolakproduk',function(event){
                     var nama = $(this).attr('data-nama');
                     swal({
                         title: "Yakin?",
-                        text: "Akan Menolak Produk Ini "+ nama +" ??",
+                        text: "Akan Menolak Arena Ini "+ nama +" ??",
                         icon: "warning",
                         buttons: true,
                         dangerMode: true,
@@ -132,13 +132,13 @@ $('body').on('click','.tolakproduk',function(event){
                         if (willDelete) {
                            
                             window.location = "tolak/" + id + ""
-                            swal("Data Produk :  "+ nama +" telah berhasil Di Tolak", {
+                            swal("Data Arena :  "+ nama +" telah berhasil Di Tolak", {
                             icon: "success",
                         
                             });
                         
                         } else {
-                            swal("Data Produk "+ name + " Tidak Jadi Di Terima ");
+                            swal("Data Arena "+ name + " Tidak Jadi Di Terima ");
                         }
                     });
         });

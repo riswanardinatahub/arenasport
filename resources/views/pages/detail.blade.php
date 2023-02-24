@@ -245,7 +245,7 @@ function myFunction() {
   copyText.select();
   copyText.setSelectionRange(0, 99999)
   document.execCommand("copy");
-  alert("Copy link produk: " + copyText.value);
+  alert("Copy link Arena: " + copyText.value);
 }
 </script>
  <script type="text/javascript">

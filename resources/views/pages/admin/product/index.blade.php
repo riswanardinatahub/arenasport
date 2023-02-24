@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-Product
+Arena
 @endsection
 
 @section('content')
@@ -9,10 +9,10 @@ Product
     <div class="container-fluid">
         <div class="dashboard-heading">
             <h2 class="dashboard-title">
-                Produk
+                Arena
             </h2>
             <p class="dashboard-subtitle">
-                List produk
+                List Arena
             </p>
         </div>
         <div class="dashboard-content">

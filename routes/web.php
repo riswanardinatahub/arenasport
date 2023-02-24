@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::post('autoLogin','AuthController@autoLogin');
+
+Route::get('/coba', function(){
+   return DB::table('regencies')->where('province_id',31)->get();
+});
 
 Route::get('/kamu', 'HomeController@kamu');
 Route::get('/', 'HomeController@index')->name('home');

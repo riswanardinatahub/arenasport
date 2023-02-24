@@ -24,7 +24,7 @@
                       </div>
                       <div class="form-group">
                         <label for="">No Telpon</label>
-                        <input id="phone_number" v-model="phone_number" type="text" class="form-control @error('phone_number') is-invalid @enderror" name="phone_number"
+                        <input id="phone_number"  type="text" class="form-control @error('phone_number') is-invalid @enderror" name="phone_number"
                           value="{{ old('phone_number') }}" required autocomplete="phone_number" autofocus>
                         @error('phone_number')
                         <span class="invalid-feedback" role="alert">
@@ -250,8 +250,10 @@
 
 @push('addon-script')
    <script src="/vendor/vue/vue.js"></script>
-  <script src="https://unpkg.com/vue-toasted"></script>
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+   <script src="/vendor/axios/dist/axios.min.js"></script>
+   <script src="https://unpkg.com/vue-toasted"></script>
+   {{-- <script src="/vendor/vuetoadted/vue-toasted.min.js"></script> --}}
+  {{-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> --}}
   <script>
     Vue.use(Toasted);
     var register = new Vue({
@@ -337,7 +339,7 @@
 
       getRegenciesData() {
         var self = this;
-        axios.get('{{ url('api/regencies') }}/' + self.provinces_id)
+        axios.get('{{ url('api/regencies') }}/')
           .then(function (response) {
             self.regencies = response.data;
           })

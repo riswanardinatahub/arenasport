@@ -12,9 +12,9 @@
           <li class="nav-item active">
             <a href="{{ route('home') }}" class="nav-link">Halaman Utama</a>
           </li>
-          <li class="nav-item">
+          {{-- <li class="nav-item">
             <a href="{{ route('categories') }}" class="nav-link">Kategori</a>
-          </li>
+          </li> --}}
           {{-- <li class="nav-item">
             <a href="#" class="nav-link">Rewards</a>
           </li> --}}

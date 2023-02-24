@@ -97,7 +97,7 @@ Arena
         <div class="container">
             <div class="row">
                 <div class="col-12" data-aos="fade-up">
-                    <h5>Produk Terbaru</h5>
+                    <h5>Arena Terbaru</h5>
                 </div>
             </div>
             <div class="row">

@@ -45,7 +45,7 @@ Store Dashboard Transactions Details Pages
                     </div>
                     <div class="col-12 col-md-6">
                       <div class="product-title">
-                        Nama Produk
+                        Nama Arena
                       </div>
                       <div class="product-subtitle">
                         {{ $transaction->product->name }}
@@ -53,7 +53,7 @@ Store Dashboard Transactions Details Pages
                     </div>
                     <div class="col-12 col-md-6">
                       <div class="product-title">
-                        Harga Per Produk
+                        Harga Per Arena
                       </div>
                       <div class="product-subtitle">
                       RP. {{ number_format($transaction->product->price) }}

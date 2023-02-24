@@ -17,7 +17,7 @@ Detail Rangking
                 <div class="d-flex justify-content-center flex-row bd-highlight">
 
                     <div class="p-1 bd-highlight">
-                        <h2> Daftar Rangking Penjualan Produk Desa</h2>
+                        <h2> Daftar Rangking Penjualan Arena</h2>
                     </div>
                 </div>
 

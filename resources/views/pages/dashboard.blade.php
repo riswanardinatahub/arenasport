@@ -69,7 +69,7 @@ Store Dashboard
                     <div class="card mb-2">
                         <div class="card-body">
                             <div class="dashboard-card-title">
-                                Total Produk
+                                Total Arena
                             </div>
                             <div class="dashboard-card-subtitle">
                                 {{ $totalproduct }}
