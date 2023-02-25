@@ -42,7 +42,7 @@ Arena
                            
                             
                         </div>
-                        <input type="date" class="form-control" placeholder="Nama Arena" aria-label="Nama Arena" aria-describedby="basic-addon1">
+                        <input type="text" class="form-control" placeholder="Nama Arena" aria-label="Nama Arena" aria-describedby="basic-addon1">
                     </div>
                 </div>
 
@@ -51,16 +51,11 @@ Arena
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-location-dot"></i></span>
                                 </div>
-                              <select name="category" id="" class="form-control">
+                              <select name="regencies_id" id="" class="form-control">
                                 <option selected> Pilih Kota</option>
-                                <option> 10:00 - 11.00 </option>
-                                <option> 10:00 - 11.00 </option>
-                                <option> 10:00 - 11.00 </option>
-                                <option> 10:00 - 11.00 </option>
-                                <option> 10:00 - 11.00 </option>
-                                {{-- @foreach ($categories as $category)
-                                  <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                @endforeach --}}
+                                @foreach ($regencies as $regency)
+                                  <option value="{{ $regency->id }}">{{ $regency->name }}</option>
+                                @endforeach
                               </select>
                             </div>
                 </div>
@@ -72,9 +67,9 @@ Arena
                                 </div>
                               <select name="category" id="" class="form-control">
                                 <option selected> Pilih Kategori</option>
-                                {{-- @foreach ($categories as $category)
+                                @foreach ($categories as $category)
                                   <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                @endforeach --}}
+                                @endforeach
                               </select>
                             </div>
                 </div>

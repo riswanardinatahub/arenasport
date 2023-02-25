@@ -34,6 +34,9 @@ class HomeController extends Controller
     {
         $categories = Category::take(6)->get();
         $products = Product::where('status','APPROVE')->latest()->with(['galleries'])->take(20)->get();
+        $regencies = DB::table('regencies')->where('province_id',31)->get();
+
+       
 
         $desaterpopuler = Transaction::all();
         
@@ -67,6 +70,7 @@ class HomeController extends Controller
             'products'=> $products,
             'produkterlaris'=> $produkterlaris,
             'occurences'=> $occurences,
+            'regencies'=> $regencies,
 
             ]);
     }
