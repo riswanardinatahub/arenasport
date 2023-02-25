@@ -1,4 +1,27 @@
 @extends('layouts.app')
+<style> 
+input[type="text"]{
+background-color:white !important;
+border: 3px solid #29a867;
+}
+
+input[type=text]:focus {
+  border: 3px solid #29a867;
+}
+.input-group-prepend span{
+    background-color:white !important;
+border: 3px solid #29a867;
+line-height: 1;
+}
+
+.input-group select.form-control {
+  background-color:white !important;
+  border: 3px solid #29a867;
+  
+}
+
+
+</style>
 
 @section('title')
 Arena
@@ -7,8 +30,61 @@ Arena
 @section('content')
 <div class="page-content page-home">
     <!-- Carusel Section -->
-    <section class="store-carousel" data-aos="fade-up">
+    
+    <section class="store-carouse pt-3" data-aos="fade-up">
         <div class="container">
+       
+            <div class="row  justify-content-center">
+                <div class="col-12 col-md-3 col-lg-3">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
+                           
+                            
+                        </div>
+                        <input type="date" class="form-control" placeholder="Nama Arena" aria-label="Nama Arena" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-lg-3 ">
+                            <div class="input-group mb-3" >
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-location-dot"></i></span>
+                                </div>
+                              <select name="category" id="" class="form-control">
+                                <option selected> Pilih Kota</option>
+                                <option> 10:00 - 11.00 </option>
+                                <option> 10:00 - 11.00 </option>
+                                <option> 10:00 - 11.00 </option>
+                                <option> 10:00 - 11.00 </option>
+                                <option> 10:00 - 11.00 </option>
+                                {{-- @foreach ($categories as $category)
+                                  <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                @endforeach --}}
+                              </select>
+                            </div>
+                </div>
+
+                <div class="col-md-3 col-lg-3">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-bars"></i></span>
+                                </div>
+                              <select name="category" id="" class="form-control">
+                                <option selected> Pilih Kategori</option>
+                                {{-- @foreach ($categories as $category)
+                                  <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                @endforeach --}}
+                              </select>
+                            </div>
+                </div>
+
+                
+                <div class="col-12 col-md-1 col-lg-1">
+                    <button type="submit" class="btn btn-success btn-md px-3 mb-2 btn-block">Cari</button>
+                </div>
+            </div>
+        
             <div class="row">
                 <div class="col-lg-12" data-aos="zoom-in">
                     <div id="storeCarousel" class="carousel slide" data-ride="carousel">
@@ -182,7 +258,7 @@ Arena
                                             <span style="font-size:13px; color:#bc2929; ">
                                              {{-- Stok : {{ $product->stock }} --}}
 
-                                             60 Menit
+                                             1 Jam
                     
                                             </span>
                                            
@@ -268,7 +344,7 @@ Arena
                                             
                                             <span style="font-size:13px; color:#bc2929; ">
                                              {{-- Stok : {{ $product->stock }} --}}
-                                             60 Menit
+                                             1 Jam
                     
                                             </span>
                                            

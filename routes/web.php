@@ -21,6 +21,7 @@ Route::get('/coba', function(){
 });
 
 Route::get('/kamu', 'HomeController@kamu');
+Route::get('/registerpartner', 'HomeController@registerpartner')->name('registerpartner');
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/rank', 'HomeController@rank')->name('rank');
 

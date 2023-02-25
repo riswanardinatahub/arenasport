@@ -75,22 +75,22 @@
                 Login
               </a>
                       
-                      <div class="form-group d-none">
+                      <div class="form-group">
                         <label for="">Toko</label>
-                        <p class="text-muted">Apakah anda juga ingin membuka toko?</p>
-                        <div class="custom-control custom-radio custom-control-inline">
+                        <p class="text-muted">Segera Buka Toko Anda</p>
+                        <div class="custom-control custom-radio custom-control-inline  d-none">
                           <input type="radio" class="custom-control-input" name="is_store_open" id="openStoreTrue" v-model="is_store_open"
                             :value="true">
-                          <label for="openStoreTrue" class="custom-control-label">Iya, Boleh</label>
+                          <label for="openStoreTrue" class="custom-control-label">Yeay Buka Toko</label>
                         </div>
-                        <div class="custom-control custom-radio custom-control-inline">
+                        <div class="custom-control custom-radio custom-control-inline d-none">
                           <input type="radio" class="custom-control-input" name="is_store_open" id="openStoreFalse" v-model="is_store_open"
                             :value="false">
                           <label for="openStoreFalse" class="custom-control-label">Enggak, Makasih</label>
                         </div>
                       </div>
                       
-                      <div class="form-group d-none" v-if="is_store_open">
+                      <div class="form-group" v-if="is_store_open">
                         <label for="">Nama Toko</label>
                         <input type="text" v-model="store_name" id="store_name" class="form-control @error('store_name') is-invalid @enderror"
                           name="store_name" required autocomplete autofocus>
@@ -101,7 +101,7 @@
                         @enderror
                       </div>
                       
-                      <div class="form-group d-none" v-if="is_store_open">
+                      <div class="form-group" v-if="is_store_open">
                         <label for="">Kategori</label>
                         <select name="categories_id" id="" class="form-control">
                           <option value="" disabled>Select Category</option>
@@ -303,7 +303,7 @@
           return{
             name: "",
             email: "",
-            is_store_open: false,
+            is_store_open: true,
             store_name: "",
             email_unavailable:false
           }

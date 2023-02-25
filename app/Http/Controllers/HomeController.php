@@ -92,5 +92,13 @@ class HomeController extends Controller
         Storage::delete('public/storage/assets/product/jDughGwNGCTmYWkc6WVlu3yJSz2fIrzTyrm1gSlr.jpg');
         
     }
+
+    public function registerpartner(){
+        $categories = Category::all();
+        return view('auth.registermitra',[
+            'categories' => $categories,
+        ]);
+        // return view('auth.registermitra');
+    }
     
 }
