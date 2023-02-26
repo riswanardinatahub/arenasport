@@ -123,23 +123,22 @@ class HomeController extends Controller
              return 'dapet arena,kota';
         }elseif($request->arena && $request->regencies_id  == '' && $request->category == ''){
              $products = Product::with(['user.regencies','category','galleries'])
-            ->whereHas('user', function($coba) use($dataarena,$datakota){
-                $coba->where('store_name', 'like', '%'.$dataarena.'%');
-            })->paginate(32); 
+                                ->whereHas('user', function($coba) use($dataarena,$datakota){
+                                    $coba->where('store_name', 'like', '%'.$dataarena.'%');
+                                })->paginate(32); 
 
         }elseif($request->arena == '' && $request->regencies_id  && $request->category == ''){
-             return 'dapet kota';
+             $products = Product::with(['user.regencies','category','galleries'])
+                                ->whereHas('user', function($coba) use($dataarena,$datakota){
+                                    $coba->where('regencies_id', 'like', '%'.$datakota.'%');
+                                })->paginate(32);
+
         }elseif($request->arena == '' && $request->regencies_id == ''  && $request->category ){
              
+            $products = Product::with(['user.regencies','category','galleries'])
+                                ->where('categories_id',$datakategori)->paginate(32);
 
-
-                       $posts = Product::whereHas('users', function ($query) {
-                        $query->where('store_name', 'like', 'TINA%');
-                            })->get();
-
-                            dd($posts);
-
-             return 'dapet kategori';
+             
         }
 
         return view('pages.fillterdata', compact('products','categories','regencies'));
