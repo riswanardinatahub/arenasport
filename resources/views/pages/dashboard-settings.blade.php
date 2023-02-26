@@ -42,8 +42,8 @@ Store Dashboard Setiing
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
-                              <label for="">Store</label>
-                              <p class="text-muted">Apakah anda juga ingin membuka toko?</p>
+                              <label for="">Toko</label>
+                              <p class="text-muted">Apakah Saat Ini Toko Anda Buka?</p>
                               <div class="custom-control custom-radio custom-control-inline">
                                 <input type="radio" class="custom-control-input" name="store_status" id="openStoreTrue"
                                   value="1" {{ $user->store_status == 1 ? 'checked' : '' }}>

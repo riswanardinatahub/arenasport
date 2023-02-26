@@ -75,7 +75,7 @@
                 Login
               </a>
                       
-                      <div class="form-group">
+                      <div class="form-group mt-3">
                         <label for="">Toko</label>
                         <p class="text-muted">Segera Buka Toko Anda</p>
                         <div class="custom-control custom-radio custom-control-inline  d-none">
@@ -104,7 +104,7 @@
                       <div class="form-group" v-if="is_store_open">
                         <label for="">Kategori</label>
                         <select name="categories_id" id="" class="form-control">
-                          <option value="" disabled>Select Category</option>
+                          <option value="" disabled>Plih Kategori</option>
                           @foreach ($categories as $category )
                           <option value="{{ $category->id }}">{{ $category->name }}</option>
                           @endforeach

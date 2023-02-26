@@ -104,5 +104,37 @@ class HomeController extends Controller
         ]);
         // return view('auth.registermitra');
     }
+
+    public function filterdata(Request $request){
+       
+        if($request->arena != null && $request->regencies_id!= null && $request->category!= null){
+            return 'dapet arena,kota,kategori';
+        }elseif($request->arena == '' && $request->regencies_id && $request->category){
+             return 'dapet kota,kategori';
+        }elseif($request->arena && $request->regencies_id  == '' && $request->category){
+             return 'dapet arena,kategori';
+        }elseif($request->arena && $request->regencies_id && $request->category  == ''){
+             return 'dapet arena,kota';
+        }elseif($request->arena && $request->regencies_id  == '' && $request->category == ''){
+             $data = Product::with(['user.villages','category','galleries'])
+            ->whereHas('user', function($coba){
+                $coba->where('store_name', 'like', 'RISWAN%');
+            })->get(); 
+            
+        }elseif($request->arena == '' && $request->regencies_id  && $request->category == ''){
+             return 'dapet kota';
+        }elseif($request->arena == '' && $request->regencies_id == ''  && $request->category ){
+             
+
+
+                       $posts = Product::whereHas('users', function ($query) {
+                        $query->where('store_name', 'like', 'TINA%');
+                            })->get();
+
+                            dd($posts);
+
+             return 'dapet kategori';
+        }
+    }
     
 }

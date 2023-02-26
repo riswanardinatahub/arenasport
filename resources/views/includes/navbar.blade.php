@@ -100,7 +100,9 @@
            
             Hi, {{ Auth::user()->name }}
           </a>
-          <div class="dropdown-menu">
+
+          @if (Auth::user()->store_name)
+            <div class="dropdown-menu">
             <a href="{{ route('dashboard') }}" class="dropdown-item">Dashborad</a>
             <a href="{{ route('dashboard-settings-account') }}" class="dropdown-item">Settings</a>
             <div class="dropdown-divider"></div>
@@ -110,6 +112,19 @@
                   @csrf
                 </form>
           </div>
+          @else
+            <div class="dropdown-menu">
+            <a href="#" class="dropdown-item">Profil</a>
+            <a href="#" class="dropdown-item">Daftar Booking</a>
+            <div class="dropdown-divider"></div>
+            <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();" class="dropdown-item">Keluar</a>
+                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                  @csrf
+                </form>
+          </div>
+          @endif
+          
         </li>
         <li class="nav-item">
         {{-- {{ route('cart') }} --}}

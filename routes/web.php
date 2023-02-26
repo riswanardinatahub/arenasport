@@ -23,6 +23,8 @@ Route::get('/coba', function(){
 Route::get('/kamu', 'HomeController@kamu');
 Route::get('/registerpartner', 'HomeController@registerpartner')->name('registerpartner');
 Route::get('/', 'HomeController@index')->name('home');
+Route::post('/filterdata', 'HomeController@filterdata')->name('filterdata');
+
 Route::get('/rank', 'HomeController@rank')->name('rank');
 
 Route::get('/categories', 'CategoryController@index')->name('categories');
