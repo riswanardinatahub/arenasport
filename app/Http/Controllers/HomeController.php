@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use App\Category;
+use App\Models\District;
 use App\Transaction;
+use App\Models\Regency;
 use App\ProductGallery;
+use App\Models\Province;
 use App\TransactionDetail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -171,5 +174,37 @@ class HomeController extends Controller
 
         return view('pages.fillterdata', compact('products','categories','regencies'));
     }
+
+    public function profil(){
+        $user = Auth::user();
+        // code di bawah hanya untuk jawa barat
+        // $provinces = Province::where('id', 32)->first();
+        $provinces = Province::where('id', Auth::user()->provinces_id)->first();
+        $regencies = Regency::where('id', Auth::user()->regencies_id)->first();
+        $distric = District::where('id', Auth::user()->districts_id)->first();
+
+        // dd($distric);
+        //$regenciesall = Regency::all();
+        //dd($regencies);
+        return view('auth.profil',[
+          'user' => $user,
+          'provinces' => $provinces,
+          'regencies' => $regencies,
+          'distric' => $distric,
+          //'regenciesall' => $regenciesall,          
+        ]);
+        // return view('auth.profil');
+    }
+
+
+    public function profilupdate(Request $request){
+            $data = $request->all();
+            $item = Auth::user();
+            $item->update($data);
+
+            return redirect()->back()->with(['success' => 'Data Behasil di Update']);
+    }
+
+    
     
 }

@@ -33,7 +33,7 @@ User
                         <div class="alert alert-success" role="alert">
                         {{ $message }}
                         </div>
-	                @endif
+	                  @endif
                         <div class="card-body">
                             <form action="{{ route('adddata') }}" method="POST" enctype="multipart/form-data">
                                 @csrf

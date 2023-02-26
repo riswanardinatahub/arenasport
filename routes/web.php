@@ -24,6 +24,9 @@ Route::get('/kamu', 'HomeController@kamu');
 Route::get('/registerpartner', 'HomeController@registerpartner')->name('registerpartner');
 Route::get('/', 'HomeController@index')->name('home');
 Route::post('/filterdata', 'HomeController@filterdata')->name('filterdata');
+Route::get('/profil', 'HomeController@profil')->name('profil');
+Route::post('/profilupdate', 'HomeController@profilupdate')->name('profilupdate');
+
 
 Route::get('/rank', 'HomeController@rank')->name('rank');
 

@@ -114,7 +114,7 @@
           </div>
           @else
             <div class="dropdown-menu">
-            <a href="#" class="dropdown-item">Profil</a>
+            <a href="{{ route('profil') }}" class="dropdown-item">Profil</a>
             <a href="#" class="dropdown-item">Daftar Booking</a>
             <div class="dropdown-divider"></div>
             <a href="{{ route('logout') }}" onclick="event.preventDefault();
