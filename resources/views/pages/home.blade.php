@@ -2,26 +2,26 @@
 <style> 
 input[type="text"]{
 background-color:white !important;
-border: 3px solid #29a867;
+border: 3px solid #358F66;
 }
 
 
 i{
-    color: #29a867;
+    color: #358F66;
 }
 
 input[type=text]:focus {
-  border: 3px solid #29a867;
+  border: 3px solid #358F66;
 }
 .input-group-prepend span{
     background-color:white !important;
-border: 3px solid #29a867;
+border: 3px solid #358F66;
 line-height: 1;
 }
 
 .input-group select.form-control {
   background-color:white !important;
-  border: 3px solid #29a867;
+  border: 3px solid #358F66;
   
 }
 
@@ -224,7 +224,9 @@ Arena
                                 <div class="row">
                                     <div class="col-9">
                                         <div class="d-flex justify-content-start">
-                                            
+                                            <span style="font-size:13px; color:black; ">
+                                                <i class="fa-solid fa-store pr-1"></i>{{ $product->user->store_name }}
+                                            </span>
                                         </div>
                                     </div>
                                     <div class="col-3">
@@ -309,7 +311,7 @@ Arena
                                 <div class="row">
                                     <div class="col-9">
                                         <div class="d-flex justify-content-start">
-                                            <span style="font-size:13px; color:#29a867; ">
+                                            <span style="font-size:13px; color:#358F66; ">
                                                 Arena : {{ $product->user->store_name }}
                                             </span>
                                         </div>
@@ -317,7 +319,7 @@ Arena
                                     <div class="col-3">
                                         <div class="d-flex justify-content-end">
                                             @if ($product->user->store_status == 1)
-                                            <span style="font-size:13px; color:#29a867; ">
+                                            <span style="font-size:13px; color:#358F66; ">
                                                 Buka
                     
                                             </span>

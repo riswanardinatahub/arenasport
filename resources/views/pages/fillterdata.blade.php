@@ -4,30 +4,32 @@
 Arena Category Page
 @endsection
 <style> 
+
 input[type="text"]{
 background-color:white !important;
-border: 3px solid #29a867;
+border: 3px solid #358F66;
 }
 
 
 i{
-    color: #29a867;
+    color: #358F66;
 }
 
 input[type=text]:focus {
-  border: 3px solid #29a867;
+  border: 3px solid #358F66;
 }
 .input-group-prepend span{
     background-color:white !important;
-border: 3px solid #29a867;
+border: 3px solid #358F66;
 line-height: 1;
 }
 
 .input-group select.form-control {
   background-color:white !important;
-  border: 3px solid #29a867;
+  border: 3px solid #358F66;
   
 }
+
 
 
 </style>
@@ -140,7 +142,7 @@ line-height: 1;
                                     <div class="col-9">
                                         <div class="d-flex justify-content-start">
                                             <span style="font-size:13px; color:black; ">
-                                                Arena : {{ $product->user->store_name }}
+                                                <i class="fa-solid fa-store pr-1"></i>{{ $product->user->store_name }}
                                             </span>
                                         </div>
                                     </div>
