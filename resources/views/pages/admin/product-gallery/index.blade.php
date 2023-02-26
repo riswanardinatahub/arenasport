@@ -31,6 +31,8 @@ Product Gallery
                                             <th>Arena</th>
                                             <th>Foto</th>
                                             <th>Action</th>
+
+                           
                                         </tr>
                                     </thead>
                                     <tbody></tbody>

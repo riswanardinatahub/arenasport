@@ -34,9 +34,7 @@ class ProductGalleryController extends Controller
                                 Action
                             </button>
                             <div class="dropdown-menu">
-                                <a href="'.route('product-gallery.edit', $item->id).'" class="dropdown-item">
-                                Edit
-                                </a>
+                               
                                 <form action="'. route('product-gallery.destroy', $item->id).'" method="POST">
                                 '.method_field('delete'). csrf_field() .'
 
