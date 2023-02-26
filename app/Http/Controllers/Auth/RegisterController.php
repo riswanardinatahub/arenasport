@@ -120,7 +120,7 @@ class RegisterController extends Controller
             'provinces_id' => $data['provinces_id'],
             'regencies_id' => $data['regencies_id'],
             'districts_id' => $data['districts_id'],
-            'villages_id' => $data['villages_id'],
+            // 'villages_id' => $data['villages_id'],
             'store_name' => isset($data['store_name']) ? $data['store_name'] : NULL,
             'categories_id' => isset($data['categories_id']) ? $data['categories_id'] : NULL,
             'store_status' => isset($data['is_store_open']) ? 1 : 0,

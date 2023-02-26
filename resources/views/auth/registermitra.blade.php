@@ -141,14 +141,14 @@
                       <select v-else class="form-control"></select>
                     </div>
 
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                       <label for="villages_id">Desa</label>
                       <select name="villages_id" id="villages_id" class="form-control" v-if="villages"
                         v-model="villages_id">
                         <option v-for="village in villages" :value="village.id">@{{ village.name }}</option>
                       </select>
                       <select v-else class="form-control"></select>
-                    </div>
+                    </div> --}}
            
                 </div>
                 
@@ -326,7 +326,7 @@
       provinces_id: null,
       regencies_id: null,
       districts_id: null,
-      villages_id: null,
+      //villages_id: null,
     },
     methods: {
       getProvincesData() {
@@ -353,13 +353,13 @@
           })
       },
 
-      getVillagesData() {
-        var self = this;
-        axios.get('{{ url('api/villages') }}/' + self.districts_id)
-          .then(function (response) {
-            self.villages = response.data;
-          })
-      },
+      //getVillagesData() {
+        //var self = this;
+        //axios.get('{{ url('api/villages') }}/' + self.districts_id)
+          //.then(function (response) {
+            //self.villages = response.data;
+          //})
+      //},
 
     },
     watch: {
