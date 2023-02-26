@@ -114,13 +114,36 @@ class HomeController extends Controller
         $datakategori = $request->category;
         
         if($request->arena != null && $request->regencies_id!= null && $request->category!= null){
-            return 'dapet arena,kota,kategori';
+            $products = Product::with(['user.regencies','category','galleries'])
+                                ->where('status','APPROVE')->latest()
+                                ->where('categories_id',$datakategori)
+                                ->whereHas('user', function($coba) use($dataarena,$datakota){
+                                    $coba->where('regencies_id',$datakota);
+                                })->whereHas('user', function($coba) use($dataarena,$datakota){
+                                    $coba->where('store_name', 'like', '%'.$dataarena.'%');
+                                })->paginate(32);
+
         }elseif($request->arena == '' && $request->regencies_id && $request->category){
-             return 'dapet kota,kategori';
+            $products = Product::with(['user.regencies','category','galleries'])
+                                ->where('status','APPROVE')->latest() 
+                                ->whereHas('user', function($coba) use($dataarena,$datakota){
+                                    $coba->where('regencies_id',$datakota);
+                                })->paginate(32);
         }elseif($request->arena && $request->regencies_id  == '' && $request->category){
-             return 'dapet arena,kategori';
+             $products = Product::with(['user.regencies','category','galleries'])
+                                ->where('status','APPROVE')->latest()
+                                ->where('categories_id',$datakategori)
+                                ->whereHas('user', function($coba) use($dataarena,$datakota){
+                                    $coba->where('store_name', 'like', '%'.$dataarena.'%');
+                                })->paginate(32);
         }elseif($request->arena && $request->regencies_id && $request->category  == ''){
-             return 'dapet arena,kota';
+             $products = Product::with(['user.regencies','category','galleries'])
+                                ->where('status','APPROVE')->latest()
+                                ->whereHas('user', function($coba) use($dataarena,$datakota){
+                                    $coba->where('regencies_id',$datakota);
+                                })->whereHas('user', function($coba) use($dataarena,$datakota){
+                                    $coba->where('store_name', 'like', '%'.$dataarena.'%');
+                                })->paginate(32);
         }elseif($request->arena && $request->regencies_id  == '' && $request->category == ''){
              $products = Product::with(['user.regencies','category','galleries'])->where('status','APPROVE')->latest()
                                 ->whereHas('user', function($coba) use($dataarena,$datakota){
