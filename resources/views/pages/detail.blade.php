@@ -99,7 +99,7 @@ Detail Page
           <div class="col-lg-8">
             <h1>{{ $product->name }}</h1>
             <div class="price">Rp. {{ number_format($product->price) }}</div>
-              <div>
+              {{-- <div>
                     @if ($product->stock >= 1)
                       <span style="font-size:17px; color:#29a867; ">
                          Arena Tersedia
@@ -111,7 +111,13 @@ Detail Page
 
                       </span>
                     @endif
+              </div> --}}
+            <div class="row">
+              <div class="col-12 col-lg-8">
+              <strong>  {!! $product->description !!}  </strong>
               </div>
+            </div>
+
             <div class="owner mt-3">
               <a href="{{ route('store-page-detail', $product->user->id) }}" class="card-list d-block">
                 <div class="card-body py-0">
@@ -119,7 +125,7 @@ Detail Page
                     @if ($product->user->images)
                     <img src="{{ Storage::url($product->user->images) }}" alt="" class="mr-2">
                     @else
-                    <img src="/images/icon-store.svg" alt="" class="mr-2">
+                    <img src="/images/icon-store.svg" alt="" class="mr-3">
                     @endif
                     <p class="text-muted">{{ $product->user->store_name }}</p>
                    
@@ -127,7 +133,7 @@ Detail Page
                 </div>
               </a>
             </div>
-             <a href="" class="btn btn-info" data-toggle="modal" data-target="#exampleModalCenter"> Share</a>
+             <a href="" class="btn btn-success btn-sm" data-toggle="modal" data-target="#exampleModalCenter"> Bagikan</a>
 
 
             <!-- Modal -->
@@ -157,7 +163,7 @@ Detail Page
       </div>
     </section>
 
-    <section class="store-description">
+    {{-- <section class="store-description">
       <div class="container">
         <div class="row">
           <div class="col-12 col-lg-8">
@@ -165,7 +171,7 @@ Detail Page
           </div>
         </div>
       </div>
-    </section>
+    </section> --}}
 
     {{-- <section class="store-review">
       <div class="container">

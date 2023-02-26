@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\Admin\ProductRequest;
+use App\ProductGallery;
 use Illuminate\Support\Str;
 use Yajra\DataTables\Facades\DataTables;
 
@@ -150,6 +151,9 @@ class ProductController extends Controller
     public function destroy($id)
     {
         $item = Product::findOrFail($id);
+
+        $galleydelete = ProductGallery::where('products_id',$item->id);
+        $galleydelete->delete();
         $item->delete();
         return redirect()->route('product.index');
     }

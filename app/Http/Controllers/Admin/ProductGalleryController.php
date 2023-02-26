@@ -22,7 +22,9 @@ class ProductGalleryController extends Controller
     public function index()
     {
        if(request()->ajax()){
-            $query = ProductGallery::with(['product']); //->withTrashed(); untuk memanggil data yang telah dihapus
+            $query = ProductGallery::with(['product']); 
+            //->withTrashed(); untuk memanggil data yang telah dihapus di gallery tapi jika product yang di hapus maka
+            //tambahkan pada relasi di model
 
             return DataTables::of($query)
             ->addColumn('action', function($item){
