@@ -217,22 +217,20 @@ Arena
                     
                     
                                 </div>
-                                <span style="font-size:15px; color:#050505; ">
+                                <span style="font-size:13px; color:black; ">
                                     {{ $product->user->villages->name }}
                                 </span>
                     
                                 <div class="row">
                                     <div class="col-9">
                                         <div class="d-flex justify-content-start">
-                                            <span style="font-size:13px; color:#29a867; ">
-                                                Arena : {{ $product->user->store_name }}
-                                            </span>
+                                            
                                         </div>
                                     </div>
                                     <div class="col-3">
                                         <div class="d-flex justify-content-end">
                                             @if ($product->user->store_status == 1)
-                                            <span style="font-size:13px; color:#29a867; ">
+                                            <span style="font-size:13px; color:green; ">
                                                 Buka
                     
                                             </span>
@@ -252,14 +250,14 @@ Arena
                                     <div class="col-7">
                                         <div class="d-flex justify-content-start">
                                             <div class="products-price">
-                                    <span class="text-dark"></span>RP. {{ number_format($product->price) }}
+                                    <span class="text-dark"></span>Rp. {{ number_format($product->price) }}
                                 </div>
                                         </div>
                                     </div>
                                     <div class="col-5">
                                         <div class="d-flex justify-content-end">
                                             
-                                            <span style="font-size:13px; color:#bc2929; ">
+                                            <span style="font-size:13px; color:black; ">
                                              {{-- Stok : {{ $product->stock }} --}}
 
                                              1 Jam
@@ -304,7 +302,7 @@ Arena
                     
                     
                                 </div>
-                                <span style="font-size:15px; color:#050505; ">
+                                <span style="font-size:13px; color:#050505; ">
                                     Lokasi : {{ $product->user->villages->name }}
                                 </span>
                     
@@ -339,7 +337,7 @@ Arena
                                     <div class="col-8">
                                         <div class="d-flex justify-content-start">
                                             <div class="products-price">
-                                    <span class="text-dark"></span>RP. {{ number_format($product->price) }}
+                                    <span class="text-dark"></span>p. {{ number_format($product->price) }}
                                 </div>
                                         </div>
                                     </div>

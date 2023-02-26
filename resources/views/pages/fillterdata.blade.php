@@ -132,14 +132,14 @@ line-height: 1;
                     
                     
                                 </div>
-                                <span style="font-size:15px; color:#050505; ">
-                                    Desa : {{ $product->user->villages->name }}
+                                <span style="font-size:15px; color:black; ">
+                                    {{ $product->user->villages->name }}
                                 </span>
                     
                                 <div class="row">
                                     <div class="col-9">
                                         <div class="d-flex justify-content-start">
-                                            <span style="font-size:13px; color:#29a867; ">
+                                            <span style="font-size:13px; color:black; ">
                                                 Arena : {{ $product->user->store_name }}
                                             </span>
                                         </div>
@@ -167,14 +167,14 @@ line-height: 1;
                                     <div class="col-7">
                                         <div class="d-flex justify-content-start">
                                             <div class="products-price">
-                                    <span class="text-dark">RP.</span> {{ number_format($product->price) }}
+                                    <span class="text-dark">Rp.</span> {{ number_format($product->price) }}
                                 </div>
                                         </div>
                                     </div>
                                     <div class="col-5">
                                         <div class="d-flex justify-content-end">
                                             
-                                            <span style="font-size:13px; color:#29a867; ">
+                                            <span style="font-size:13px; color:black; ">
                                              {{-- Stok : {{ $product->stock }} --}}
 
                                              1 Jam

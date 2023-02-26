@@ -11884,15 +11884,15 @@ nav .navbar-nav .nav-item a:hover {
 
 .component-products .products-text {
     font-weight: normal;
-    font-size: 18px;
+    font-size: 15px;
     color: #0c0d36;
     margin-top: 12px;
 }
 
 .component-products .products-price {
-    font-weight: 500;
-    font-size: 16px;
-    color: #ff7158;
+    font-weight: 900;
+    font-size: 15px;
+    color: black;
 }
 
 .store-breadcrumbs .breadcrumb {
