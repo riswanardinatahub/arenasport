@@ -103,7 +103,7 @@
 
           @if (Auth::user()->store_name)
             <div class="dropdown-menu">
-            <a href="{{ route('dashboard') }}" class="dropdown-item">Dashboard AYANG</a>
+            <a href="{{ route('dashboard') }}" class="dropdown-item">Dashboard</a>
             <a href="{{ route('dashboard-settings-account') }}" class="dropdown-item">Settings</a>
             <div class="dropdown-divider"></div>
             <a href="{{ route('logout') }}" onclick="event.preventDefault();
