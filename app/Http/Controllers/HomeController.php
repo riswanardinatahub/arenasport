@@ -122,23 +122,28 @@ class HomeController extends Controller
         }elseif($request->arena && $request->regencies_id && $request->category  == ''){
              return 'dapet arena,kota';
         }elseif($request->arena && $request->regencies_id  == '' && $request->category == ''){
-             $products = Product::with(['user.regencies','category','galleries'])
+             $products = Product::with(['user.regencies','category','galleries'])->where('status','APPROVE')->latest()
                                 ->whereHas('user', function($coba) use($dataarena,$datakota){
                                     $coba->where('store_name', 'like', '%'.$dataarena.'%');
                                 })->paginate(32); 
 
         }elseif($request->arena == '' && $request->regencies_id  && $request->category == ''){
-             $products = Product::with(['user.regencies','category','galleries'])
+             $products = Product::with(['user.regencies','category','galleries'])->where('status','APPROVE')->latest()
                                 ->whereHas('user', function($coba) use($dataarena,$datakota){
                                     $coba->where('regencies_id', 'like', '%'.$datakota.'%');
                                 })->paginate(32);
 
         }elseif($request->arena == '' && $request->regencies_id == ''  && $request->category ){
              
-            $products = Product::with(['user.regencies','category','galleries'])
+            $products = Product::with(['user.regencies','category','galleries'])->where('status','APPROVE')->latest()
                                 ->where('categories_id',$datakategori)->paginate(32);
 
              
+        }elseif($request->arena == '' && $request->regencies_id == ''  && $request->category== '' ){
+            $products = Product::where('status','DATA KOSONG')->paginate(0);
+                return view('pages.fillterdata', compact('products','categories','regencies'));
+
+           
         }
 
         return view('pages.fillterdata', compact('products','categories','regencies'));
