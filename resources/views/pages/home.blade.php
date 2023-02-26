@@ -37,55 +37,8 @@ Arena
     <!-- Carusel Section -->
     
     <section class="store-carouse pt-3" data-aos="fade-up">
-        <div class="container">
-       <form action="{{ route('filterdata') }}" method="POST" enctype="multipart/form-data">
-            @csrf
-            <div  class="row  justify-content-center">
-
-                <div class="col-12 col-md-3 col-lg-3">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
-
-                        </div>
-                        <input type="text" class="form-control" name="arena" placeholder="Nama Arena" aria-label="Nama Arena" aria-describedby="basic-addon1">
-                    </div>
-                </div>
-           
-                <div class="col-md-3 col-lg-3 ">
-                            <div class="input-group mb-3" >
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-location-dot"></i></span>
-                                </div>
-                              <select name="regencies_id" id="" class="form-control">
-                                <option value=""  selected> Pilih Kota</option>
-                                @foreach ($regencies as $regency)
-                                  <option value="{{ $regency->id }}">{{ $regency->name }}</option>
-                                @endforeach
-                              </select>
-                            </div>
-                </div>
-
-                <div class="col-md-3 col-lg-3">
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-bars"></i></span>
-                                </div>
-                              <select name="category" id="" class="form-control">
-                                <option value="" selected> Pilih Kategori</option>
-                                @foreach ($categories as $category)
-                                  <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                @endforeach
-                              </select>
-                            </div>
-                </div>
-
-                
-                <div class="col-12 col-md-1 col-lg-1">
-                    <button type="submit" class="btn btn-success btn-md px-3 mb-2 btn-block">Cari</button>
-                </div>
-            </div>
-        </form>
+        <div class="container-fluid">
+            
         
             <div class="row">
                 <div class="col-lg-12" data-aos="zoom-in">
@@ -113,6 +66,55 @@ Arena
                     </div>
                 </div>
             </div>
+
+            <form action="{{ route('filterdata') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div  class="row mt-5 justify-content-center">
+
+                    <div class="col-12 col-md-3 col-lg-3">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
+
+                            </div>
+                            <input type="text" class="form-control" name="arena" placeholder="Nama Arena" aria-label="Nama Arena" aria-describedby="basic-addon1">
+                        </div>
+                    </div>
+            
+                    <div class="col-md-3 col-lg-3 ">
+                                <div class="input-group mb-3" >
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-location-dot"></i></span>
+                                    </div>
+                                <select name="regencies_id" id="" class="form-control">
+                                    <option value=""  selected> Pilih Kota</option>
+                                    @foreach ($regencies as $regency)
+                                    <option value="{{ $regency->id }}">{{ $regency->name }}</option>
+                                    @endforeach
+                                </select>
+                                </div>
+                    </div>
+
+                    <div class="col-md-3 col-lg-3">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-bars"></i></span>
+                                    </div>
+                                <select name="category" id="" class="form-control">
+                                    <option value="" selected> Pilih Kategori</option>
+                                    @foreach ($categories as $category)
+                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                    @endforeach
+                                </select>
+                                </div>
+                    </div>
+
+                    
+                    <div class="col-12 col-md-1 col-lg-1">
+                        <button type="submit" class="btn btn-success btn-md px-3 mb-2 btn-block">Cari</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </section>
 
@@ -134,7 +136,7 @@ Arena
     </section>
 
     <!-- Store Trend Categori -->
-    <section class="store-trend-categories">
+    {{-- <section class="store-trend-categories">
         <div class="container">
             <div class="row">
                 <div class="col-12" data-aos="fade-up">
@@ -170,7 +172,7 @@ Arena
 
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <!-- Store new Produk -->
     <section class="store-new-products mt-3">
