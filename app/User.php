@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Models\Regency;
 use App\Models\Village;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -46,6 +47,11 @@ class User extends Authenticatable
     public function villages()
     {
         return $this->belongsTo(Village::class, 'villages_id','id');
+    }
+
+     public function regencies()
+    {
+        return $this->belongsTo(Regency::class, 'regencies_id','id');
     }
 
 

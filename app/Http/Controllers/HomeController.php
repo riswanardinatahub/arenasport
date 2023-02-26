@@ -106,7 +106,13 @@ class HomeController extends Controller
     }
 
     public function filterdata(Request $request){
-       
+        $categories = Category::take(6)->get();
+        $regencies = DB::table('regencies')->where('province_id',31)->get();
+
+        $dataarena = $request->arena;
+        $datakota = $request->regencies_id;
+        $datakategori = $request->category;
+        
         if($request->arena != null && $request->regencies_id!= null && $request->category!= null){
             return 'dapet arena,kota,kategori';
         }elseif($request->arena == '' && $request->regencies_id && $request->category){
@@ -116,11 +122,11 @@ class HomeController extends Controller
         }elseif($request->arena && $request->regencies_id && $request->category  == ''){
              return 'dapet arena,kota';
         }elseif($request->arena && $request->regencies_id  == '' && $request->category == ''){
-             $data = Product::with(['user.villages','category','galleries'])
-            ->whereHas('user', function($coba){
-                $coba->where('store_name', 'like', 'RISWAN%');
-            })->get(); 
-            
+             $products = Product::with(['user.regencies','category','galleries'])
+            ->whereHas('user', function($coba) use($dataarena,$datakota){
+                $coba->where('store_name', 'like', '%'.$dataarena.'%');
+            })->paginate(32); 
+
         }elseif($request->arena == '' && $request->regencies_id  && $request->category == ''){
              return 'dapet kota';
         }elseif($request->arena == '' && $request->regencies_id == ''  && $request->category ){
@@ -135,6 +141,8 @@ class HomeController extends Controller
 
              return 'dapet kategori';
         }
+
+        return view('pages.fillterdata', compact('products','categories','regencies'));
     }
     
 }
