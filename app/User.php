@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Models\District;
 use App\Models\Regency;
 use App\Models\Village;
 use Illuminate\Notifications\Notifiable;
@@ -52,6 +53,11 @@ class User extends Authenticatable
      public function regencies()
     {
         return $this->belongsTo(Regency::class, 'regencies_id','id');
+    }
+
+    public function districts()
+    {
+        return $this->belongsTo(District::class, 'districts_id','id');
     }
 
 

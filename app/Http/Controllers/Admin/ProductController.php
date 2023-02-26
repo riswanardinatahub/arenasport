@@ -164,7 +164,7 @@ class ProductController extends Controller
            
 
             $query = Product::where('status', '<>', 'APPROVE')
-                                    ->with(['user.villages','category','galleries'])->get(); //->withTrashed(); untuk memanggil data yang telah dihapus
+                                    ->with(['user.regencies','category','galleries'])->get(); //->withTrashed(); untuk memanggil data yang telah dihapus
 
             //dd($query);
 

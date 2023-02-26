@@ -135,7 +135,7 @@ line-height: 1;
                     
                                 </div>
                                 <span style="font-size:15px; color:black; ">
-                                    {{ $product->user->villages->name }}
+                                    {{ $product->user->regencies->name }}
                                 </span>
                     
                                 <div class="row">

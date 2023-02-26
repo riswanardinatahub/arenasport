@@ -61,7 +61,7 @@ Arena
             {data: 'DT_RowIndex', orderable: false, searchable: false },
             { data: 'name', name: 'name' },
             { data: 'user.name', name: 'user.name' },
-            { data: 'user.villages.name', name: 'user.villages.name' },
+            { data: 'user.regencies.name', name: 'user.regencies.name' },
             { data: 'category.name', name: 'category.name' },
             { data: 'price', name: 'price' },
             { data: 'status', name: 'status' },

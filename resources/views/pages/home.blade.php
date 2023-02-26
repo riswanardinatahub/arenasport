@@ -218,7 +218,7 @@ Arena
                     
                                 </div>
                                 <span style="font-size:13px; color:black; ">
-                                    {{ $product->user->villages->name }}
+                                    {{ $product->user->regencies->name }}
                                 </span>
                     
                                 <div class="row">
