@@ -15,7 +15,7 @@
                         </div>
 	                  @endif
             
-            <form class="mt-3" method="POST" action="{{ route('profilupdate') }}">
+            <form class="mt-3" method="POST" action="{{ route('profilupdate') }}" enctype="multipart/form-data" >
                @csrf
               <div class="row">
                 <div class="col-lg-12" id="register">
@@ -49,6 +49,29 @@
                         </span>
                         @enderror
                       </div>
+
+
+                      <div class="form-group">
+                        <label for="images">Upload Foto</label>
+                        <input type="file" class="form-control" id="images" name="images">
+                      </div>
+
+                      @if ($user->images)
+                      <img src="{{ Storage::url($user->images) }}" alt="" height="100" class="mr-2">
+                        
+                      @else
+                        
+                      @endif
+
+
+
+
+
+                      
+
+
+
+                      
                       
                        <button type="submit" :disabled="this.email_unavailable" class="btn btn-success btn-block mt-4">
                          Simpan Perubahan

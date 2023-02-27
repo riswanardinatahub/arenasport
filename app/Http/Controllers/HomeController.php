@@ -200,6 +200,12 @@ class HomeController extends Controller
     public function profilupdate(Request $request){
             $data = $request->all();
             $item = Auth::user();
+            if($request->hasFile('images')){
+                $data['images'] = $request->file('images')->store('assets/product','public');
+                
+            }
+        
+        
             $item->update($data);
 
             return redirect()->back()->with(['success' => 'Data Behasil di Update']);
