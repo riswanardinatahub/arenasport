@@ -56,7 +56,7 @@ class CheckoutController extends Controller
     //delete cart data after checkout
     Cart::where('users_id', Auth::user()->id)->delete();
 
-    return redirect('/dashboard/transactions');
+    return view('pages.success');
 
 
     // //midtrans

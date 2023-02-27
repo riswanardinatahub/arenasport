@@ -12,18 +12,18 @@
           <div class="col-lg-6 text-center">
             <img src="/images/success.svg" class="mb-4" alt="">
             <h2>
-              Transaction Processed!
+              Selesaikan Transaksimu!
             </h2>
             <p>
-              Silahkan tunggu konfirmasi email dari kami dan
-              kami akan menginformasikan resi secept mungkin!
+              Silahkan chat arenamu untuk lakukan transaksi dan <br>
+              status akan berubah setelah transaksi dilakukan! 
             </p>
-            <a href="/dashboard.html" class="btn btn-success w-50 mt-4">
-              My Dashborad
+            <a href="" class="btn btn-success w-50 mt-4">
+              Cek Pesananmu
             </a>
 
-            <a href="/index.html" class="btn btn-signup w-50 mt-2">
-              Go To Shopping
+            <a href="/" class="btn btn-signup w-50 mt-2">
+              Halaman Utama
             </a>
           </div>
         </div>
