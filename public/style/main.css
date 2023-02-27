@@ -11433,7 +11433,6 @@ footer p {
     font-weight: normal;
     font-size: 14px;
     color: #979797;
-    margin-bottom: 8px;
 }
 
 .page-details .store-heading .owner img {
@@ -11445,15 +11444,14 @@ footer p {
 }
 
 .page-details .store-heading .price {
-    font-weight: 500;
+    font-weight: 900;
     font-size: 18px;
     line-height: 27px;
     color: #ff7158;
-    margin-bottom: 10px;
 }
 
 .page-details .store-description {
-    font-weight: normal;
+    font-weight: 400;
     font-size: 16px;
     line-height: 180%;
     color: #525252;

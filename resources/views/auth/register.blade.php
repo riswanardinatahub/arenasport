@@ -11,7 +11,7 @@
             <form class="mt-3" method="POST" action="{{ route('register') }}">
                @csrf
               <div class="row">
-                <div class="col-lg-6" id="register">
+                <div class="col-lg-12" id="register">
                       <div class="form-group">
                         <label for="">Nama Lengkap</label>
                         <input id="name" v-model="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name"
@@ -113,7 +113,7 @@
                 </div>
                 
                 <div class="col-lg-6" id="locations">
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                       <div class="form-group">
                         <label for="provinces_id">Provinsi</label>
                         <select name="provinces_id" id="provinces_id" class="form-control" v-if="provinces" v-model="provinces_id">
@@ -130,16 +130,16 @@
                         <option v-for="regency in regencies" :value="regency.id">@{{ regency.name }}</option>
                       </select>
                       <select v-else class="form-control"></select>
-                    </div>
+                    </div> --}}
 
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                       <label for="districts_id">Kecamatan/Kelurahan</label>
                       <select name="districts_id" id="districts_id" class="form-control" v-if="districts"
                         v-model="districts_id">
                         <option v-for="district in districts" :value="district.id">@{{ district.name }}</option>
                       </select>
                       <select v-else class="form-control"></select>
-                    </div>
+                    </div> --}}
 
                     {{-- <div class="form-group">
                       <label for="villages_id">Desa</label>
@@ -322,11 +322,11 @@
     data: {
       provinces: null,
       regencies: null,
-      districts: null,
+      //districts: null,
       //villages: null,
       provinces_id: null,
       regencies_id: null,
-      districts_id: null,
+      //districts_id: null,
       //villages_id: null,
     },
     methods: {
@@ -346,13 +346,13 @@
           })
       },
 
-      getDistrictsData() {
-        var self = this;
-        axios.get('{{ url('api/districts') }}/' + self.regencies_id)
-          .then(function (response) {
-            self.districts = response.data;
-          })
-      },
+      //getDistrictsData() {
+       // var self = this;
+       // axios.get('{{ url('api/districts') }}/' + self.regencies_id)
+         // .then(function (response) {
+          //  self.districts = response.data;
+        //  })
+    //  },
 
       //getVillagesData() {
         //var self = this;

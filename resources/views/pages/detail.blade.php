@@ -4,6 +4,43 @@
 Detail Page
 @endsection
 
+<style> 
+input[type="text"]{
+background-color:white !important;
+border: 3px solid #358F66;
+}
+
+input[type="date"]{
+background-color:white !important;
+border: 3px solid #358F66;
+}
+
+
+
+
+
+i{
+    color: #358F66;
+}
+
+input[type=text]:focus {
+  border: 3px solid #358F66;
+}
+.input-group-prepend span{
+    background-color:white !important;
+border: 3px solid #358F66;
+line-height: 1;
+}
+
+.input-group select.form-control {
+  background-color:white !important;
+  border: 3px solid #358F66;
+  
+}
+
+
+</style>
+
 @section('content')
 <div class="page-content page-details">
  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -97,7 +134,7 @@ Detail Page
       <div class="container">
         <div class="row">
           <div class="col-lg-8">
-            <h1>{{ $product->name }}</h1>
+            <h1 style="font-weight: 900;">{{ $product->name }}</h1>
             <div class="price">Rp. {{ number_format($product->price) }}</div>
               {{-- <div>
                     @if ($product->stock >= 1)
@@ -113,9 +150,14 @@ Detail Page
                     @endif
               </div> --}}
             <div class="row">
-              <div class="col-12 col-lg-8">
-              <strong>  {!! $product->description !!}  </strong>
+              <div class="col-12 col-lg-12">
+              <p class="store-description text-muted">  {!! $product->description !!}  </p>
               </div>
+
+              <div class="col-12 col-lg-12">
+              <p class="" style="font-size: small;">{{ $product->user->address_one }}</p>
+              </div>
+
             </div>
 
             <div class="owner mt-3">
@@ -123,17 +165,74 @@ Detail Page
                 <div class="card-body py-0">
                   <div class="row">
                     @if ($product->user->images)
-                    <img src="{{ Storage::url($product->user->images) }}" alt="" class="mr-2">
+                    <img src="{{ Storage::url($product->user->images) }}" alt="" class="mr-2 rounded-circle profile-picture">
                     @else
-                    <img src="/images/icon-store.svg" alt="" class="mr-3">
+                    <img src="/images/icon-store.svg" alt="" class="rounded-circle mr-3 profile-picture">
                     @endif
-                    <p class="text-muted">{{ $product->user->store_name }}</p>
+                    <p class="" style="font-weight: bolder;">{{ $product->user->store_name }}</p>
                    
                   </div>
                 </div>
               </a>
             </div>
-             <a href="" class="btn btn-success btn-sm" data-toggle="modal" data-target="#exampleModalCenter"> Bagikan</a>
+             <a href="" class="btn btn-success btn-sm px-3" data-toggle="modal" data-target="#exampleModalCenter"> Bagikan</a>
+              <div class="row">
+                <div class="col">
+                <h1 class="mt-3" style="font-weight: 900; font-size: 21px;
+                  line-height: 32px;">Pilih Jadwal</h1>
+
+                </div>
+
+
+              </div>
+              <form action="{{ route('filterdata') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div  class="row mt-2">
+
+                    <div class="col-12 col-md-4 col-lg-4">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-calendar-days"></i></span>
+
+                            </div>
+                            <input type="date" class="form-control" name="" placeholder="Pilih Tanggal" aria-label="Pilih Tanggal" aria-describedby="basic-addon1">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-4">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-clock"></i></span>
+                                    </div>
+                                    
+                                    <select name="category" id="" class="form-control">
+                                        <option value="" selected> Pilih Waktu</option>
+                                    </select>
+                                </div>
+                    </div>
+
+                    
+                    <div class="col-12 col-md-4 col-lg-4">
+                        <button type="submit" class="btn btn-success btn-md px-3 mb-2 btn-block">Masukkan Keranjang</button>
+                    </div>
+                </div>
+            </form>
+
+            <div  class="row mt-2">
+
+                    <div class="col-12">
+                    @if ($product->user->address_two)
+                    <div class="embed-responsive embed-responsive-21by9">
+                    <iframe src="https://maps.google.com/maps?q={{ $product->user->address_two }}&z=15&output=embed" width="360" height="270" frameborder="0" style="border:0"></iframe>  
+                    @else
+                    </div>
+                    <img class="img-fluid" src="/images/locationnotfound.jpg" alt="">
+                    @endif
+                    </div>
+                    
+                </div>
+
+
+              
 
 
             <!-- Modal -->

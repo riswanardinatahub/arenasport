@@ -9,7 +9,7 @@ Arena
     <div class="container-fluid">
         <div class="dashboard-heading">
             <h2 class="dashboard-title">
-                Arena
+                Edit Arena
             </h2>
             <p class="dashboard-subtitle">
                 Edit Arena
@@ -46,9 +46,9 @@ Arena
                                             <label>Pemilik Arena</label>
                                             <select name="users_id" class="form-control">
                                             <option value="{{ $item->users_id }}" selected>{{ $item->user->name }}</option>
-                                                @foreach ( $users as $user)
+                                                {{-- @foreach ( $users as $user)
                                                     <option value="{{ $user->id }}">{{ $user->name }}</option>
-                                                @endforeach
+                                                @endforeach --}}
                                             </select>
                                             
                                         </div>
@@ -56,7 +56,7 @@ Arena
 
                                      <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Kategory Arena</label>
+                                            <label>Kategori Arena</label>
                                             <select name="categories_id" class="form-control">
                                             <option value="{{ $item->categories_id }}" selected>{{ $item->category->name }}</option>
                                                  @foreach ( $categories as $category)
@@ -86,7 +86,7 @@ Arena
                                 <div class="row">
                                     <div class="col text-right">
                                         <button type="submit" class="btn btn-success px-5">
-                                            Simpan
+                                            Simpan Perubahan
                                         </button>
 
                                         

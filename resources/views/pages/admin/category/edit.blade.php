@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-Kategori
+Edit Kategori
 @endsection
 
 @section('content')
@@ -9,7 +9,7 @@ Kategori
     <div class="container-fluid">
         <div class="dashboard-heading">
             <h2 class="dashboard-title">
-                Kategori
+                Edit Kategori
             </h2>
             <p class="dashboard-subtitle">
                 Edit Kategori
@@ -49,7 +49,7 @@ Kategori
                                 <div class="row">
                                     <div class="col text-right">
                                         <button type="submit" class="btn btn-success px-5">
-                                            Simpan
+                                            Simpan Perubahan
                                         </button>
                                     </div>
                                 </div>

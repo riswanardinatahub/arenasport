@@ -28,8 +28,8 @@ class UserController extends Controller
        if(request()->ajax()){
             // $query = User::with(['villages'])->where('roles','USER');
            $query = DB::table('users')
-                    ->join('villages', 'villages.id', '=','users.villages_id')
-                    ->select('users.id as id','users.name as name','users.email as email','users.roles as roles','villages.name as namadesa')
+                    ->join('regencies', 'regencies.id', '=','users.regencies_id')
+                    ->select('users.id as id','users.name as name','users.email as email','users.roles as roles','regencies.name as namadesa')
                     ->where('roles','USER')->get();
 
             return DataTables::of($query)

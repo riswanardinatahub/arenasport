@@ -45,43 +45,13 @@
                         @enderror
                       </div>
                       
-                      <div class="form-group">
-                        <label for="">Password</label>
-                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password"
-                          required autocomplete="new-password">
-                        @error('password')
-                        <span class="invalid-feedback" role="alert">
-                          <strong>{{ $message }}</strong>
-                        </span>
-                        @enderror
-                      </div>
-                      
-                      <div class="form-group">
-                        <label for="">Konfirmasi Password</label>
-                        <input id="password_confirmation" type="password"
-                          class="form-control @error('password_confirmation') is-invalid @enderror" name="password_confirmation" required
-                          autocomplete="new-password">
-                        @error('password_confirmation')
-                        <span class="invalid-feedback" role="alert">
-                          <strong>{{ $message }}</strong>
-                        </span>
-                        @enderror
-                      </div>
-                       <button type="submit" :disabled="this.email_unavailable" class="btn btn-success btn-block mt-4">
-                  Register
-                </button>
-
-              <a href="{{ route('login') }}" class="btn btn-signup btn-block  mt-2">
-                Login
-              </a>
-                      
-                      <div class="form-group mt-3">
-                        <label for="">Toko</label>
-                        <p class="text-muted">Segera Buka Toko Anda</p>
+                     <div class="form-group mt-3">
+                        {{-- <label for="">Toko</label>
+                        <p class="text-muted">Segera Buka Toko Anda</p> --}}
                         <div class="custom-control custom-radio custom-control-inline  d-none">
                           <input type="radio" class="custom-control-input" name="is_store_open" id="openStoreTrue" v-model="is_store_open"
                             :value="true">
-                          <label for="openStoreTrue" class="custom-control-label">Yeay Buka Toko</label>
+                          {{-- <label for="openStoreTrue" class="custom-control-label">Yeay Buka Toko</label> --}}
                         </div>
                         <div class="custom-control custom-radio custom-control-inline d-none">
                           <input type="radio" class="custom-control-input" name="is_store_open" id="openStoreFalse" v-model="is_store_open"
@@ -110,6 +80,15 @@
                           @endforeach
                         </select>
                       </div>
+                       <button type="submit" :disabled="this.email_unavailable" class="btn btn-success btn-block mt-4">
+                  Register
+                </button>
+
+              <a href="{{ route('login') }}" class="btn btn-signup btn-block  mt-2">
+                Login
+              </a>
+                      
+                      
                 </div>
                 
                 <div class="col-lg-6" id="locations">
@@ -132,14 +111,37 @@
                       <select v-else class="form-control"></select>
                     </div>
 
-                    <div class="form-group">
+                     <div class="form-group">
+                        <label for="">Password</label>
+                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password"
+                          required autocomplete="new-password">
+                        @error('password')
+                        <span class="invalid-feedback" role="alert">
+                          <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                      </div>
+                      
+                      <div class="form-group">
+                        <label for="">Konfirmasi Password</label>
+                        <input id="password_confirmation" type="password"
+                          class="form-control @error('password_confirmation') is-invalid @enderror" name="password_confirmation" required
+                          autocomplete="new-password">
+                        @error('password_confirmation')
+                        <span class="invalid-feedback" role="alert">
+                          <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                      </div>
+
+                    {{-- <div class="form-group">
                       <label for="districts_id">Kecamatan/Kelurahan</label>
                       <select name="districts_id" id="districts_id" class="form-control" v-if="districts"
                         v-model="districts_id">
                         <option v-for="district in districts" :value="district.id">@{{ district.name }}</option>
                       </select>
                       <select v-else class="form-control"></select>
-                    </div>
+                    </div> --}}
 
                     {{-- <div class="form-group">
                       <label for="villages_id">Desa</label>
@@ -321,11 +323,11 @@
     data: {
       provinces: null,
       regencies: null,
-      districts: null,
-      villages: null,
+      //districts: null,
+      //villages: null,
       provinces_id: null,
       regencies_id: null,
-      districts_id: null,
+      //districts_id: null,
       //villages_id: null,
     },
     methods: {
@@ -345,13 +347,13 @@
           })
       },
 
-      getDistrictsData() {
-        var self = this;
-        axios.get('{{ url('api/districts') }}/' + self.regencies_id)
-          .then(function (response) {
-            self.districts = response.data;
-          })
-      },
+      //getDistrictsData() {
+      //  var self = this;
+       // axios.get('{{ url('api/districts') }}/' + self.regencies_id)
+        //  .then(function (response) {
+         //   self.districts = response.data;
+         // })
+      //},
 
       //getVillagesData() {
         //var self = this;

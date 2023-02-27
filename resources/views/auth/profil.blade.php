@@ -18,7 +18,7 @@
             <form class="mt-3" method="POST" action="{{ route('profilupdate') }}">
                @csrf
               <div class="row">
-                <div class="col-lg-6" id="register">
+                <div class="col-lg-12" id="register">
                       <div class="form-group">
                         <label for="">Nama Lengkap</label>
                         <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ $user->name }}" required autocomplete="name" autofocus>
@@ -84,7 +84,7 @@
                 </div>
                 
                 <div class="col-lg-6" id="locations">
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                       <div class="form-group">
                         <label for="provinces_id">Provinsi</label>
                         <select disabled name="provinces_id" id="provinces_id" class="form-control">
@@ -99,15 +99,15 @@
                         <option >{{ $regencies->name }}</option>
                       </select>
                      
-                    </div>
+                    </div> --}}
 
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                       <label for="districts_id">Kecamatan/Kelurahan</label>
                       <select disabled name="districts_id" id="districts_id" class="form-control" >
                         <option>{{ $distric->name }}</option>
                       </select>
                       
-                    </div>
+                    </div> --}}
 
                     {{-- <div class="form-group">
                       <label for="villages_id">Desa</label>
@@ -207,58 +207,6 @@
     });
   </script>
 
- <script>
-  <script>
-  var locations = new Vue({
-    el: "#locations",
-    mounted() {
-       AOS.init();
-      this.getProvincesData();
-      this.getRegenciesDataAll();
-      
-    },
-    data: {
-      provinces: null,
-      regencies: null,
-      provinces_id: {{ $provinces->id }},
-      regencies_id: {{ $regencies->id }},
-    },
-    methods: {
-      getProvincesData(){ 
-        var self = this;
-        axios.get('{{ route('api-provinces') }}')
-        .then(function(response){
-            self.provinces = response.data;
-        })
-      },
-
-      getRegenciesDataAll(){ 
-        var self = this;
-        axios.get('{{ url('api/regencies') }}/' + self.provinces_id)
-        .then(function(response){
-            self.regencies = response.data;
-        })
-      },
-
-      getRegenciesData(){
-        var self = this;
-        axios.get('{{ url('api/regencies') }}/' + self.provinces_id)
-        .then(function(response){
-            self.regencies = response.data;
-        })
-      },
-
-    },
-    watch:{
-        provinces_id: function(val, oldVal){
-            this.regencies_id = regencies_id;
-            this.getRegenciesData();
-        }
-    }
-  });
-
-</script>
-
-</script>
+ 
  
 @endpush

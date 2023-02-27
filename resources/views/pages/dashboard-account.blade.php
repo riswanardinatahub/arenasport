@@ -33,7 +33,7 @@ Store Dashboard Account
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="email">Email</label>
-                      <input type="email" class="form-control" id="email" name="email" value="{{ $user->email }}">
+                      <input disabled type="email" class="form-control" id="email" name="email" value="{{ $user->email }}">
                     </div>
                   </div>
                   {{-- <div class="col-md-6">
@@ -112,19 +112,32 @@ Store Dashboard Account
 
                   </div>
 
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="address_one">Alamat Lengkap</label>
+                      <input type="text" class="form-control" id="address_one" name="address_one" value="{{ $user->address_one }}">
+                    </div>
+                  </div>
 
+                  <div class="col-md-12 pt-3">
+                    <div class="form-group">
+                      <label for="address_two">Lokasi Maps (Latitude,Longitude)</label>
+                      <textarea class="form-control" name="address_two" id="" cols="30" rows="3">{{ $user->address_two }}</textarea>
+                    </div>
+                  </div>
 
-
-
-
-
-
+                  <div class="col-md-12 pt-3">
+                    <div class="form-group">
+                      <label for="address_two">Tutorial </label>
+                      <img src="/images/tutorialmaps.jpg" class="img-fluid" alt="">
+                    </div>
+                  </div>
 
                 </div>
                 <div class="row">
                   <div class="col text-right">
                     <button type="submit" class="btn btn-success px-5 mt-3">
-                      Simpan
+                      Simpan Perubahan
                     </button>
                   </div>
                 </div>
@@ -167,7 +180,7 @@ Store Dashboard Account
 
       getRegenciesDataAll(){ 
         var self = this;
-        axios.get('{{ url('api/regencies') }}/' + self.provinces_id)
+        axios.get('{{ url('api/regencies') }}/')
         .then(function(response){
             self.regencies = response.data;
         })
