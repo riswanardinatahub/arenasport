@@ -305,7 +305,7 @@ Arena
                     
                                 </div>
                                 <span style="font-size:13px; color:#050505; ">
-                                    Lokasi : {{ $product->user->villages->name }}
+                                    Lokasi : {{ $product->user->regencies->name }}
                                 </span>
                     
                                 <div class="row">
