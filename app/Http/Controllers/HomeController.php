@@ -43,14 +43,14 @@ class HomeController extends Controller
 
         $desaterpopuler = Transaction::all();
         
-        $data =[];
-        foreach ($desaterpopuler as $value) {
-            $data[] = $value->user->villages->id;
-        }
+        // $data =[];
+        // foreach ($desaterpopuler as $value) {
+        //     $data[] = $value->user->villages->id;
+        // }
         
-        $occurences = array_count_values($data);
+        // $occurences = array_count_values($data);
         //print_r($occurences);
-        arsort( $occurences );
+        // arsort( $occurences );
         //dd($occurences);
 
         $produkterlaris = DB::table('transaction_details')
@@ -72,7 +72,6 @@ class HomeController extends Controller
             'categories'=> $categories,
             'products'=> $products,
             'produkterlaris'=> $produkterlaris,
-            'occurences'=> $occurences,
             'regencies'=> $regencies,
 
             ]);
