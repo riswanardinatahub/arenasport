@@ -37,11 +37,12 @@ Arena Cart Page
                     <table class="table table-borderless table-cart">
                         <thead>
                             <tr>
-                                <td>Image</td>
-                                <td>Name &amp; Seller</td>
+                                <td>Foto</td>
+                                <td>Arena &amp; Toko</td>
                                 <td>Harga</td>
-                                <td>Jumlah</td>
-                                <td>Menu</td>
+                                <td>Tanggal</td>
+                                <td>Waktu</td>
+                                <td>Aksi</td>
                             </tr>
                         </thead>
 
@@ -69,6 +70,14 @@ Arena Cart Page
                                     <div class="product-subtitle">Rupiah</div>
                                 </td>
                                 <td style="width: 20%;">
+                                    <div class="product-title"> {{ $cart->book_date }}</div>
+                                    
+                                </td>
+                                <td style="width: 20%;">
+                                    <div class="product-title">{{ $cart->book_time }}</div>
+                                    
+                                </td>
+                                {{-- <td style="width: 20%;">
                                     <div class="row mt-3 pt-1">
                                         <div class="col-2">
                                             <a href="{{ route('kurangqty', $cart->id) }}" class="btn btn-danger btn-sm">-</a>
@@ -80,12 +89,12 @@ Arena Cart Page
                                             <a href="{{ route('tambahqty', $cart->id) }}" class="btn btn-success btn-sm">+</a>
                                         </div>
                                     </div>
-                                </td>
+                                </td> --}}
                                 <td style="width: 25%;">
                                     <form action="{{ route('cart-delete',$cart->id) }}" method="POST">
                                         @method('DELETE')
                                         @csrf
-                                        <button type="submit" class="btn btn-remove-cart btn-sm">X</button>
+                                        <button type="submit" class="btn btn-remove-cart btn-sm">Hapus</button>
                                     </form>
                                 </td>
                             </tr>
@@ -106,23 +115,23 @@ Arena Cart Page
                     </table>
                 </div>
             </div>
-            <div class="row" data-aos="fade-up" data-aos-delay="150">
+            {{-- <div class="row" data-aos="fade-up" data-aos-delay="150">
                 <div class="col-12">
                     <hr>
                 </div>
                 <div class="col-12">
                     <h2 class="mb-4"> Lokasi COD</h2>
                 </div>
-            </div>
+            </div> --}}
 
 
             <form action="{{ route('checkout') }}" id="locations" enctype="multipart/form-data" method="POST">
             @csrf
             <input type="hidden"  name="total_price" value={{ $totalPrice }}>
-            <input type="hidden"  name="total_qty" value={{ $totalqty }}>
+            {{-- <input type="hidden"  name="total_qty" value={{ $totalqty }}> --}}
             
                 <div class="row mb-2" data-aos="fade-up" data-aos-delay="200">
-                    <div class="col-md-6">
+                    {{-- <div class="col-md-6">
                         <div class="form-group">
                             <label for="address_one">Detail Lokasi 1</label>
                             <input type="text" class="form-control" id="address_one" name="address_one"
@@ -135,7 +144,7 @@ Arena Cart Page
                             <input type="text" class="form-control" id="address_two" name="address_two"
                               >
                         </div>
-                    </div>
+                    </div> --}}
                     {{-- <div class="col-md-4">
                         <div class="form-group">
                             <label for="provinces_id">Provinsi</label>
@@ -174,13 +183,13 @@ Arena Cart Page
                         </div>
                     </div> --}}
 
-                    <div class="col-md-6">
+                    {{-- <div class="col-md-6">
                         <div class="form-group">
                             <label for="phone_number">No Telpon</label>
                             <input type="text" class="form-control" id="phone_number" name="phone_number"
                                 value="{{ Auth::user()->phone_number }}">
                         </div>
-                    </div>
+                    </div> --}}
 
                 </div>
 

@@ -24,8 +24,11 @@ class DetailController extends Controller
     }
 
     public function add(Request $request, $id){
+        // dd($request->all());
         $data = [
             'products_id'=> $id,
+            'book_date'=> $request->book_date,
+            'book_time'=> $request->book_time,
             'users_id'=> Auth::user()->id,
         ];
 

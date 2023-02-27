@@ -128,7 +128,7 @@
         </li>
         <li class="nav-item">
         {{-- {{ route('cart') }} --}}
-          <a href="#" class="nav-link d-inline-block mt-2 pl-0">
+          <a href="{{ route('cart') }}" class="nav-link d-inline-block mt-2 pl-0">
             @php
             $cart = \App\Cart::where('users_id', Auth::user()->id)->count();
             @endphp

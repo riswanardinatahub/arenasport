@@ -185,7 +185,7 @@ line-height: 1;
 
 
               </div>
-              <form action="{{ route('filterdata') }}" method="POST" enctype="multipart/form-data">
+              {{-- <form action="{{ route('filterdata') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div  class="row mt-2">
 
@@ -195,19 +195,21 @@ line-height: 1;
                                 <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-calendar-days"></i></span>
 
                             </div>
-                            <input type="date" class="form-control" name="" placeholder="Pilih Tanggal" aria-label="Pilih Tanggal" aria-describedby="basic-addon1">
+                            <input type="date" class="form-control" name="book_date" placeholder="Pilih Tanggal" aria-label="Pilih Tanggal" aria-describedby="basic-addon1">
                         </div>
                     </div>
                     <div class="col-12 col-md-4 col-lg-4">
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-clock"></i></span>
-                                    </div>
-                                    
-                                    <select name="category" id="" class="form-control">
-                                        <option value="" selected> Pilih Waktu</option>
-                                    </select>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-clock"></i></span>
                                 </div>
+                                
+                                <select name="book_time" id="" class="form-control">
+                                    <option value="" selected> Pilih Waktu</option>
+                                    <option value="10.00 - 11.00" > 10.00 - 11.00</option>
+                                    <option value="10.00 - 11.00" > 10.00 - 11.00</option>
+                                </select>
+                            </div>
                     </div>
 
                     
@@ -215,7 +217,58 @@ line-height: 1;
                         <button type="submit" class="btn btn-success btn-md px-3 mb-2 btn-block">Masukkan Keranjang</button>
                     </div>
                 </div>
+            </form> --}}
+
+
+            
+            @auth
+            <form action="{{ route('detail-add', $product->id) }}" method="POST" enctype="multipart/form-data">
+              @csrf
+              <div  class="row mt-2">
+
+                    <div class="col-12 col-md-4 col-lg-4">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-calendar-days"></i></span>
+
+                            </div>
+                            <input type="date" class="form-control" name="book_date" placeholder="Pilih Tanggal" aria-label="Pilih Tanggal" aria-describedby="basic-addon1">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-4">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-clock"></i></span>
+                                </div>
+                                
+                                <select name="book_time" id="" class="form-control">
+                                    <option value="" selected> Pilih Waktu</option>
+                                    <option value="10.00 - 11.00" > 10.00 - 11.00</option>
+                                    <option value="10.00 - 11.00" > 10.00 - 11.00</option>
+                                </select>
+                            </div>
+                    </div>
+
+                    
+                    <div class="col-12 col-md-4 col-lg-4">
+                    @auth
+                      @if($product->users_id == Auth::user()->id)
+                        <button type="submit" disabled class="btn btn-warning btn-md px-3 mb-2 btn-block">Your Product</button>
+                      @else
+                        <button type="submit" class="btn btn-success btn-md px-3 mb-2 btn-block">Masukkan Keranjang</button>
+
+                      @endif
+                    @endauth
+                    </div>
+                </div>
+              
             </form>
+
+            @else
+            <a href="{{ route('login') }}" class="btn btn-warning px-4 text-white btn-block mb-3"> Sign In To Add</a>
+            @endauth
+
+         
 
             <div  class="row mt-2">
 
@@ -240,24 +293,7 @@ line-height: 1;
           </div>
 
 
-          {{-- <div class="col-lg-2" data-aos="zoom-in">
-            @auth
-            <form action="{{ route('detail-add', $product->id) }}" method="POST" enctype="multipart/form-data">
-              @csrf
-              @auth
-                @if($product->users_id == Auth::user()->id)
-                   <button type="submit" disabled class="btn btn-warning px-4 text-white btn-block mb-3">Your Product</button>
-                @else
-                   <button type="submit" class="btn btn-success px-4 text-white btn-block mb-3"> Masukkan Ke Keranjang</button>
-                @endif
-              @endauth
-            </form>
-
-            @else
-            <a href="{{ route('login') }}" class="btn btn-warning px-4 text-white btn-block mb-3"> Sign In To Add</a>
-            @endauth
-
-          </div> --}}
+          
         </div>
       </div>
     </section>
