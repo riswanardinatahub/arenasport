@@ -115,7 +115,7 @@ class RegisterController extends Controller
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'phone_number' => $data['phone_number'],
+            'phone_number' => isset($data['phone_number']) ? $data['phone_number'] : NULL,
             'password' => Hash::make($data['password']),
             'provinces_id' => isset($data['provinces_id']) ? $data['provinces_id'] : NULL,
             'regencies_id' => isset($data['regencies_id']) ? $data['regencies_id'] : NULL,

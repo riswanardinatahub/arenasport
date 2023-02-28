@@ -30,6 +30,7 @@ User
                                             <th>ID</th>
                                             <th>Nama</th>
                                             <th>Email</th>
+                                            <th>Nama Toko</th>
                                             <th>Roles</th>
                                             <th>Lokasi</th>
                                             <th>Action</th>
@@ -63,6 +64,7 @@ $(document).ready( function () {
             {data: 'DT_RowIndex', orderable: false, searchable: false },
             { data: 'name', name: 'name' },
             { data: 'email', name: 'email' },
+            { data: 'store_name', name: 'store_name' },
             { data: 'roles', name: 'roles' },
             { data: 'namadesa', name: 'namadesa' },
             {

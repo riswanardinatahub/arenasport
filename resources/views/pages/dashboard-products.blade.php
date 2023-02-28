@@ -22,10 +22,10 @@ Store Dashboard Arena Pages
                 @php 
                 $product = App\Product::with('user')->where('users_id',Auth::user()->id)->count()     
                 @endphp
-                @if (Auth::user()->store_name)
+                @if (Auth::user()->store_name && Auth::user()->address_one && Auth::user()->provinces_id && Auth::user()->regencies_id && Auth::user()->number_phone && Auth::user()->categories_id)
                   <a href="{{ route('dashboard-product-create') }}" class="btn btn-success">Tambah Arena</a>
                 @else
-                  <a href="{{ route('dashboard-settings-store') }}" class="btn btn-warning text-white">Buat Toko</a>
+                  <a href="{{ route('dashboard-settings-account') }}" class="btn btn-warning text-white">Lengkapi Data Terlebih Dahulu</a>
                 @endif     
                 </div>
               </div>

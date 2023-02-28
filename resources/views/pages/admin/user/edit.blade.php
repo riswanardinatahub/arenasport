@@ -54,7 +54,7 @@ User
                                         </div>
                                     </div>
 
-                                    <div class="col-md-12">
+                                    <div class="col-md-12 d-none">
                                         <div class="form-group">
                                             <label>Roles</label>
                                             <select name="roles" required class="form-control">

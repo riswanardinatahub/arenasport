@@ -29,16 +29,30 @@ class DashboardSettingController extends Controller
      public function account()
     {
         $user = Auth::user();
+        $categories = Category::all();
         // code di bawah hanya untuk jawa barat
         // $provinces = Province::where('id', 32)->first();
-        $provinces = Province::where('id', Auth::user()->provinces_id)->first();
-        $regencies = Regency::where('id', Auth::user()->regencies_id)->first();
+        $provinces_get = Province::where('id', Auth::user()->provinces_id)->first();
+        if($provinces_get){
+            $provinces = Province::where('id', Auth::user()->provinces_id)->first();
+        }else{
+            $provinces = Province::where('id', 35)->first();
+
+        }
+        $regencies_get = Regency::where('id', Auth::user()->regencies_id)->first();
+        if($regencies_get){
+            $regencies = Regency::where('id', Auth::user()->regencies_id)->first();
+        }else{
+            $regencies = Regency::where('province_id', 35)->first();
+
+        }
         //$regenciesall = Regency::all();
         //dd($regencies);
         return view('pages.dashboard-account',[
           'user' => $user,
           'provinces' => $provinces,
           'regencies' => $regencies,
+          'categories' => $categories,
           //'regenciesall' => $regenciesall,          
         ]);
     }

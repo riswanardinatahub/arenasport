@@ -29,7 +29,7 @@ class UserController extends Controller
             // $query = User::with(['villages'])->where('roles','USER');
            $query = DB::table('users')
                     ->join('regencies', 'regencies.id', '=','users.regencies_id')
-                    ->select('users.id as id','users.name as name','users.email as email','users.roles as roles','regencies.name as namadesa')
+                    ->select('users.id as id','users.name as name','users.email as email','users.roles as roles','regencies.name as namadesa','users.store_name as store_name')
                     ->where('roles','USER')->get();
 
             return DataTables::of($query)

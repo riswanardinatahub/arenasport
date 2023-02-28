@@ -11,7 +11,7 @@
             <form class="mt-3" method="POST" action="{{ route('register') }}">
                @csrf
               <div class="row">
-                <div class="col-lg-6" id="register">
+                <div class="col-12" id="register">
                       <div class="form-group">
                         <label for="">Nama Lengkap</label>
                         <input id="name" v-model="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name"
@@ -22,7 +22,7 @@
                         </span>
                         @enderror
                       </div>
-                      <div class="form-group">
+                      {{-- <div class="form-group">
                         <label for="">No Telpon</label>
                         <input id="phone_number"  type="text" class="form-control @error('phone_number') is-invalid @enderror" name="phone_number"
                           value="{{ old('phone_number') }}" required autocomplete="phone_number" autofocus>
@@ -31,7 +31,7 @@
                           <strong>{{ $message }}</strong>
                         </span>
                         @enderror
-                      </div>
+                      </div> --}}
                       
                       <div class="form-group">
                         <label for="">Email</label>
@@ -61,7 +61,7 @@
                       </div>
                       
                       <div class="form-group" v-if="is_store_open">
-                        <label for="">Nama Toko</label>
+                        <label for="">Nama Arena</label>
                         <input type="text" v-model="store_name" id="store_name" class="form-control @error('store_name') is-invalid @enderror"
                           name="store_name" required autocomplete autofocus>
                         @error('store_name')
@@ -70,48 +70,8 @@
                         </span>
                         @enderror
                       </div>
-                      
-                      <div class="form-group" v-if="is_store_open">
-                        <label for="">Kategori</label>
-                        <select name="categories_id" id="" class="form-control">
-                          <option value="" disabled>Plih Kategori</option>
-                          @foreach ($categories as $category )
-                          <option value="{{ $category->id }}">{{ $category->name }}</option>
-                          @endforeach
-                        </select>
-                      </div>
-                       <button type="submit" :disabled="this.email_unavailable" class="btn btn-success btn-block mt-4">
-                  Register
-                </button>
 
-              <a href="{{ route('login') }}" class="btn btn-signup btn-block  mt-2">
-                Login
-              </a>
-                      
-                      
-                </div>
-                
-                <div class="col-lg-6" id="locations">
-                    <div class="form-group">
                       <div class="form-group">
-                        <label for="provinces_id">Provinsi</label>
-                        <select name="provinces_id" id="provinces_id" class="form-control" v-if="provinces" v-model="provinces_id">
-                          <option v-for="province in provinces" :value="province.id">@{{ province.name }}</option>
-                        </select>
-                        <select v-else class="form-control"></select>
-                      </div>
-                    </div>
-
-                    <div class="form-group">
-                      <label for="regencies_id">Kabupaten</label>
-                      <select name="regencies_id" id="regencies_id" class="form-control" v-if="regencies"
-                        v-model="regencies_id">
-                        <option v-for="regency in regencies" :value="regency.id">@{{ regency.name }}</option>
-                      </select>
-                      <select v-else class="form-control"></select>
-                    </div>
-
-                     <div class="form-group">
                         <label for="">Password</label>
                         <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password"
                           required autocomplete="new-password">
@@ -133,6 +93,48 @@
                         </span>
                         @enderror
                       </div>
+                      
+                      {{-- <div class="form-group" v-if="is_store_open">
+                        <label for="">Kategori</label>
+                        <select name="categories_id" id="" class="form-control">
+                          <option value="" disabled>Plih Kategori</option>
+                          @foreach ($categories as $category )
+                          <option value="{{ $category->id }}">{{ $category->name }}</option>
+                          @endforeach
+                        </select>
+                      </div> --}}
+                       <button type="submit" :disabled="this.email_unavailable" class="btn btn-success btn-block mt-4">
+                  Register
+                </button>
+
+              <a href="{{ route('login') }}" class="btn btn-signup btn-block  mt-2">
+                Login
+              </a>
+                      
+                      
+                </div>
+                
+                <div class="col-lg-6" id="locations">
+                    {{-- <div class="form-group">
+                      <div class="form-group">
+                        <label for="provinces_id">Provinsi</label>
+                        <select name="provinces_id" id="provinces_id" class="form-control" v-if="provinces" v-model="provinces_id">
+                          <option v-for="province in provinces" :value="province.id">@{{ province.name }}</option>
+                        </select>
+                        <select v-else class="form-control"></select>
+                      </div>
+                    </div> --}}
+
+                    {{-- <div class="form-group">
+                      <label for="regencies_id">Kabupaten</label>
+                      <select name="regencies_id" id="regencies_id" class="form-control" v-if="regencies"
+                        v-model="regencies_id">
+                        <option v-for="regency in regencies" :value="regency.id">@{{ regency.name }}</option>
+                      </select>
+                      <select v-else class="form-control"></select>
+                    </div> --}}
+
+                     
 
                     {{-- <div class="form-group">
                       <label for="districts_id">Kecamatan/Kelurahan</label>

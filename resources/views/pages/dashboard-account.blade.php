@@ -30,12 +30,14 @@ Store Dashboard Account
                       <input type="text" class="form-control" id="name" name="name" value="{{ $user->name }}">
                     </div>
                   </div>
-                  <div class="col-md-6">
+
+                   <div class="col-md-6">
                     <div class="form-group">
-                      <label for="email">Email</label>
-                      <input disabled type="email" class="form-control" id="email" name="email" value="{{ $user->email }}">
+                      <label for="">Nama Arena</label>
+                      <input type="text" name="store_name" class="form-control" value="{{ $user->store_name }}">
                     </div>
                   </div>
+                  
                   {{-- <div class="col-md-6">
                     <div class="form-group">
                       <label for="address_one">Lokasi 1</label>
@@ -102,6 +104,71 @@ Store Dashboard Account
                   </div>
 
 
+
+                  
+
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="address_one">Alamat Lengkap</label>
+                  <textarea class="form-control" name="address_one" id="address_one" cols="10" rows="3">{{ $user->address_one }}</textarea>
+
+                    </div>
+                  </div>
+
+                 
+
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="email">Email</label>
+                      <input disabled type="email" class="form-control" id="email" name="email" value="{{ $user->email }}">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="">Kategori ( @if(Auth::user()->categories_id)
+                        {{ Auth::user()->category->name }}
+                      @else
+                        Pilih Kategori
+                      @endif)
+                      </label>
+                      <select name="categories_id" id="" class="form-control">
+                        <option value="{{ $user->categories_id }}">Tidak Di Ganti </option>
+                        @foreach ($categories as $category)
+                          <option value="{{ $category->id }}">{{ $category->name }}</option>
+                        @endforeach
+                      </select>
+                    </div>
+                  </div>
+                 
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="address_two">Lokasi Maps (Latitude,Longitude)</label>
+                      <input type="text" class="form-control" id="address_two" name="address_two" value="{{ $user->address_two }}">
+                    </div>
+                  </div>
+                        
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="">Arena</label>
+                      <p class="text-muted">Apakah Saat Ini Arena Anda Buka?</p>
+                      <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" class="custom-control-input" name="store_status" id="openStoreTrue"
+                          value="1" {{ $user->store_status == 1 ? 'checked' : '' }}>
+                        <label for="openStoreTrue" class="custom-control-label">Buka</label>
+                      </div>
+                      <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" class="custom-control-input" name="store_status"
+                          id="openStoreFalse" value="0" {{ $user->store_status == 0 || $user->store_status == NULL ? 'checked' : '' }}>
+                        <label for="openStoreFalse" class="custom-control-label">Sementara Tutup</label>
+                      </div>
+                      <br>
+                      <label class="mt-3" for="address_two">Tutorial </label>
+
+                      <img src="/images/tutorialmaps.jpg" class="img-fluid" alt="">
+
+                    </div>
+                  </div>
+
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="images">Upload Foto</label>
@@ -112,26 +179,14 @@ Store Dashboard Account
 
                   </div>
 
-                  <div class="col-md-6">
+                  <div class="col-md-6 pt-3">
                     <div class="form-group">
-                      <label for="address_one">Alamat Lengkap</label>
-                      <input type="text" class="form-control" id="address_one" name="address_one" value="{{ $user->address_one }}">
                     </div>
                   </div>
 
-                  <div class="col-md-12 pt-3">
-                    <div class="form-group">
-                      <label for="address_two">Lokasi Maps (Latitude,Longitude)</label>
-                      <textarea class="form-control" name="address_two" id="" cols="30" rows="3">{{ $user->address_two }}</textarea>
-                    </div>
-                  </div>
+                  
 
-                  <div class="col-md-12 pt-3">
-                    <div class="form-group">
-                      <label for="address_two">Tutorial </label>
-                      <img src="/images/tutorialmaps.jpg" class="img-fluid" alt="">
-                    </div>
-                  </div>
+                   
 
                 </div>
                 <div class="row">
