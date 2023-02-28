@@ -36,14 +36,14 @@ class DashboardSettingController extends Controller
         if($provinces_get){
             $provinces = Province::where('id', Auth::user()->provinces_id)->first();
         }else{
-            $provinces = Province::where('id', 35)->first();
+            $provinces = Province::where('id', 31)->first();
 
         }
         $regencies_get = Regency::where('id', Auth::user()->regencies_id)->first();
         if($regencies_get){
             $regencies = Regency::where('id', Auth::user()->regencies_id)->first();
         }else{
-            $regencies = Regency::where('province_id', 35)->first();
+            $regencies = Regency::where('province_id', 31)->first();
 
         }
         //$regenciesall = Regency::all();
