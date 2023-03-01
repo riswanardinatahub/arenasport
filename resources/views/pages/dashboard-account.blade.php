@@ -171,18 +171,25 @@ Store Dashboard Account
 
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label for="images">Upload Foto</label>
+                      <label for="images">Upload Foto Profil</label>
                       <input type="file" class="form-control" id="images" name="images">
                     </div>
 
                     <img src="{{ Storage::url($user->images) }}" alt="" height="100" class="mr-2">
 
+
+                    <div class="form-group mt-3">
+                      <label for="arena_photos">Upload Foto Arena</label>
+                      <input type="file" class="form-control" id="arena_photos" name="arena_photos">
+                    </div>
+
+
+                    <img src="{{ Storage::url($user->arena_photos) }}" alt="" height="100" class="mr-2">
+
                   </div>
 
-                  <div class="col-md-6 pt-3">
-                    <div class="form-group">
-                    </div>
-                  </div>
+                 
+               
 
                   
 

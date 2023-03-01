@@ -36,7 +36,7 @@ class HomeController extends Controller
     public function index()
     {
         $categories = Category::take(6)->get();
-        $products = Product::where('status','APPROVE')->latest()->with(['galleries'])->take(20)->get();
+        $products = Product::where('status','APPROVE')->latest()->with(['galleries'])->take(20)->get()->unique('users_id');
         $regencies = DB::table('regencies')->where('province_id',31)->get();
 
        

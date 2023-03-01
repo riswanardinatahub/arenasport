@@ -74,6 +74,7 @@ class RegisterController extends Controller
             'store_name' => ['nullable', 'string', 'max:255'],
             'categories_id' => ['nullable', 'integer', 'exists:categories,id'],
             'is_store_open' => ['required'],
+            'arena_photos' => ['required'],
         ]);
     }
 
@@ -110,11 +111,24 @@ class RegisterController extends Controller
         //         ])->json();
 
         
+           
+        
+           
+            $request = app('request');
 
- 
+        if($request->hasFile('arena_photos')){
+            $data['arena_photos'] = $request->file('arena_photos')->store('assets/product','public');
+            
+        }
+
+    //    dd($data['arena_photos']);
+  
+
+    
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'arena_photos' => $data['arena_photos'],
             'phone_number' => isset($data['phone_number']) ? $data['phone_number'] : NULL,
             'password' => Hash::make($data['password']),
             'provinces_id' => isset($data['provinces_id']) ? $data['provinces_id'] : NULL,

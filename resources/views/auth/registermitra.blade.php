@@ -8,7 +8,7 @@
           <div class="col-12 col-lg-8">
             <h2 class="text-center">Silahkan Daftarkan Diri Anda</h2>
             
-            <form class="mt-3" method="POST" action="{{ route('register') }}">
+            <form class="mt-3" method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                @csrf
               <div class="row">
                 <div class="col-12" id="register">
@@ -93,6 +93,22 @@
                         </span>
                         @enderror
                       </div>
+
+
+
+                      <div class="form-group mt-3">
+                        <label for="arena_photos">Upload Foto Arena</label>
+                        <input type="file" class="form-control @error('arena_photos') is-invalid @enderror" id="arena_photos" name="arena_photos">
+
+                        @error('arena_photos')
+                        <span class="invalid-feedback" role="alert">
+                          <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                     </div>
+
+                      
+
                       
                       {{-- <div class="form-group" v-if="is_store_open">
                         <label for="">Kategori</label>

@@ -192,40 +192,24 @@ Arena
                         @forelse ( $products as $product)
                         <div class="col-12 col-md-3 col-lg-3" data-aos="fade-up" data-aos-delay="{{ $incrementProduct+=100 }}">
                             @if($product->user->store_status == 1)
-                            <a href="{{ route('detail', $product->slug) }}" class="component-products d-block">
+                            <a href="{{ route('store-page-detail', $product->user->id) }}" class="component-products d-block">
                                 <div class="products-thumbnail">
                                     <div class="products-image" style="
-                                                 @if ($product->galleries->count())
-                                                    background-image: url('{{ Storage::url($product->galleries->first()->photos) }}')
+                                                 @if ($product->user->arena_photos)
+                                                    background-image: url('{{ Storage::url($product->user->arena_photos) }}')
                                                  @else
                                                     background-image: url('{{ Storage::url('/assets/product/no-photo.png') }}')
                                                  @endif 
                                                 ">
                                     </div>
                                 </div>
+                              
                                 <div class="products-text">
-                                    {{ $product->name }}
-                                    @auth
-                                    @if($product->users_id == Auth::user()->id)
-                                    <small class="text-success"> Your Product
-                                    </small>
-                                    @else
-                    
-                                    @endif
-                                    @endauth
-                    
-                    
-                    
-                                </div>
-                                <span style="font-size:13px; color:black; ">
-                                    {{ $product->user->regencies->name }}
-                                </span>
-                    
                                 <div class="row">
                                     <div class="col-9">
                                         <div class="d-flex justify-content-start">
                                             <span style="font-size:13px; color:black; ">
-                                                <i class="fa-solid fa-store pr-1"></i>{{ $product->user->store_name }}
+                                                <i  class="fa-solid fa-store pr-1" style="color:black;"></i>{{ $product->user->store_name }}
                                             </span>
                                         </div>
                                     </div>
@@ -246,20 +230,35 @@ Arena
                                         </div>
                                     </div>
                                 </div>
+                                    {{-- {{ $product->name }}
+                                    @auth
+                                    @if($product->users_id == Auth::user()->id)
+                                    <small class="text-success"> Your Product
+                                    </small>
+                                    @else
+                    
+                                    @endif
+                                    @endauth --}}
+                                </div>
+                                
+                    
+                              
 
 
                                 <div class="row">
-                                    <div class="col-7">
+                                    <div class="col-8">
                                         <div class="d-flex justify-content-start">
-                                            <div class="products-price">
-                                    <span class="text-dark"></span>Rp. {{ number_format($product->price) }}
+                                            <div class="">
+                                    <span style="font-size:12px; color:black; ">
+                                    {{ $product->user->regencies->name }}
+                                </span>
                                 </div>
                                         </div>
                                     </div>
-                                    <div class="col-5">
+                                    <div class="col-4">
                                         <div class="d-flex justify-content-end">
                                             
-                                            <span style="font-size:13px; color:black; ">
+                                            <span style="font-size:12px; color:black; ">
                                              {{-- Stok : {{ $product->stock }} --}}
 
                                              1 Jam

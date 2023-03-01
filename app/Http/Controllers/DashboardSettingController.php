@@ -65,6 +65,11 @@ class DashboardSettingController extends Controller
             $data['images'] = $request->file('images')->store('assets/product','public');
             
         }
+
+        if($request->hasFile('arena_photos')){
+            $data['arena_photos'] = $request->file('arena_photos')->store('assets/product','public');
+            
+        }
         
         
         $item->update($data);
