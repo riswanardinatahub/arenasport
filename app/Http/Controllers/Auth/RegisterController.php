@@ -110,11 +110,7 @@ class RegisterController extends Controller
         //             'foto_profil'   =>  NULL
         //         ])->json();
 
-        
-           
-        
-           
-            $request = app('request');
+        $request = app('request');
 
         if($request->hasFile('arena_photos')){
             $data['arena_photos'] = $request->file('arena_photos')->store('assets/product','public');

@@ -75,7 +75,7 @@
        
         @guest
         <li class="nav-item">
-          <a href="{{ route('registerpartner') }}" class="nav-link">Partner Join Us</a>
+          <a href="{{ route('registerpartner') }}" class="nav-link">Join Arena</a>
         </li>
         <li class="nav-item">
           <a href="{{ route('register') }}" class="nav-link">Daftar</a>

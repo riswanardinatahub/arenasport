@@ -64,8 +64,7 @@ Store Dashboard Account
                     </div>
                   </div>
 
-                  
-
+                  @if ($user->regencies_id)
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="regencies_id">Kota</label>
@@ -79,6 +78,27 @@ Store Dashboard Account
                     </div>
                   </div>
 
+                  @else
+
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="regencies_id">Kota</label>
+                      <select name="regencies_id" id="" class="form-control">
+                        <option value="" selected>Pilih Kota/Kabupaten</option>
+
+                        @foreach ($dataregencies as $dataregenciess)
+                          <option value="{{ $dataregenciess->id }}">{{ $dataregenciess->name }}</option>
+                        @endforeach
+                      </select>
+                       
+
+                    </div>
+                  </div>
+
+                    
+                  @endif
+
+                
                   {{-- <div class="col-md-4">
                     <div class="form-group">
                       <label for="zip_code">Postal Code</label>

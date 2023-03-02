@@ -181,7 +181,8 @@ Arena
                 <div class="col-12">
                     <div class="row">
                         <div class="col-12" data-aos="fade-up">
-                            <h5>Arena Terbaru</h5>
+                        <span style="font-size: 21px; color: black; font-weight:800;"> Arena Terbaru </span>
+                            
                 
                         </div>
                     </div>
@@ -258,10 +259,10 @@ Arena
                                     <div class="col-4">
                                         <div class="d-flex justify-content-end">
                                             
-                                            <span style="font-size:12px; color:black; ">
+                                            <span style="font-size:15px; color:black; ">
                                              {{-- Stok : {{ $product->stock }} --}}
 
-                                             1 Jam
+                                             <i class="fa-solid fa-map-location-dot"></i>
                     
                                             </span>
                                            

@@ -119,45 +119,48 @@ class HomeController extends Controller
                                 ->where('status','APPROVE')->latest()
                                 ->where('categories_id',$datakategori)
                                 ->whereHas('user', function($coba) use($dataarena,$datakota){
-                                    $coba->where('regencies_id',$datakota);
-                                })->where('name', 'like', '%'.$dataarena.'%')->paginate(32);
+                                    $coba->where('regencies_id',$datakota)->where('store_name', 'like', '%'.$dataarena.'%');
+                                })->get()->unique('users_id');
 
         }elseif($request->arena == '' && $request->regencies_id && $request->category){
             $products = Product::with(['user.regencies','category','galleries'])
                                 ->where('status','APPROVE')->latest() 
                                 ->whereHas('user', function($coba) use($dataarena,$datakota){
                                     $coba->where('regencies_id',$datakota);
-                                })->paginate(32);
+                                })->get()->unique('users_id');
         }elseif($request->arena && $request->regencies_id  == '' && $request->category){
              $products = Product::with(['user.regencies','category','galleries'])
                                 ->where('status','APPROVE')->latest()
                                 ->where('categories_id',$datakategori)
-                                ->where('name', 'like', '%'.$dataarena.'%')
-                                ->paginate(32);
+                                ->whereHas('user', function($coba) use($dataarena,$datakota){
+                                    $coba->where('store_name', 'like', '%'.$dataarena.'%');
+                                })
+                                ->get()->unique('users_id');
         }elseif($request->arena && $request->regencies_id && $request->category  == ''){
              $products = Product::with(['user.regencies','category','galleries'])
                                 ->where('status','APPROVE')->latest()
                                 ->whereHas('user', function($coba) use($dataarena,$datakota){
-                                    $coba->where('regencies_id',$datakota);
-                                })->where('name', 'like', '%'.$dataarena.'%')->paginate(32);
+                                    $coba->where('regencies_id',$datakota)->where('store_name', 'like', '%'.$dataarena.'%');
+                                })->get()->unique('users_id');
         }elseif($request->arena && $request->regencies_id  == '' && $request->category == ''){
              $products = Product::with(['user.regencies','category','galleries'])
                                 ->where('status','APPROVE')->latest()
-                                ->where('name', 'like', '%'.$dataarena.'%')
-                                ->where('name', 'like', '%'.$dataarena.'%')
-                                ->paginate(32); 
+                                ->whereHas('user', function($coba) use($dataarena,$datakota){
+                                    $coba->where('store_name', 'like', '%'.$dataarena.'%');
+                                })
+                                ->get()->unique('users_id'); 
 
         }elseif($request->arena == '' && $request->regencies_id  && $request->category == ''){
              $products = Product::with(['user.regencies','category','galleries'])->where('status','APPROVE')->latest()
                                 ->whereHas('user', function($coba) use($dataarena,$datakota){
                                     $coba->where('regencies_id', 'like', '%'.$datakota.'%');
-                                })->paginate(32);
+                                })->get()->unique('users_id');
 
         }elseif($request->arena == '' && $request->regencies_id == ''  && $request->category ){
              
             $products = Product::with(['user.regencies','category','galleries'])
                                 ->where('status','APPROVE')->latest()
-                                ->where('categories_id',$datakategori)->paginate(32);
+                                ->where('categories_id',$datakategori)->get()->unique('users_id');
              
         }elseif($request->arena == '' && $request->regencies_id == ''  && $request->category== '' ){
             $products = Product::where('status','DATA KOSONG')->paginate(0);

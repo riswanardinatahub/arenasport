@@ -12,7 +12,7 @@ Admin Dashboard
                       Admin  Dashboard
                     </h2>
                     <p class="dashboard-subtitle">
-                        Halaman ini di akses oleh super admin Arena
+                        Halaman ini di akses oleh super admin Lapangan
                     </p>
                     </div>
                     <div class="dashboard-content">
@@ -166,7 +166,7 @@ Admin Dashboard
             text: 'Pengguna Baru, {{ \Carbon\Carbon::now()->year }}'
         },
         subtitle: {
-            text: 'Arena'
+            text: 'Lapangan'
         },
          xAxis: {
             categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']

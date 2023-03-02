@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-Arena
+Lapangan
 @endsection
 
 @section('content')
@@ -9,10 +9,10 @@ Arena
     <div class="container-fluid">
         <div class="dashboard-heading">
             <h2 class="dashboard-title">
-                Edit Arena
+                Edit Lapangan
             </h2>
             <p class="dashboard-subtitle">
-                Edit Arena
+                Edit Lapangan
             </p>
         </div>
         <div class="dashboard-content">
@@ -35,7 +35,7 @@ Arena
                              <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Nama Arena</label>
+                                            <label>Nama Lapangan</label>
                                             <input type="text" name="name" class="form-control" value="{{ $item->name }}" required>
                                         </div>
                                     </div>
@@ -43,7 +43,7 @@ Arena
 
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Pemilik Arena</label>
+                                            <label>Pemilik Lapangan</label>
                                             <select name="users_id" class="form-control">
                                             <option value="{{ $item->users_id }}" selected>{{ $item->user->name }}</option>
                                                 {{-- @foreach ( $users as $user)
@@ -56,7 +56,7 @@ Arena
 
                                      <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Kategori Arena</label>
+                                            <label>Kategori Lapangan</label>
                                             <select name="categories_id" class="form-control">
                                             <option value="{{ $item->categories_id }}" selected>{{ $item->category->name }}</option>
                                                  @foreach ( $categories as $category)
@@ -70,7 +70,7 @@ Arena
 
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Harga Arena</label>
+                                            <label>Harga Lapangan</label>
                                             <input type="number" name="price" class="form-control" value="{{ $item->price }}" required>
                                         </div>
                                     </div>
@@ -78,7 +78,7 @@ Arena
                                     
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Deskirpsi Arena</label>
+                                            <label>Deskirpsi Lapangan</label>
                                             <textarea name="description" id="editor"> {!! $item->description !!}</textarea>
                                         </div>
                                     </div>

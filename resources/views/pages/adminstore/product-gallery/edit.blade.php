@@ -1,7 +1,7 @@
 @extends('layouts.adminstore')
 
 @section('title')
-Arena
+Lapangan
 @endsection
 
 @section('content')
@@ -9,10 +9,10 @@ Arena
     <div class="container-fluid">
         <div class="dashboard-heading">
             <h2 class="dashboard-title">
-                Arena Galeri
+                Lapangan Galeri
             </h2>
             <p class="dashboard-subtitle">
-                Edit Arena Galeri
+                Edit Lapangan Galeri
             </p>
         </div>
         <div class="dashboard-content">
@@ -40,7 +40,7 @@ Arena
                              <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Nama Arena</label>
+                                            <label>Nama Lapangan</label>
                                             <input disabled type="text" name="name" class="form-control" value="{{ $productgallery->product->name}}" required>
                                         </div>
                                     </div>

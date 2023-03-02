@@ -1,7 +1,7 @@
 @extends('layouts.adminstore')
 
 @section('title')
-Arena Gallery
+Lapangan Gallery
 @endsection
 
 @section('content')
@@ -9,10 +9,10 @@ Arena Gallery
     <div class="container-fluid">
         <div class="dashboard-heading">
             <h2 class="dashboard-title">
-               Gallery Arena
+               Gallery Lapangan
             </h2>
             <p class="dashboard-subtitle">
-                List Gallery Arena
+                List Gallery Lapangan
             </p>
         </div>
         <div class="dashboard-content">
@@ -21,14 +21,14 @@ Arena Gallery
                     <div class="card">
                         <div class="card-body">
                             <a href="{{ route('adminstore-product-gallery.create') }}" class="btn btn-primary mb-3">
-                                + Tambah Gallery Arena
+                                + Tambah Gallery Lapangan
                             </a>
                             <div class="table-responsive">
                                 <table class="table table-hover scroll-horizontal-vertical w-100" id="crudTable">
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Arena</th>
+                                            <th>Lapangan</th>
                                             <th>Foto</th>
                                             <th>Action</th>
                                         </tr>

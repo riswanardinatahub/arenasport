@@ -330,7 +330,7 @@
         },
     });
   </script>
-
+{{-- 
  <script>
   var locations = new Vue({
     el: "#locations",
@@ -401,5 +401,5 @@
   });
 
 </script>
- 
+  --}}
 @endpush

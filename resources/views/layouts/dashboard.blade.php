@@ -32,13 +32,13 @@
                         
                     @endif
           <a href="{{ route('dashboard-product') }}" 
-             class="list-group-item list-group-item-action {{ Request::is('dashboard/products') ? 'active' : '' }} ">Arena</a>
+             class="list-group-item list-group-item-action {{ Request::is('dashboard/products') ? 'active' : '' }} ">Lapangan</a>
           <a href="{{ route('dashboard-transaction') }}" 
              class="list-group-item list-group-item-action {{ Request::is('dashboard/transactions') ? 'active' : '' }}">Transaksi</a>
           {{-- <a href="{{ route('dashboard-settings-store') }}" 
              class="list-group-item list-group-item-action {{ Request::is('dashboard/settings') ? 'active' : '' }}">Toko Setting</a> --}}
           <a href="{{ route('dashboard-settings-account') }}" 
-             class="list-group-item list-group-item-action {{ Request::is('dashboard/account') ? 'active' : '' }}">Toko Setting</a>
+             class="list-group-item list-group-item-action {{ Request::is('dashboard/account') ? 'active' : '' }}">Arena Setting</a>
           <a href="{{ route('logout') }}" onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();" 
              class="list-group-item list-group-item-action">Keluar</a>

@@ -135,6 +135,8 @@ line-height: 1;
         <div class="row">
           <div class="col-lg-8">
             <h1 style="font-weight: 900;">{{ $product->name }}</h1>
+            <h1 style="font-size: 16px; font-weight: 400;">{{ $product->user->regencies->name }}</h1>
+
             <div class="price">Rp. {{ number_format($product->price) }}</div>
               {{-- <div>
                     @if ($product->stock >= 1)

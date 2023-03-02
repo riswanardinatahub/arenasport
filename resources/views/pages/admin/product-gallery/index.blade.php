@@ -9,10 +9,10 @@ Product Gallery
     <div class="container-fluid">
         <div class="dashboard-heading">
             <h2 class="dashboard-title">
-                Gallery Arena
+                Gallery Lapangan
             </h2>
             <p class="dashboard-subtitle">
-                List Gallery Arena
+                List Gallery Lapangan
             </p>
         </div>
         <div class="dashboard-content">
@@ -28,7 +28,7 @@ Product Gallery
                                     <thead>
                                         <tr>
                                             <th>ID</th>
-                                            <th>Arena</th>
+                                            <th>Lapangan</th>
                                             <th>Foto</th>
                                             <th>Action</th>
 

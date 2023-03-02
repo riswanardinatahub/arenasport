@@ -1,7 +1,7 @@
 @extends('layouts.dashboard')
 
 @section('title')
-Dashboard Arena Details Pages
+Dashboard Lapangan Details Pages
 @endsection
 
 @section('content')
@@ -9,10 +9,10 @@ Dashboard Arena Details Pages
           <div class="container-fluid">
             <div class="dashboard-heading">
               <h2 class="dashboard-title">
-                Tambah Arena
+                Tambah Lapangan
               </h2>
               <p class="dashboard-subtitle">
-                Ayok Tambahkan Arena Kamu
+                Ayok Tambahkan Lapangan Kamu
               </p>
             </div>
             <div class="dashboard-content">
@@ -35,7 +35,7 @@ Dashboard Arena Details Pages
                         <div class="row">
                           <div class="col-md-6">
                             <div class="form-group">
-                              <label for="">Nama Arena</label>
+                              <label for="">Nama Lapangan</label>
                               <input type="text" class="form-control" name="name" required>
                             </div>
                           </div>
@@ -53,7 +53,7 @@ Dashboard Arena Details Pages
                           </div> --}}
                           <div class="col-md-12">
                             <div class="form-group">
-                              <label>Kategori Arena</label>
+                              <label>Kategori Lapangan</label>
                                 <select name="categories_id" class="form-control" required>
                                       @foreach ( $categories as $category)
                                         <option value="{{ $category->id }}">{{ $category->name }}</option>

@@ -12,7 +12,7 @@ Store Dashboard Products Details Pages
        {{ $product->name }}
       </h2>
       <p class="dashboard-subtitle">
-        Detail Arena
+        Detail Lapangan
       </p>
     </div>
     <div class="dashboard-content">
@@ -36,7 +36,7 @@ Store Dashboard Products Details Pages
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label for="">Nama Arena</label>
+                      <label for="">Nama Lapangan</label>
                       <input type="text" class="form-control" name="name" value="{{ $product->name }}">
                     </div>
                   </div>
@@ -55,7 +55,7 @@ Store Dashboard Products Details Pages
                   </div> --}}
                   <div class="col-md-12">
                     <div class="form-group">
-                      <label>Kategori Arena</label>
+                      <label>Kategori Lapangan</label>
                       <select name="categories_id" class="form-control">
                         <option value="{{ $product->categories_id }}"> Tidak Di Ganti ({{ $product->category->name }})
                         </option>

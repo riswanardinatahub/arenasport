@@ -6,6 +6,7 @@ use App\Category;
 use App\Models\Regency;
 use App\Models\Province;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
 class DashboardSettingController extends Controller
@@ -30,6 +31,8 @@ class DashboardSettingController extends Controller
     {
         $user = Auth::user();
         $categories = Category::all();
+         $dataregencies =  DB::table('regencies')->where('province_id',31)->get();
+       
         // code di bawah hanya untuk jawa barat
         // $provinces = Province::where('id', 32)->first();
         $provinces_get = Province::where('id', Auth::user()->provinces_id)->first();
@@ -53,7 +56,7 @@ class DashboardSettingController extends Controller
           'provinces' => $provinces,
           'regencies' => $regencies,
           'categories' => $categories,
-          //'regenciesall' => $regenciesall,          
+          'dataregencies' => $dataregencies,          
         ]);
     }
 

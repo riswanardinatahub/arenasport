@@ -1,7 +1,7 @@
 @extends('layouts.success')
 
 @section('title')
-    Arena Success Page
+    Success Page
 @endsection
 
 @section('content')

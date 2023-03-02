@@ -26,9 +26,9 @@
         </div>
         <div class="list-group list-group-flush">
           <a href="{{ route('admin-dashboard') }}" class="list-group-item list-group-item-action">Dashboard</a>
-          <a href="{{ route('product.index') }}" class="list-group-item list-group-item-action {{ (request()->is('admin/product')) ? 'active' : ''}}  ">Arena</a>
-          <a href="{{ route('admin-product-pending') }}" class="list-group-item list-group-item-action {{ (request()->is('admin/admin/pending*')) ? 'active' : ''}}  ">Arena Pending</a>
-           <a href="{{ route('product-gallery.index') }}" class="list-group-item list-group-item-action {{ (request()->is('admin/product-gallery*')) ? 'active' : ''}}"> Gallery Arena</a>
+          <a href="{{ route('product.index') }}" class="list-group-item list-group-item-action {{ (request()->is('admin/product')) ? 'active' : ''}}  ">Lapangan</a>
+          <a href="{{ route('admin-product-pending') }}" class="list-group-item list-group-item-action {{ (request()->is('admin/admin/pending*')) ? 'active' : ''}}  ">Lapangan Pending</a>
+           <a href="{{ route('product-gallery.index') }}" class="list-group-item list-group-item-action {{ (request()->is('admin/product-gallery*')) ? 'active' : ''}}"> Gallery Lapangan</a>
           <a href="{{ route('category.index') }}" class="list-group-item list-group-item-action {{ (request()->is('admin/category*')) ? 'active' : ''}}">Kategori</a>
           <a href="{{ route('transaction.index') }}" class="list-group-item list-group-item-action {{ (request()->is('admin/transaction*')) ? 'active' : ''}}">Transaksi</a>
           <a href="{{ route('user.index') }}" class="list-group-item list-group-item-action {{ (request()->is('admin/user*')) ? 'active' : ''}} ">Users</a>

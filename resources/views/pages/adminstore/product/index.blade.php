@@ -1,7 +1,7 @@
 @extends('layouts.adminstore')
 
 @section('title')
-Arena
+Lapangan
 @endsection
 
 @section('content')
@@ -9,10 +9,10 @@ Arena
     <div class="container-fluid">
         <div class="dashboard-heading">
             <h2 class="dashboard-title">
-                Arena
+                Lapangan
             </h2>
             <p class="dashboard-subtitle">
-                List Arena
+                List Lapangan
             </p>
         </div>
         <div class="dashboard-content">
@@ -21,7 +21,7 @@ Arena
                     <div class="card">
                         <div class="card-body">
                             <a href="{{ route('tambahproduk') }}" class="btn btn-primary mb-3">
-                                + Tambah Arena
+                                + Tambah Lapangan
                             </a>
                             <div class="table-responsive">
                                 <table class="table table-hover scroll-horizontal-vertical w-100" id="crudTable">
