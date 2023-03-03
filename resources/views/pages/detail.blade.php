@@ -243,11 +243,17 @@ line-height: 1;
                                     <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-clock"></i></span>
                                 </div>
                                 
-                                <select name="book_time" id="" class="form-control">
-                                    <option value="" selected> Pilih Waktu</option>
-                                    <option value="10.00 - 11.00" > 10.00 - 11.00</option>
-                                    <option value="10.00 - 11.00" > 10.00 - 11.00</option>
+                              
+                                   
+                                    
+                                <select name="schedule" id="" class="form-control">
+                                    <option value="" selected> Pilih Jadwal</option>
+                                    @foreach ($schedule as $schedule)
+                                    <option value="{{ $schedule->id }}">{{ $schedule->time }}</option>
+                                    @endforeach
                                 </select>
+                                   
+                                
                             </div>
                     </div>
 

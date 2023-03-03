@@ -31,10 +31,12 @@ class DashboardProductController extends Controller
     {
         $product = Product::with(['galleries','user','category'])->findOrFail($id);
         $categories = Category::all();
+        $schadules = Schedule::where('products_id',$id)->get();
 
         return view('pages.dashboard-products-details',[
             'product' => $product,
             'categories' => $categories,
+            'schadules' => $schadules,
         ]);
     }
 
@@ -78,7 +80,7 @@ class DashboardProductController extends Controller
 
     public function store(ProductRequest $request)
     {
-        // dd($request->param);
+        // dd($request->all());
         
         $data = $request->all(); 
         $data['slug'] = Str::slug($request->name);
@@ -97,12 +99,30 @@ class DashboardProductController extends Controller
             ,'09.00 - 10.00','10.00 - 11.00','11.00 - 12.00','12.00 - 13.00','13.00 - 14.00',
             '14.00 - 15.00','15.00 - 16.00','16.00 - 17.00','17.00 - 18.00','18.00 - 19.00',
             '19.00 - 20.00','20.00 - 21.00','21.00 - 22.00','22.00 - 23.00','23.00 - 24.00',);
-    foreach($test as $datawaktu) {
-    $data = array('products_id' => $product->id,
-                    'time' => $datawaktu, 
-                    'status' => 'open');
-    Schedule::insert($data);  
+            
+    $datajadwal = array($request->time1,$request->time2,$request->time3,$request->time4,$request->time5,$request->time6,$request->time7,$request->time8
+                        ,$request->time9,$request->time10,$request->time11,$request->time12,$request->time13,$request->time14,$request->time15,$request->time16
+                        ,$request->time17,$request->time18,$request->time19,$request->time20,$request->time21,$request->time22,$request->time23,$request->time24);
+   
+                        // $datajadwaltostring = implode(", ", $datajadwal);
+
+    // $codes = array('tn', 'us', 'fr');
+    // $names = array('Tunisia', 'United States', 'France');
+    foreach($test as $key => $value) {
+        // echo "Code is: " . $test[$key] . " - " . "and Name: " . $datajadwal[$key] . "<br>";
+        $data = array('products_id' => $product->id,
+                    'time' => $test[$key], 
+                    'status' => $datajadwal[$key]);
+        Schedule::insert($data);
     }
+                      
+    // foreach($test as $code and $datajadwal as $name) {
+        
+    // $data = array('products_id' => $product->id,
+    //                 'time' => $datawaktu, 
+    //                 'status' => 'hay');
+    // Schedule::insert($data);  
+    // }
         //  dd($data);
 
         // for ($x = 0; $x < 24; $x++){
@@ -122,6 +142,7 @@ class DashboardProductController extends Controller
 
      public function update(ProductRequest $request, $id)
     {
+        dd($request->DATAID);
         $data = $request->all();
       
         $item = Product::findOrfail($id);
@@ -129,6 +150,33 @@ class DashboardProductController extends Controller
         $item->update($data);
 
         return redirect()->route('dashboard-product');
+    }
+
+    public function scheduleudapte($id){
+        $item = Schedule::find($id);
+
+        //  $user = User::find($id);
+        
+        if($item->status == 'yes'){
+            $item->update(['status' => 'no']); 
+        }else{
+            $item->update(['status' => 'yes']); 
+        }
+
+        $item->save();
+        return redirect()->back();
+        // dd($item);
+        // if($item->status = 'no'){
+        //     $item->update([
+        //     'status' => 'yes'
+        //     ]);
+        // }else{
+        //     $item->update([
+        //     'status' => 'no'
+        // ]);
+        // }
+        // return redirect()->back();
+        
     }
 
 

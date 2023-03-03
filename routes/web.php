@@ -18,6 +18,12 @@ Route::post('autoLogin','AuthController@autoLogin');
 
 Route::get('/coba', function(){
 
+    $codes = array('tn', 'us', 'fr');
+    $names = array('Tunisia', 'United States', 'France');
+    foreach($codes as $key => $value) {
+        echo "Code is: " . $codes[$key] . " - " . "and Name: " . $names[$key] . "<br>";
+    }
+
     // $data = riswan;
     
 
@@ -29,20 +35,20 @@ Route::get('/coba', function(){
 
    
 
-    $test = array('00.00 - 01.00','00.10 - 02.00','02.00 - 03.00','03.00 - 04.00','04.00 - 05.00','05.00 - 06.00','06.00 - 07.00','07.00 - 08.00','08.00 - 09.00'
-                ,'09.00 - 10.00','10.00 - 11.00','11.00 - 12.00','12.00 - 13.00','13.00 - 14.00',
-                '14.00 - 15.00','15.00 - 16.00','16.00 - 17.00','17.00 - 18.00','18.00 - 19.00',
-                '19.00 - 20.00','20.00 - 21.00','21.00 - 22.00','22.00 - 23.00','23.00 - 24.00',);
-    foreach($test as $kamu) {
-    $data[] = array('products_id' => 'time',
-                    'time' => $kamu, 
-                    'status' => 'test_property');
-    // Test_table::insert($data);    
-    }
-         dd($data);
+//     $test = array('00.00 - 01.00','00.10 - 02.00','02.00 - 03.00','03.00 - 04.00','04.00 - 05.00','05.00 - 06.00','06.00 - 07.00','07.00 - 08.00','08.00 - 09.00'
+//                 ,'09.00 - 10.00','10.00 - 11.00','11.00 - 12.00','12.00 - 13.00','13.00 - 14.00',
+//                 '14.00 - 15.00','15.00 - 16.00','16.00 - 17.00','17.00 - 18.00','18.00 - 19.00',
+//                 '19.00 - 20.00','20.00 - 21.00','21.00 - 22.00','22.00 - 23.00','23.00 - 24.00',);
+//     foreach($test as $kamu) {
+//     $data[] = array('products_id' => 'time',
+//                     'time' => $kamu, 
+//                     'status' => 'test_property');
+//     // Test_table::insert($data);    
+//     }
+//          dd($data);
 
 
-   return DB::table('regencies')->where('province_id',31)->get();
+//    return DB::table('regencies')->where('province_id',31)->get();
 });
 
 Route::get('/kamu', 'HomeController@kamu');
@@ -97,6 +103,10 @@ Route::get('/dashboard/products/create', 'DashboardProductController@create')->n
 Route::post('/dashboard/products', 'DashboardProductController@store')->name('dashboard-product-store');
 Route::get('/dashboard/products/{id}', 'DashboardProductController@details')->name('dashboard-product-details');
 Route::post('/dashboard/products/{id}', 'DashboardProductController@update')->name('dashboard-product-update');
+
+Route::get('/dashboard/scheduleudapte/{id}', 'DashboardProductController@scheduleudapte')->name('scheduleudapte');
+
+
 
 Route::post('/dashboard/products/gallery/upload', 'DashboardProductController@uploadGallery')->name('dashboard-product-gallery-upload');
 Route::get('/dashboard/products/gallery/delete/{id}', 'DashboardProductController@deleteGallery')->name('dashboard-product-gallery-delete');

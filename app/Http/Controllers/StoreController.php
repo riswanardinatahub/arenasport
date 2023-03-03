@@ -7,6 +7,7 @@ use App\Product;
 use App\Category;
 use App\Models\Regency;
 use App\Models\Village;
+use App\Schedule;
 use Illuminate\Http\Request;
 
 class StoreController extends Controller
@@ -62,7 +63,7 @@ class StoreController extends Controller
        $products = Product::with(['user'])
         ->whereHas('user', function($q) use($id) {
                     $q->where('villages_id', '=', $id); 
-                    })->get();
+                    })->latest()->get();
 
         if ($products) {
              return view('pages.home-store-area',compact('products','villages','categories'));
@@ -77,7 +78,7 @@ class StoreController extends Controller
 
        $user = User::find($id);
 
-      $products = Product::with(['galleries'])->where('users_id',$id)->where('status','APPROVE');
+      $products = Product::with(['galleries'])->where('users_id',$id)->where('status','APPROVE')->latest();
         //dd($user);
 
        

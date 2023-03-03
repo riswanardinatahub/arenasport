@@ -96,46 +96,112 @@ Dashboard Lapangan Details Pages
                                           <tr>
                                             {{-- <input type="hidden" name="param" value="0">
                                             <input type="checkbox" name="param" value="1"> --}}
+                                            <div class="row">
 
-                                            <td><input type="checkbox" name="a" value="hallo1"> <label>00.00 - 01.00</label></td>
-                                            <td><input type="checkbox" name="b" value="hallo2"> <label>00.00 - 01.00</label></td>
-                                            <td><input type="checkbox" name="c" value="hallo3"> <label>00.00 - 01.00</label></td>
-                                            <td><input type="checkbox" name="d" value="hallo4"> <label>00.00 - 01.00</label></td>
-                                            <td><input type="checkbox" name="f" value="hallo5"> <label>00.00 - 01.00</label></td>
-                                            <td><input type="checkbox" name="g" value="hallo5"> <label>00.00 - 01.00</label></td>
-                                            
-                                          </tr>
-                                          <tr>
-                                            <td><input type="checkbox" name="as" value="hallo"> <label>00.00 - 01.00</label></td>
-                                            <td><input type="checkbox" name="as" value="hallo"> <label>00.00 - 01.00</label></td>
-                                            <td><input type="checkbox" name="as" value="hallo"> <label>00.00 - 01.00</label></td>
-                                            <td><input type="checkbox" name="as" value="hallo"> <label>00.00 - 01.00</label></td>
-                                            <td><input type="checkbox" name="as" value="hallo"> <label>00.00 - 01.00</label></td>
-                                            <td><input type="checkbox" name="as" value="hallo"> <label>00.00 - 01.00</label></td>
-                                            
-                                          </tr>
-                                          <tr>
-                                            <td><input type="checkbox" name="as" value="hallo"> <label>00.00 - 01.00</label></td>
-                                            <td><input type="checkbox" name="as" value="hallo"> <label>00.00 - 01.00</label></td>
-                                            <td><input type="checkbox" name="as" value="hallo"> <label>00.00 - 01.00</label></td>
-                                            <td><input type="checkbox" name="as" value="hallo"> <label>00.00 - 01.00</label></td>
-                                            <td><input type="checkbox" name="as" value="hallo"> <label>00.00 - 01.00</label></td>
-                                            <td><input type="checkbox" name="as" value="hallo"> <label>00.00 - 01.00</label></td>
-                                            
-                                          </tr>
-                                          <tr>
-                                            <td><input type="checkbox" name="as" value="hallo"> <label>00.00 - 01.00</label></td>
-                                            <td><input type="checkbox" name="as" value="hallo"> <label>00.00 - 01.00</label></td>
-                                            <td><input type="checkbox" name="as" value="hallo"> <label>00.00 - 01.00</label></td>
-                                            <td><input type="checkbox" name="as" value="hallo"> <label>00.00 - 01.00</label></td>
-                                            <td><input type="checkbox" name="as" value="hallo"> <label>00.00 - 01.00</label></td>
-                                            <td><input type="checkbox" name="as" value="hallo"> <label>00.00 - 01.00</label></td>
-                                            
+                                           
+                                            <div class="col-2">
+                                                <input type="hidden" name="time1" value="no"> 
+                                                <input type="checkbox" name="time1" value="yes"> <label>00.00 - 01.00</label>
+                                            </div>
+                                            <div class="col-2">
+                                                <input type="hidden" name="time2" value="no"> 
+                                                <input type="checkbox" name="time2" value="yes"> <label>01.00 - 02.00</label>
+                                            </div>
+                                            <div class="col-2">
+                                                <input type="hidden" name="time3" value="no"> 
+                                                <input type="checkbox" name="time3" value="yes"> <label>02.00 - 03.00</label>
+                                            </div>
+                                            <div class="col-2">
+                                                <input type="hidden" name="time4" value="no"> 
+                                                <input type="checkbox" name="time4" value="yes"> <label>03.00 - 04.00</label>
+                                            </div>
+                                            <div class="col-2">
+                                                <input type="hidden" name="time5" value="no"> 
+                                                <input type="checkbox" name="time5" value="yes"> <label>04.00 - 05.00</label>
+                                            </div>
+                                            <div class="col-2">
+                                                <input type="hidden" name="time6" value="no"> 
+                                                <input type="checkbox" name="time6" value="yes"> <label>05.00 - 06.00</label>
+                                            </div>
+                                            <div class="col-2">
+                                                <input type="hidden" name="time7" value="no"> 
+                                                <input type="checkbox" name="time7" value="yes"> <label>06.00 - 07.00</label>
+                                            </div>
+                                            <div class="col-2">
+                                                <input type="hidden" name="time8" value="no"> 
+                                                <input type="checkbox" name="time8" value="yes"> <label>07.00 - 08.00</label>
+                                            </div>
+                                            <div class="col-2">
+                                                <input type="hidden" name="time9" value="no"> 
+                                                <input type="checkbox" name="time9" value="yes"> <label>08.00 - 09.00</label>
+                                            </div>
+                                            <div class="col-2">
+                                                <input type="hidden" name="time10" value="no"> 
+                                                <input type="checkbox" name="time10" value="yes"> <label>09.00 - 10.00</label>
+                                            </div>
+                                            <div class="col-2">
+                                                <input type="hidden" name="time11" value="no"> 
+                                                <input type="checkbox" name="time11" value="yes"> <label>10.00 - 11.00</label>
+                                            </div>
+                                            <div class="col-2">
+                                                <input type="hidden" name="time12" value="no"> 
+                                                <input type="checkbox" name="time12" value="yes"> <label>11.00 - 12.00</label>
+                                            </div>
+                                            <div class="col-2">
+                                                <input type="hidden" name="time13" value="no"> 
+                                                <input type="checkbox" name="time13" value="yes"> <label>12.00 - 13.00</label>
+                                            </div>
+                                            <div class="col-2">
+                                                <input type="hidden" name="time14" value="no"> 
+                                                <input type="checkbox" name="time14" value="yes"> <label>13.00 - 14.00</label>
+                                            </div><div class="col-2">
+                                                <input type="hidden" name="time15" value="no"> 
+                                                <input type="checkbox" name="time15" value="yes"> <label>14.00 - 15.00</label>
+                                            </div>
+                                            <div class="col-2">
+                                                <input type="hidden" name="time16" value="no"> 
+                                                <input type="checkbox" name="time16" value="yes"> <label>15.00 - 16.00</label>
+                                            </div>
+                                            <div class="col-2">
+                                                <input type="hidden" name="time17" value="no"> 
+                                                <input type="checkbox" name="time17" value="yes"> <label>16.00 - 17.00</label>
+                                            </div><div class="col-2">
+                                                <input type="hidden" name="time18" value="no"> 
+                                                <input type="checkbox" name="time18" value="yes"> <label>17.00 - 18.00</label>
+                                            </div><div class="col-2">
+                                                <input type="hidden" name="time19" value="no"> 
+                                                <input type="checkbox" name="time19" value="yes"> <label>18.00 - 19.00</label>
+                                            </div><div class="col-2">
+                                                <input type="hidden" name="time20" value="no"> 
+                                                <input type="checkbox" name="time20" value="yes"> <label>19.00 - 20.00</label>
+                                            </div>
+                                            <div class="col-2">
+                                                <input type="hidden" name="time21" value="no"> 
+                                                <input type="checkbox" name="time21" value="yes"> <label>20.00 - 21.00</label>
+                                            </div>
+                                            <div class="col-2">
+                                                <input type="hidden" name="time22" value="no"> 
+                                                <input type="checkbox" name="time22" value="yes"> <label>21.00 - 22.00</label>
+                                            </div>
+                                            <div class="col-2">
+                                                <input type="hidden" name="time23" value="no"> 
+                                                <input type="checkbox" name="time23" value="yes"> <label>22.00 - 23.00</label>
+                                            </div>
+                                            <div class="col-2">
+                                                <input type="hidden" name="time24" value="no"> 
+                                                <input type="checkbox" name="time24" value="yes"> <label>23.00 - 24.00</label>
+                                            </div>
+                                          
+
+                                              
+                                             
+                                            </div>
+
                                           </tr>
                                          
                                           
                                         </tbody>
-                                      </table>
+                              </table>
 
                              
                                 

@@ -73,6 +73,57 @@ Store Dashboard Products Details Pages
                     </div>
                   </div>
 
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label for="">Jadwal </label>
+                          <table class="table table-borderless table-responsive">
+                              <thead>
+                                
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <div class="row">
+                                  @php
+                                    $no=1;
+                                  @endphp
+                                  @foreach ($schadules as $data)
+                                  <div class="col-6 col-md-3 col-lg-3">
+                                      {{-- <input type="hidden" name="time{{ $no++}}" value="no">  --}}
+                                      {{-- <input type="hidden" name="DATAID" value="{{ $data->id }}" > <label>{{ $data->id }}</label> --}}
+                                      
+                                      {{-- <input type="checkbox" disabled name="time{{ $no++}}" value="yes" {{  ($data->status == 'yes' ? ' checked' : '') }}> <label style="font-size: 18px;" class="mr-2">{{ $data->time }}</label>  --}}
+
+                                      @if ($data->status == 'yes')
+                                      <label style="font-size: 16px; background-color: #C7E8CA; border-radius:15px;" class="mr-2 p-1">{{ $data->time }}</label> 
+                                        
+                                      @else
+                                      <label style="font-size: 16px; " class="mr-2 p-1">{{ $data->time }}</label> 
+
+                                        
+                                      @endif
+                                      @if ($data->status == 'yes')
+                                      <a href="{{ route('scheduleudapte', $data->id) }}" class="btn btn-sm btn-danger "><i style="color: white;" class="fa-regular fa-rectangle-xmark"></i> </a>  
+                                        
+                                      @else
+                                      <a href="{{ route('scheduleudapte', $data->id) }}" class="btn btn-sm btn-success"><i style="color: white;" class="fa-solid fa-check"></i> </a>
+                                        
+                                      @endif
+                                  </div>
+                                  @endforeach
+
+                                  </div>
+
+                                </tr>
+                                
+                                
+                              </tbody>
+                          </table>
+                    </div>
+                  </div>
+
+
+                 
+
 
                 </div>
                 <div class="row">
