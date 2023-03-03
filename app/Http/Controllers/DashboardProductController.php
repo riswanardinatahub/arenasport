@@ -9,6 +9,7 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\Admin\ProductRequest;
+use App\Schedule;
 
 class DashboardProductController extends Controller
 {
@@ -68,6 +69,7 @@ class DashboardProductController extends Controller
     public function create(Request $request)
     {
         $categories = Category::all();
+
         return view('pages.dashboard-products-create',[
             'categories' => $categories,
         ]);
@@ -76,9 +78,13 @@ class DashboardProductController extends Controller
 
     public function store(ProductRequest $request)
     {
+        // dd($request->param);
+        
         $data = $request->all(); 
         $data['slug'] = Str::slug($request->name);
         $product = Product::create($data);
+
+        // dd($product->id);
 
        $gallery = [
            'products_id' =>$product->id,
@@ -86,6 +92,29 @@ class DashboardProductController extends Controller
        ];
 
         ProductGallery::create($gallery);
+
+    $test = array('00.00 - 01.00','00.10 - 02.00','02.00 - 03.00','03.00 - 04.00','04.00 - 05.00','05.00 - 06.00','06.00 - 07.00','07.00 - 08.00','08.00 - 09.00'
+            ,'09.00 - 10.00','10.00 - 11.00','11.00 - 12.00','12.00 - 13.00','13.00 - 14.00',
+            '14.00 - 15.00','15.00 - 16.00','16.00 - 17.00','17.00 - 18.00','18.00 - 19.00',
+            '19.00 - 20.00','20.00 - 21.00','21.00 - 22.00','22.00 - 23.00','23.00 - 24.00',);
+    foreach($test as $datawaktu) {
+    $data = array('products_id' => $product->id,
+                    'time' => $datawaktu, 
+                    'status' => 'open');
+    Schedule::insert($data);  
+    }
+        //  dd($data);
+
+        // for ($x = 0; $x < 24; $x++){
+        //      $data = 1+$x;
+        //      Schedule::insert($data);
+        // }
+
+    // $test = array(123, 231, 321, 543);
+    // foreach($test as $key) {
+    // $data = array('name' => 'test_name', 'test' => $key, 'property' => 'test_property');
+    // Test_table::insert($data);    
+    // }
 
        
         return redirect()->route('dashboard-product');

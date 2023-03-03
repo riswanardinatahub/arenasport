@@ -200,44 +200,28 @@ line-height: 1;
                             <a data-toggle="modal" data-target="#exampleModal" class="component-products d-block">
                                 <div class="products-thumbnail">
                                     <div class="products-image" style="
-                                                 @if ($product->galleries->count())
-                                                    background-image: url('{{ Storage::url($product->galleries->first()->photos) }}')
+                                                 @if ($product->user->arena_photos)
+                                                    background-image: url('{{ Storage::url($product->user->arena_photos) }}')
                                                  @else
                                                     background-image: url('{{ Storage::url('/assets/product/no-photo.png') }}')
                                                  @endif 
                                                 ">
                                     </div>
                                 </div>
+                              
                                 <div class="products-text">
-                                    {{ $product->name }}
-                                    @auth
-                                    @if($product->users_id == Auth::user()->id)
-                                    <small class="text-success"> Your Product
-                                    </small>
-                                    @else
-                    
-                                    @endif
-                                    @endauth
-                    
-                    
-                    
-                                </div>
-                                <span style="font-size:13px; color:#050505; ">
-                                    Lokasi : {{ $product->user->regencies->name }}
-                                </span>
-                    
                                 <div class="row">
                                     <div class="col-9">
                                         <div class="d-flex justify-content-start">
-                                            <span style="font-size:13px; color:#358F66; ">
-                                                Arena : {{ $product->user->store_name }}
+                                            <span style="font-size:13px; color:black; ">
+                                                <i  class="fa-solid fa-store pr-1" style="color:black;"></i>{{ $product->user->store_name }}
                                             </span>
                                         </div>
                                     </div>
                                     <div class="col-3">
                                         <div class="d-flex justify-content-end">
                                             @if ($product->user->store_status == 1)
-                                            <span style="font-size:13px; color:#358F66; ">
+                                            <span style="font-size:13px; color:green; ">
                                                 Buka
                     
                                             </span>
@@ -251,22 +235,38 @@ line-height: 1;
                                         </div>
                                     </div>
                                 </div>
+                                    {{-- {{ $product->name }}
+                                    @auth
+                                    @if($product->users_id == Auth::user()->id)
+                                    <small class="text-success"> Your Product
+                                    </small>
+                                    @else
+                    
+                                    @endif
+                                    @endauth --}}
+                                </div>
+                                
+                    
+                              
 
 
                                 <div class="row">
                                     <div class="col-8">
                                         <div class="d-flex justify-content-start">
-                                            <div class="products-price">
-                                    <span class="text-dark"></span>p. {{ number_format($product->price) }}
+                                            <div class="">
+                                    <span style="font-size:12px; color:black; ">
+                                    {{ $product->user->regencies->name }}
+                                </span>
                                 </div>
                                         </div>
                                     </div>
                                     <div class="col-4">
                                         <div class="d-flex justify-content-end">
                                             
-                                            <span style="font-size:13px; color:#bc2929; ">
+                                            <span style="font-size:15px; color:black; ">
                                              {{-- Stok : {{ $product->stock }} --}}
-                                             1 Jam
+
+                                             <i class="fa-solid fa-map-location-dot"></i>
                     
                                             </span>
                                            
@@ -275,8 +275,15 @@ line-height: 1;
                                     </div>
                                 </div>
                     
-                            </a>
+                    
+                    
+                    
+                    
                                 
+
+                            </a>
+
+                          
                             @endif
                         </div>
 

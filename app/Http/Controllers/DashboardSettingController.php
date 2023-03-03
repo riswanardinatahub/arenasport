@@ -62,6 +62,8 @@ class DashboardSettingController extends Controller
 
     public function update(Request $request, $redirect){
 
+      
+
         $data = $request->all();
         $item = Auth::user();
         if($request->hasFile('images')){

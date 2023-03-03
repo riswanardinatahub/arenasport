@@ -81,6 +81,69 @@ Dashboard Lapangan Details Pages
 
 
 
+
+
+                        </div>
+                        <div class="row">
+                        <div class="col-12">
+                          <div class="form-group">
+                              <label for="">Pilih Jadwal Yang Ingin Di Buka</label> <br>
+                              <table class="table table-borderless table-responsive">
+                                        <thead>
+                                          
+                                        </thead>
+                                        <tbody>
+                                          <tr>
+                                            {{-- <input type="hidden" name="param" value="0">
+                                            <input type="checkbox" name="param" value="1"> --}}
+
+                                            <td><input type="checkbox" name="a" value="hallo1"> <label>00.00 - 01.00</label></td>
+                                            <td><input type="checkbox" name="b" value="hallo2"> <label>00.00 - 01.00</label></td>
+                                            <td><input type="checkbox" name="c" value="hallo3"> <label>00.00 - 01.00</label></td>
+                                            <td><input type="checkbox" name="d" value="hallo4"> <label>00.00 - 01.00</label></td>
+                                            <td><input type="checkbox" name="f" value="hallo5"> <label>00.00 - 01.00</label></td>
+                                            <td><input type="checkbox" name="g" value="hallo5"> <label>00.00 - 01.00</label></td>
+                                            
+                                          </tr>
+                                          <tr>
+                                            <td><input type="checkbox" name="as" value="hallo"> <label>00.00 - 01.00</label></td>
+                                            <td><input type="checkbox" name="as" value="hallo"> <label>00.00 - 01.00</label></td>
+                                            <td><input type="checkbox" name="as" value="hallo"> <label>00.00 - 01.00</label></td>
+                                            <td><input type="checkbox" name="as" value="hallo"> <label>00.00 - 01.00</label></td>
+                                            <td><input type="checkbox" name="as" value="hallo"> <label>00.00 - 01.00</label></td>
+                                            <td><input type="checkbox" name="as" value="hallo"> <label>00.00 - 01.00</label></td>
+                                            
+                                          </tr>
+                                          <tr>
+                                            <td><input type="checkbox" name="as" value="hallo"> <label>00.00 - 01.00</label></td>
+                                            <td><input type="checkbox" name="as" value="hallo"> <label>00.00 - 01.00</label></td>
+                                            <td><input type="checkbox" name="as" value="hallo"> <label>00.00 - 01.00</label></td>
+                                            <td><input type="checkbox" name="as" value="hallo"> <label>00.00 - 01.00</label></td>
+                                            <td><input type="checkbox" name="as" value="hallo"> <label>00.00 - 01.00</label></td>
+                                            <td><input type="checkbox" name="as" value="hallo"> <label>00.00 - 01.00</label></td>
+                                            
+                                          </tr>
+                                          <tr>
+                                            <td><input type="checkbox" name="as" value="hallo"> <label>00.00 - 01.00</label></td>
+                                            <td><input type="checkbox" name="as" value="hallo"> <label>00.00 - 01.00</label></td>
+                                            <td><input type="checkbox" name="as" value="hallo"> <label>00.00 - 01.00</label></td>
+                                            <td><input type="checkbox" name="as" value="hallo"> <label>00.00 - 01.00</label></td>
+                                            <td><input type="checkbox" name="as" value="hallo"> <label>00.00 - 01.00</label></td>
+                                            <td><input type="checkbox" name="as" value="hallo"> <label>00.00 - 01.00</label></td>
+                                            
+                                          </tr>
+                                         
+                                          
+                                        </tbody>
+                                      </table>
+
+                             
+                                
+                          
+
+                            </div>
+                            
+                          </div>
                         </div>
                         <div class="row">
                           <div class="col-12">
