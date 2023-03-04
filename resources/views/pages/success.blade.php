@@ -18,7 +18,7 @@
               Silahkan chat arenamu untuk lakukan transaksi dan <br>
               status akan berubah setelah transaksi dilakukan! 
             </p>
-            <a href="" class="btn btn-success w-50 mt-4">
+            <a href="{{ route('bookinglist') }}" class="btn btn-success w-50 mt-4">
               Cek Pesananmu
             </a>
 

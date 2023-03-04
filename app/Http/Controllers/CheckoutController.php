@@ -18,6 +18,7 @@ class CheckoutController extends Controller
     public function process(Request $request){
 
 
+    
      //ambil user   
      $user = Auth::user();
      $user->update($request->except('total_price','total_qty'));
@@ -36,17 +37,21 @@ class CheckoutController extends Controller
             'code'=> $code,
 
         ]);
+
+       
+
+        $takeidtarnsaction = $transaction->id;
     
         //transaction details
             foreach ($carts as $cart) {
                 $trx = 'TRX-'. mt_rand(000000, 999999);
                 
                 $transaction = TransactionDetail::create([
-                    'transactions_id'=> $transaction->id,
+                    'transactions_id'=> $takeidtarnsaction,
                     'products_id'=> $cart->product->id,
                     'price'=> $request->total_price,
                     'shipping_status'=> 'PENDING',
-                    'resi'=> 'PENDING',
+                    'resi'=> $cart->book_time,
                     'total_qty'=> $request->total_qty,
                     'code'=> $trx,
 
@@ -56,6 +61,7 @@ class CheckoutController extends Controller
     //delete cart data after checkout
     Cart::where('users_id', Auth::user()->id)->delete();
 
+    // return redirect('/dashboard/transactions');
     return view('pages.success');
 
 

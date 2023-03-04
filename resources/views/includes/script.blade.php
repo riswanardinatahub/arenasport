@@ -7,4 +7,12 @@
     AOS.init();
   </script>
 
+<script src="https://cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.3/js/dataTables.bootstrap5.min.js"></script>
+
+<script>
+  $(document).ready(function () {
+    $('#example').DataTable();
+  });
+</script>
   <script src="/script/navbar-scroll.js"></script>

@@ -22,7 +22,7 @@
                         </span>
                         @enderror
                       </div>
-                      {{-- <div class="form-group">
+                      <div class="form-group">
                         <label for="">No Telpon</label>
                         <input id="phone_number"  type="text" class="form-control @error('phone_number') is-invalid @enderror" name="phone_number"
                           value="{{ old('phone_number') }}" required autocomplete="phone_number" autofocus>
@@ -31,7 +31,7 @@
                           <strong>{{ $message }}</strong>
                         </span>
                         @enderror
-                      </div> --}}
+                      </div>
                       
                       <div class="form-group">
                         <label for="">Email</label>
@@ -98,7 +98,7 @@
 
                       <div class="form-group mt-3">
                         <label for="arena_photos">Upload Foto Arena</label>
-                        <input type="file" class="form-control @error('arena_photos') is-invalid @enderror" id="arena_photos" name="arena_photos">
+                        <input type="file" class="form-control @error('arena_photos') is-invalid @enderror" id="arena_photos" name="arena_photos" required>
 
                         @error('arena_photos')
                         <span class="invalid-feedback" role="alert">

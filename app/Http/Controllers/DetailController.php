@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Cart;
 use App\Product;
 use App\Schedule;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -20,6 +21,20 @@ class DetailController extends Controller
     {
         $product = Product::with(['galleries','user'])->where('slug',$id)->firstOrFail();
          $schedule = Schedule::where('products_id',$product->id)->where('status','yes')->get();
+
+         $now = Carbon::now();
+         $monday = $now->startOfWeek();
+         $tuesday = $monday->copy()->addDay();
+         $wednesday = $tuesday->copy()->addDay();
+         $thursday = $wednesday->copy()->addDay();
+         $friday = $thursday->copy()->addDay();
+         $saturday = $friday->copy()->addDay();
+         $sunday = $saturday->copy()->addDay();
+       
+
+        //   dd($monday->format('Y-m-d'),$tuesday->format('Y-m-d'),$wednesday->format('Y-m-d'),
+        //     $thursday->format('Y-m-d'),$friday->format('Y-m-d')
+        // ,$saturday->format('Y-m-d'),$sunday->format('Y-m-d'));
 
         return view('pages.detail',[
             'product' => $product,

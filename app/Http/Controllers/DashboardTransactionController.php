@@ -17,27 +17,56 @@ class DashboardTransactionController extends Controller
     public function index()
     {
 
-        $selltransaction = TransactionDetail::with(['transaction.user','product.galleries'])
-        ->whereHas('product', function($product){
-            $product->where('users_id', Auth::user()->id);
-        })->get();
-
+        $transaction = Transaction::where('users_id', Auth::user()->id)->get();
+        // dd($transaction);
         $buytransaction = TransactionDetail::with(['transaction.user','product.galleries'])
         ->whereHas('transaction', function($transaction){
             $transaction->where('users_id', Auth::user()->id);
         })->get();
 
         return view('pages.dashboard-transactions',[
-            'selltransaction' => $selltransaction,
             'buytransaction' => $buytransaction,
+            'transaction' => $transaction,
         ]);
+
+
+        // $selltransaction = TransactionDetail::with(['transaction.user','product.galleries'])
+        // ->whereHas('product', function($product){
+        //     $product->where('users_id', Auth::user()->id);
+        // })->get();
+
+        // $buytransaction = TransactionDetail::with(['transaction.user','product.galleries'])
+        // ->whereHas('transaction', function($transaction){
+        //     $transaction->where('users_id', Auth::user()->id);
+        // })->get();
+
+        // return view('pages.dashboard-transactions',[
+        //     'selltransaction' => $selltransaction,
+        //     'buytransaction' => $buytransaction,
+        // ]);
     }
 
     public function details(Request $request, $id)
     {
-        $transaction = TransactionDetail::with(['transaction.user','product.galleries'])
-        ->findOrFail($id);
+        // $transaction = TransactionDetail::with(['transaction.user','product.galleries'])
+        // ->findOrFail($id);
+        // return view('pages.dashboard-transactions-details',[
+        //     'transaction'=> $transaction
+        // ]);
+
+
+         $transaction = Transaction::find($id);
+
+        $transactiondetails = TransactionDetail::with(['transaction.user','product.galleries'])
+        ->where('transactions_id',$id)->get();
+
+        $jumlahproduk = TransactionDetail::with(['transaction.user','product.galleries'])
+        ->where('transactions_id',$id)->count();
+
+        // dd($transactiondetail);
         return view('pages.dashboard-transactions-details',[
+            'transactiondetails'=> $transactiondetails,
+            'jumlahproduk'=> $jumlahproduk,
             'transaction'=> $transaction
         ]);
     }

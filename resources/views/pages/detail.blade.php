@@ -16,7 +16,33 @@ border: 3px solid #358F66;
 }
 
 
+.tabs-size{
+  font-size:12px;
 
+}
+
+.nav-tabs {
+  border-bottom: 0px solid transparent !important;
+}
+.nav-tabs .nav-link {
+  border: 0px solid transparent !important;
+}
+
+
+.nav-tabs .tina .nav-link {
+  color: black;
+}
+
+
+.nav-tabs .tina .nav-link.active {
+  background-color: #358F66; !important;
+  color: white;
+}
+
+.tina > a:hover {
+  color: green;
+ 
+}
 
 
 i{
@@ -36,6 +62,9 @@ line-height: 1;
   background-color:white !important;
   border: 3px solid #358F66;
   
+}
+.tab-pane{
+  font-size:12px;
 }
 
 
@@ -246,10 +275,10 @@ line-height: 1;
                               
                                    
                                     
-                                <select name="schedule" id="" class="form-control">
+                                <select name="book_time" id="" class="form-control">
                                     <option value="" selected> Pilih Jadwal</option>
                                     @foreach ($schedule as $schedule)
-                                    <option value="{{ $schedule->id }}">{{ $schedule->time }}</option>
+                                    <option value="{{ $schedule->time }}">{{ $schedule->time }}</option>
                                     @endforeach
                                 </select>
                                    
@@ -276,9 +305,102 @@ line-height: 1;
             <a href="{{ route('login') }}" class="btn btn-warning px-4 text-white btn-block mb-3"> Sign In To Add</a>
             @endauth
 
+            
+
+       
+          <h1 class="mt-2" style="font-weight: 900; font-size: 21px;
+                  line-height: 32px;">Jadwal Terbooking</h1>
+            <ul class="nav nav-tabs bordered text-center" id="myTab" role="tablist">
+              <li class="nav-item tina">
+                <a class="nav-link tabs-size active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Senin <br> 10-11-2022</a>
+              </li>
+              <li class="nav-item tina">
+                <a class="nav-link tabs-size" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Senin <br> 10-11-2022</a>
+              </li>
+              <li class="nav-item tina">
+                <a class="nav-link tabs-size" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Senin <br> 10-11-2022</a>
+              </li>
+              <li class="nav-item tina">
+                <a class="nav-link tabs-size" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Senin <br> 10-11-2022</a>
+              </li>
+              <li class="nav-item tina">
+                <a class="nav-link tabs-size" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Senin <br> 10-11-2022</a>
+              </li>
+              <li class="nav-item tina">
+                <a class="nav-link tabs-size" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Senin <br> 10-11-2022</a>
+              </li>
+              <li class="nav-item tina">
+                <a class="nav-link tabs-size" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Senin <br> 10-11-2022</a>
+              </li>
+            </ul>
+            
+            
+       
+            <div class="tab-content mt-3 pl-3 pr-4" id="myTabContent">
+              <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <div class="row">
+                  <div class="col-2 pb-2">
+                    10.00 - 11.00
+                  </div>
+                  <div class="col-2 pb-2">
+                    10.00 - 11.00
+                  </div>
+                  <div class="col-2 pb-2">
+                    10.00 - 11.00
+                  </div>
+                  <div class="col-2 pb-2">
+                    10.00 - 11.00
+                  </div>
+                  <div class="col-2 pb-2">
+                    10.00 - 11.00
+                  </div>
+                  <div class="col-2 pb-2">
+                    10.00 - 11.00
+                  </div>
+                  <div class="col-2 pb-2">
+                    10.00 - 11.00
+                  </div>
+                  <div class="col-2 pb-2">
+                    10.00 - 11.00
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+              <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+              <div class="row">
+                  <div class="col-2 pb-2">
+                    10.00 - 11.00
+                  </div>
+                  <div class="col-2 pb-2">
+                    10.00 - 11.00
+                  </div>
+                  <div class="col-2 pb-2">
+                    10.00 - 11.00
+                  </div>
+                  <div class="col-2 pb-2">
+                    10.00 - 11.00
+                  </div>
+                  <div class="col-2 pb-2">
+                    10.00 - 11.00
+                  </div>
+                  <div class="col-2 pb-2">
+                    10.00 - 11.00
+                  </div>
+                  <div class="col-2 pb-2">
+                    10.00 - 11.00
+                  </div>
+                  <div class="col-2 pb-2">
+                    10.00 - 11.00
+                  </div>
+                </div>
+                </div>
+            </div>
+
+        
+
          
 
-            <div  class="row mt-2">
+              <div  class="row mt-2">
 
                     <div class="col-12">
                     @if ($product->user->address_two)

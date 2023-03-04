@@ -73,8 +73,8 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'store_name' => ['nullable', 'string', 'max:255'],
             'categories_id' => ['nullable', 'integer', 'exists:categories,id'],
-            'is_store_open' => ['required'],
-            'arena_photos' => ['required'],
+            'is_store_open' => ['required']
+            
         ]);
     }
 
@@ -86,6 +86,8 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+
+        // dd($data);
         // Http::post('https://desaku-desacuss.masuk.id/api/register', [
         //                 'email' => $data['email'],
         //                 'password' => Hash::make($data['password']),
@@ -124,7 +126,7 @@ class RegisterController extends Controller
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'arena_photos' => $data['arena_photos'],
+            'arena_photos' => isset($data['arena_photos']) ? $data['arena_photos'] : NULL,
             'phone_number' => isset($data['phone_number']) ? $data['phone_number'] : NULL,
             'password' => Hash::make($data['password']),
             'provinces_id' => isset($data['provinces_id']) ? $data['provinces_id'] : NULL,

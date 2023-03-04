@@ -207,6 +207,32 @@ class HomeController extends Controller
             return redirect()->back()->with(['success' => 'Data Behasil di Update']);
     }
 
+    public function bookinglist(){
+        $transaction = Transaction::where('users_id', Auth::user()->id)->get();
+
+        return view('pages.bookinglist',compact('transaction'));
+    }
+
+    public function detailbooking($id){
+        $transaction = Transaction::find($id);
+
+        // dd($transaction);
+
+        $transactiondetails = TransactionDetail::with(['transaction.user','product.galleries'])
+        ->where('transactions_id',$id)->get();
+
+        $jumlahproduk = TransactionDetail::with(['transaction.user','product.galleries'])
+        ->where('transactions_id',$id)->count();
+
+        // dd($transactiondetail);
+        return view('pages.detailbooking',[
+            'transactiondetails'=> $transactiondetails,
+            'jumlahproduk'=> $jumlahproduk,
+            'transaction'=> $transaction
+        ]);
+        // return view('pages.detailbooking');
+    }
+
     
     
 }

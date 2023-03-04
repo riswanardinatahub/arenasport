@@ -2,3 +2,4 @@
   <link href="/style/main.css" rel="stylesheet" />
   {{-- <script src="https://kit.fontawesome.com/58cfd4d2e0.js" crossorigin="anonymous"></script> --}}
   <script src="https://kit.fontawesome.com/069e062e69.js" crossorigin="anonymous"></script>
+<link href="https://cdn.datatables.net/1.13.3/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
