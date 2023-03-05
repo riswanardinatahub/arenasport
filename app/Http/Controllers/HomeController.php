@@ -216,6 +216,7 @@ class HomeController extends Controller
 
     public function detailbooking($id){
         $transaction = Transaction::find($id);
+        $kode = Transaction::find($id);
 
         // dd($transaction);
 
@@ -229,9 +230,10 @@ class HomeController extends Controller
         return view('pages.detailbooking',[
             'transactiondetails'=> $transactiondetails,
             'jumlahproduk'=> $jumlahproduk,
-            'transaction'=> $transaction
+            'transaction'=> $transaction,
+            'kode'=> $kode,
         ]);
-        // return view('pages.detailbooking');
+       
     }
 
     
