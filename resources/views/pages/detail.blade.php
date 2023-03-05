@@ -267,6 +267,7 @@ line-height: 1;
             <form action="{{ route('detail-add', $product->id) }}" method="POST" enctype="multipart/form-data">
               @csrf
               <div  class="row mt-2">
+                            <input type="hidden" class="form-control" name="arena_id" value="{{ $product->users_id }}">
 
                     <div class="col-12 col-md-4 col-lg-4">
                         <div class="input-group mb-3">
@@ -377,9 +378,9 @@ line-height: 1;
                     {{ $datamonday->book_time }}
                   </div>
                  @empty
-                 <div class="row">
-                  Data Tidak Ada
-                 </div> 
+                 <div class="row px-5 mx-5">
+                    Data Tidak Ada
+                   </div>  
                 @endforelse
 
                

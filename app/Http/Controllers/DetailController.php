@@ -66,43 +66,28 @@ class DetailController extends Controller
         // dd($request->all());
 
         $datacart = Cart::where('users_id',Auth::user()->id)->first();
+        $datacartproduct = Cart::where('users_id',Auth::user()->id)->get();
 
-        // $cekbedaproductincart = 
-
-        // if($datacart->products_id == $id && $datacart->users_id == Auth::user()->id){
-        //      return redirect()->route('cart')->with(['success' => 'SIlahkan Tambahkan Jadwal yang sama']);
-        // }
-
-        if($datacart){
-             if($datacart->users_id == Auth::user()->id && $datacart->book_date == $request->book_date && $datacart->book_time == $request->book_time && $datacart->products_id == $id){
+        foreach ($datacartproduct as $datamasuk) {
+            if($datamasuk->users_id == Auth::user()->id && $datamasuk->book_date == $request->book_date && $datamasuk->book_time == $request->book_time && $datamasuk->products_id == $id){
              return redirect()->route('cart')->with(['success' => 'Mohon Maaf Jadwal Sudah Di Tambahkan']);
-            }else{
-                
-        $data = [
-            'products_id'=> $id,
-            'book_date'=> $request->book_date,
-            'book_time'=> $request->book_time,
-            'users_id'=> Auth::user()->id,
-        ];
-
-        $produk = Product::find($id);
-
-        $jumlah = $produk->stock - 1;
-        $produk->update(['stock'=> $jumlah]);
-        $produk->save();
-
-        Cart::create($data);
-
-        return redirect()->route('cart');
             }
+            if($datamasuk->arena_id <> $request->arena_id){
+             return redirect()->route('cart')->with(['success' => 'Kamu Hanya Bisa Memilih Sesuai Arena Kamu Atau Kamu Bisa Lakukan Checkout Terlebih Dahulu Kemudian Pilih Arena Baru']);
+            }
+
         }
 
 
+        
+
+
         $data = [
             'products_id'=> $id,
             'book_date'=> $request->book_date,
             'book_time'=> $request->book_time,
             'users_id'=> Auth::user()->id,
+            'arena_id'=> $request->arena_id,
         ];
 
         $produk = Product::find($id);
@@ -117,7 +102,7 @@ class DetailController extends Controller
         return redirect()->route('cart');
 
 
-        // dd($datacart->id);
+       
        
     }
 
