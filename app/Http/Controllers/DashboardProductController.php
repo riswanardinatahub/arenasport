@@ -142,7 +142,7 @@ class DashboardProductController extends Controller
 
      public function update(ProductRequest $request, $id)
     {
-        dd($request->DATAID);
+        // dd($request->DATAID);
         $data = $request->all();
       
         $item = Product::findOrfail($id);
