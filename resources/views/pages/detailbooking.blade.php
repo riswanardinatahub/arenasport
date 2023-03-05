@@ -133,7 +133,7 @@ Booking Detail
                               Total Biaya
                             </div>
                             <div class="product-subtitle ">
-                             <input disabled  value="RP. {{ number_format($transaction->price) }}" type="text" class="form-control" >
+                             <input disabled  value="RP. {{ number_format($kode->total_price) }}" type="text" class="form-control" >
 
                               
 

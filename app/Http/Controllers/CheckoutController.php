@@ -17,11 +17,11 @@ class CheckoutController extends Controller
 {
     public function process(Request $request){
 
-
+    // dd($request->total_price);
     
      //ambil user   
      $user = Auth::user();
-     $user->update($request->except('total_price','total_qty'));
+    //  $user->update($request->except('total_price','total_qty'));
 
      //proses checkout
      $code = 'STORE-'. mt_rand(000000, 999999);
@@ -50,7 +50,7 @@ class CheckoutController extends Controller
                 $transaction = TransactionDetail::create([
                     'transactions_id'=> $takeidtarnsaction,
                     'products_id'=> $cart->product->id,
-                    'price'=> $request->total_price,
+                    'price'=> $cart->product->price,
                     'book_date'=> $cart->book_date,
                     'book_time'=> $cart->book_time,
                     'shipping_status'=> 'PENDING',

@@ -143,12 +143,12 @@ Dashboard Transactions Details Pages
                             <div class="product-subtitle ">
                               <div class="row">
                                 <div class="col-12 col-md-9 col-lg-9 pr-md-0">
-                             <input disabled  value="{{ $transaction->transaction->user->phone_number }}" type="text" class="form-control" >
+                             <input disabled  value="0{{ $transaction->transaction->user->phone_number }}" type="text" class="form-control" >
 
                                 </div>
                                 <div class="col-12 col-md-3 col-lg-3 pl-md-1">
                               <a target="_blank"
-                                href="https://api.whatsapp.com/send?text=Terimakasih Telah Memesan Lapangan ini silahkan {{ $transaction->product->name }}&phone={{ $transaction->transaction->user->phone_number }}"
+                                href="https://api.whatsapp.com/send?text=Terimakasih Terimakasih Telah Melakukan pemesanan {{ $transaction->product->name }} dengan kode booking {{ $transactionss->code }} total biaya {{ $transactionss->total_price }} &phone=62{{ $transaction->transaction->user->phone_number }}"
                                 type="button" class="btn btn-success d-block ">Whatsapp</a>
                                 </div>
                               </div>
@@ -184,7 +184,7 @@ Dashboard Transactions Details Pages
                               Total Biaya
                             </div>
                             <div class="product-subtitle ">
-                             <input disabled  value="RP. {{ number_format($transaction->price) }}" type="text" class="form-control" >
+                             <input disabled  value="RP. {{ number_format($transactionss->total_price) }}" type="text" class="form-control" >
 
                               
 
