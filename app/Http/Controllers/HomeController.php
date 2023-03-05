@@ -124,7 +124,8 @@ class HomeController extends Controller
 
         }elseif($request->arena == '' && $request->regencies_id && $request->category){
             $products = Product::with(['user.regencies','category','galleries'])
-                                ->where('status','APPROVE')->latest() 
+                                ->where('status','APPROVE')->latest()
+                                ->where('categories_id',$datakategori)
                                 ->whereHas('user', function($coba) use($dataarena,$datakota){
                                     $coba->where('regencies_id',$datakota);
                                 })->get()->unique('users_id');
