@@ -102,7 +102,7 @@ Store Dashboard Products Details Pages
                                         
                                       @endif
                                       @if ($data->status == 'yes')
-                                      <a href="{{ route('scheduleudapte', $data->id) }}" class="btn btn-sm btn-danger "><i style="color: white;" class="fa-regular fa-rectangle-xmark"></i> </a>  
+                                      <a href="{{ route('scheduleudapte', $data->id) }}" class="btn btn-sm btn-danger "><i style="color: white;" class="fa-solid fa-trash"></i></a>  
                                         
                                       @else
                                       <a href="{{ route('scheduleudapte', $data->id) }}" class="btn btn-sm btn-success"><i style="color: white;" class="fa-solid fa-check"></i> </a>

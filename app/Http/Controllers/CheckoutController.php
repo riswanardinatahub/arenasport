@@ -54,7 +54,7 @@ class CheckoutController extends Controller
                     'book_time'=> $cart->book_time,
                     'shipping_status'=> 'PENDING',
                     'resi'=> 'PENDING',
-                    'total_qty'=> $request->total_qty,
+                    'total_qty'=> 1,
                     'code'=> $trx,
 
                 ]);

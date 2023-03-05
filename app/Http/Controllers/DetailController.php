@@ -67,6 +67,12 @@ class DetailController extends Controller
 
         $datacart = Cart::where('users_id',Auth::user()->id)->first();
 
+        // $cekbedaproductincart = 
+
+        // if($datacart->products_id == $id && $datacart->users_id == Auth::user()->id){
+        //      return redirect()->route('cart')->with(['success' => 'SIlahkan Tambahkan Jadwal yang sama']);
+        // }
+
         if($datacart){
              if($datacart->users_id == Auth::user()->id && $datacart->book_date == $request->book_date && $datacart->book_time == $request->book_time && $datacart->products_id == $id){
              return redirect()->route('cart')->with(['success' => 'Mohon Maaf Jadwal Sudah Di Tambahkan']);
