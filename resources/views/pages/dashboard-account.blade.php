@@ -162,6 +162,13 @@ Store Dashboard Account
                  
                   <div class="col-md-6">
                     <div class="form-group">
+                      <label for="maps">Url Maps </label>
+                      <input type="text" class="form-control" id="maps" name="maps" value="{{ $user->maps }}">
+                    </div>
+                  </div>
+
+                  <div class="col-md-12">
+                    <div class="form-group">
                       <label for="address_two">Lokasi Maps (Latitude,Longitude)</label>
                       <input type="text" class="form-control" id="address_two" name="address_two" value="{{ $user->address_two }}">
                     </div>

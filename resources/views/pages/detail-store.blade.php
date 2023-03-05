@@ -44,11 +44,17 @@ Detail Arena
                     </div>
 
                     <div class="col-12 col-md-9 mt-4">
-                        <span style="font-size: 12px; color: black;"> Jl. Gndangan Kecamatan Riau no. 34 Samping Bengkel</span>
+                        <span style="font-size: 12px; color: black;">{{ $user->address_one }}</span>
 
                     </div>
                     <div class="col-12 col-md-3 mt-4">
-                    <a href="https://goo.gl/maps/AhrfJKB7r62KFg2M7"><span style="font-size: 13px; color: black;"><i class="fa-solid fa-street-view mr-1"></i> Lihat Peta </span></a>
+                    @if ($user->maps)
+                    <a href="{{ $user->maps }}"><span style="font-size: 13px; color: black;"><i class="fa-solid fa-street-view mr-1"></i> Lihat Peta </span></a>
+                      
+                    @else
+                    <a href="#"><span style="font-size: 13px; color: black;"><i class="fa-solid fa-street-view mr-1"></i> Lihat Peta </span></a>
+                      
+                    @endif
                      
 
                     </div>
