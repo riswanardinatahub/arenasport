@@ -17,33 +17,36 @@ class DashboardTransactionController extends Controller
     public function index()
     {
 
-        $transaction = Transaction::where('users_id', Auth::user()->id)->get();
-        // dd($transaction);
-        $buytransaction = TransactionDetail::with(['transaction.user','product.galleries'])
-        ->whereHas('transaction', function($transaction){
-            $transaction->where('users_id', Auth::user()->id);
-        })->get();
-
-        return view('pages.dashboard-transactions',[
-            'buytransaction' => $buytransaction,
-            'transaction' => $transaction,
-        ]);
-
-
-        // $selltransaction = TransactionDetail::with(['transaction.user','product.galleries'])
-        // ->whereHas('product', function($product){
-        //     $product->where('users_id', Auth::user()->id);
-        // })->get();
-
+        // $transaction = Transaction::where('users_id', Auth::user()->id)->get();
+        // // dd($transaction);
         // $buytransaction = TransactionDetail::with(['transaction.user','product.galleries'])
         // ->whereHas('transaction', function($transaction){
         //     $transaction->where('users_id', Auth::user()->id);
         // })->get();
 
         // return view('pages.dashboard-transactions',[
-        //     'selltransaction' => $selltransaction,
         //     'buytransaction' => $buytransaction,
+        //     'transaction' => $transaction,
         // ]);
+
+
+        $selltransaction = TransactionDetail::with(['transaction.user','product.galleries'])
+        ->whereHas('product', function($product){
+            $product->where('users_id', Auth::user()->id);
+        })->get();
+
+        $buytransaction = TransactionDetail::with(['transaction.user','product.galleries'])
+        ->whereHas('transaction', function($transaction){
+            $transaction->where('users_id', Auth::user()->id);
+        })->get();
+
+        $transaction = Transaction::where('arena_id', Auth::user()->id)->get();
+
+        return view('pages.dashboard-transactions',[
+            'selltransaction' => $selltransaction,
+            'buytransaction' => $buytransaction,
+            'transaction' => $transaction,
+        ]);
     }
 
     public function details(Request $request, $id)
@@ -56,6 +59,8 @@ class DashboardTransactionController extends Controller
 
 
          $transaction = Transaction::find($id);
+         $transactionss = Transaction::find($id);
+         
 
         $transactiondetails = TransactionDetail::with(['transaction.user','product.galleries'])
         ->where('transactions_id',$id)->get();
@@ -67,18 +72,21 @@ class DashboardTransactionController extends Controller
         return view('pages.dashboard-transactions-details',[
             'transactiondetails'=> $transactiondetails,
             'jumlahproduk'=> $jumlahproduk,
-            'transaction'=> $transaction
+            'transaction'=> $transaction,
+            'transactionss'=> $transactionss
         ]);
     }
 
     public function update(Request $request, $id){
-        $data = $request->all();
 
-        $item = TransactionDetail::findOrFail($id);
+        // dd($id);
+        $item = Transaction::find($id);
 
-        $item->update($data);
+        $item->update([
+            'transaction_status' => $request->transaction_status
+        ]);
 
-        return redirect()->route('dashboard-transaction-details',$id);
+        return redirect()->back();
     }
 
 

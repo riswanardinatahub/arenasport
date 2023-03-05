@@ -314,7 +314,7 @@ line-height: 1;
             </form>
 
             @else
-            <a href="{{ route('login') }}" class="btn btn-warning px-4 text-white btn-block mb-3"> Sign In To Add</a>
+            <a href="{{ route('login') }}" class="btn btn-warning px-4 text-white btn-block mb-3"> Masuk Terlebih Dahulu Untuk Memilih Jadwal</a>
             @endauth
 
             

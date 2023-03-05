@@ -5,7 +5,77 @@ Dashboard Transactions Pages
 @endsection
 
 @section('content')
- <div class="section-content section-dashboard-home" data-aos="fade-up">
+<div class="section-content section-dashboard-home" data-aos="fade-up">
+    <div class="container-fluid">
+        <div class="dashboard-heading">
+            <h2 class="dashboard-title">
+               Transaction
+            </h2>
+            <p class="dashboard-subtitle">
+               Transaction
+            </p>
+        </div>
+        <div class="dashboard-content">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                           
+        <div class="table-responsive">
+                    <table id="exampless" class="table table-bordered" style="width:100%">
+                      <thead>
+                        <tr>
+                          <th scope="col">No</th>
+                          <th scope="col">Kode Booking</th>
+                          <th scope="col">Total Biaya</th>
+                          <th scope="col">Tanggal Pesan</th>
+                          <th scope="col">status</th>
+                          <th scope="col">Aksi</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      @php
+                        $no=1;
+                      @endphp
+                      @foreach ($transaction as $data)
+                        <tr>
+                          <th scope="row">{{ $no++ }}</th>
+                          <td>{{ $data->code }}</td>
+                          <td>Rp. {{ number_format($data->total_price,0,',','.') }}</td>
+                          <td>{{ $data->created_at->format('d-m-Y') }}</td>
+                          <td>
+                            @if ($data->transaction_status == 'PENDING')
+                            <span class="font-weight-bold"  style="color: red;">Belum Bayar</span> 
+                            @elseif ($data->transaction_status == 'DP')
+                            <span class="font-weight-bold" style="color: orange;">DP</span>
+                            @else
+                            <span class="font-weight-bold" style="color: green;">Lunas</span>
+                              
+                            @endif
+                        
+                          
+                          </td>
+                          <td><a href="{{ route('dashboard-transaction-details', $data->id) }}" class="btn btn-sm btn-success">Detail</a></td>
+                        </tr>
+                      @endforeach
+                        
+                        
+                      </tbody>
+                    </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+ {{-- <div class="section-content section-dashboard-home" data-aos="fade-up">
           <div class="container-fluid">
             <div class="dashboard-heading">
               <h2 class="dashboard-title">
@@ -14,6 +84,9 @@ Dashboard Transactions Pages
               <p class="dashboard-subtitle">
                 Perbanyak transaksi untuk toko mu
               </p>
+
+            
+
             </div>
              <div class="dashboard-content">
 
@@ -64,7 +137,7 @@ Dashboard Transactions Pages
                 </div>
               </div>
             </div>
-            {{-- <div class="dashboard-content">
+            <div class="dashboard-content">
 
               <div class="row">
                 <div class="col-12 mt-2">
@@ -140,8 +213,8 @@ Dashboard Transactions Pages
 
                 </div>
               </div>
-            </div> --}}
+            </div>
           </div>
-        </div>
+  </div> --}}
 
 @endsection

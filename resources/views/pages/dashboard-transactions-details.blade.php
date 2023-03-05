@@ -1,7 +1,7 @@
 @extends('layouts.dashboard')
 
 @section('title')
-Store Dashboard Transactions Details Pages
+Dashboard Transactions Details Pages
 @endsection
 
 @section('content')
@@ -20,7 +20,7 @@ Store Dashboard Transactions Details Pages
 
     <!-- Button trigger modal -->
           <!-- Modal -->
-          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" data-backdrop="false" aria-hidden="true">
+          {{-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" data-backdrop="false" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
@@ -53,10 +53,10 @@ Store Dashboard Transactions Details Pages
 
               </div>
             </div>
-          </div>
+          </div> --}}
 
 
-          <div class="modal fade" id="buktipembayaran" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" data-backdrop="false" aria-hidden="true">
+          {{-- <div class="modal fade" id="buktipembayaran" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" data-backdrop="false" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
@@ -80,25 +80,14 @@ Store Dashboard Transactions Details Pages
 
               </div>
             </div>
-          </div>
-
-
-
-
-
-
-          
-
+          </div> --}}
 
     <div class="dashboardcontent" id="transactionDetails">
-
-
-
       <div class="row">
       <div class="col-12 col-md-8">
                     <div class="row mt-3">
                         <div class="col-12 mt-2">
-                        <h5 class="mb-3">Detail Transaction</h5>
+                        <h5 class="mb-3">Detail Transaction </h5>
                          
                         </div>
                     </div>
@@ -108,251 +97,127 @@ Store Dashboard Transactions Details Pages
         <div class="col-12">
           <div class="card">
             <div class="card-body">
-              @foreach ($transactiondetails as $transaction)
-                            <a href="#"
-                                class="card card-list d-block">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-md-1">
-                                            <img src="{{ Storage::url($transaction->product->galleries->first()->photos ?? '') }}"
-                                                class="w-75">
-                                        </div>
-                                        <div class="col-md-4">
-                                            {{ $transaction->product->name }}
-                                        </div>
-                                        <div class="col-md-3">
-                                            {{ $transaction->price }}
-                                        </div>
-                                        <div class="col-md-3">
-                                            {{ $transaction->total_qty }}
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                            </a>
-                         @endforeach
+                    @foreach ($transactiondetails as $transaction)
+                      <a href="#" class="card card-list d-block">
+                        <div class="card-body">
+                          <div class="row">
+                            <div class="col-md-1">
+                              <img src="{{ Storage::url($transaction->product->galleries->first()->photos ?? '') }}"
+                                class="w-75">
+                            </div>
+                            <div class="col-md-3">
+                              {{ $transaction->product->name }}
+                            </div>
+                            <div class="col-md-3">
+                              
+                              RP. {{ number_format($transaction->price) }}
+                            </div>
+                            {{-- <div class="col-md-2">
+                              {{ $transaction->total_qty }}
+                            </div> --}}
 
+                            <div class="col-md-2">
+                              {{ $transaction->book_date }} 
+                            </div>
 
+                            <div class="col-md-2">
+                              {{ $transaction->book_time }}
+                            </div>
 
-
-
-
-
-
-
-
+                          </div>
+                        </div>
+                      </a>
+                    @endforeach
              
-              <form action="{{ route('dashboard-transaction-update', $transaction->id) }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('dashboard-transaction-update',$transactionss->id) }}" method="POST" enctype="multipart/form-data">
               @csrf
                 <div class="row">
                   <div class="col-12 mt-4">
-                    <h5>Informasi</h5>
+                    <span class="" style="font-size: 20px; color: black; font-weight:600;"> Informasi</span>
                   </div>
-                  @if (Auth::user()->id == $transaction->product->users_id)
-                    <div class="col-12 col-md-12">
-                        <div class="product-title">
-                          No Telpon Pembeli
-                        </div>
-                        <div class="product-subtitle ">
-                          {{ $transaction->transaction->user->phone_number }}  <a target="_blank" href="https://api.whatsapp.com/send?text=Hallo saya dokter {{ $transaction->product->name }}&phone={{ $transaction->transaction->user->phone_number }}" type="button" class="btn btn-success btn-sm">Chat</a>
-                        </div>
-                        <div class="product-title">
-                          Konfirmasi Status Pembelian
-                        </div>
-                          @if ($transaction->transaction->transaction_status == 'SUCCESS')
-                            <button disabled type="button" class="btn btn-success btn-sm">Selesai</button>
-                          @else
-                            <a href="/konfirmasistatuspenjual/{{ $transaction->transaction->id }}" class="btn btn-warning">Konfrimasi Transasksi</a>
-                          @endif
+                  
+                  <div class="col-12 col-md-6 mb-3">
+                            <div class="product-title">
+                              No Telpon 
+                            </div>
+                            <div class="product-subtitle ">
+                              <div class="row">
+                                <div class="col-12 col-md-9 col-lg-9 pr-md-0">
+                             <input disabled  value="{{ $transaction->transaction->user->phone_number }}" type="text" class="form-control" >
+
+                                </div>
+                                <div class="col-12 col-md-3 col-lg-3 pl-md-1">
+                              <a target="_blank"
+                                href="https://api.whatsapp.com/send?text=Terimakasih Telah Memesan Lapangan ini silahkan {{ $transaction->product->name }}&phone={{ $transaction->transaction->user->phone_number }}"
+                                type="button" class="btn btn-success d-block ">Whatsapp</a>
+                                </div>
+                              </div>
+                              
+                               
+                            </div>
+
                     </div>
 
-                    @else
-                      <div class="col-12 col-md-12">
-                        <div class="product-title">
-                          No Telpon Penjual
-                        </div>
-                        <div class="product-subtitle ">
-                          {{ $transaction->product->user->phone_number }} <a target="_blank" href="https://api.whatsapp.com/send?text=Hallo saya dokter {{ $transaction->product->name }}&phone={{ $transaction->transaction->user->phone_number }}" type="button" class="btn btn-success btn-sm">Chat</a>
-                        </div>
+                    <div class="col-12 col-md-6 mb-3">
+                            <div class="product-title">
+                              Tanggal Transaksi
+                            </div>
+                            <div class="product-subtitle">
+                             <input disabled  value="{{ $transaction->created_at->format('d-m-Y') }}" type="text" class="form-control" >
 
-                       @if ($transaction->transaction->invoice)
+                            </div>
+                          </div>
+                          
 
-                       <div class="product-title">
-                          Konfirmasi Status Pembelian
-                        </div>
-                        
-                        @if ($transaction->transaction->status_transaction_customer == 'SUCCESS')
-                          <button disabled type="button" class="btn btn-success btn-sm">Selesai</button>
-                        @else
+                          <div class="col-12 col-md-6 mb-3">
+                            <div class="product-title">
+                              Total Pesanan
+                            </div>
+                            <div class="product-subtitle ">
+                             <input disabled  value="{{ $jumlahproduk}}" type="text" class="form-control" >
 
-                          <a href="/konfirmasistatuscustomer/{{ $transaction->transaction->id }}" class="btn btn-warning">Konfrimasi Transasksi</a>
-                        @endif
+                              
+                            </div>
+                          </div>
+                          <div class="col-12 col-md-6 mb-3">
+                            <div class="product-title">
+                              Total Biaya
+                            </div>
+                            <div class="product-subtitle ">
+                             <input disabled  value="RP. {{ number_format($transaction->price) }}" type="text" class="form-control" >
 
-                        <div class="product-title">
-                          Cek Bukti Pembayaran
-                        </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#buktipembayaran">
-                          Bukti Pemyaran
-                        </button>
-                         
-                       @else
-                       <div class="product-title">
-                          Upload Bukti Pembayaran
-                        </div>
-                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                          Upload Bukti Pembayaran
-                        </button>
-                       @endif
+                              
 
-                        
+                            </div>
+                          </div>
 
-                        
-                        
-                        
-                       
-                      </div>
-                    @endif
 
-                  <div class="mt-3 col-12 col-md-6">
-                      <div class="product-title">
-                        Status Pengiriman
-                      </div>
-                      <div class="product-subtitle">
-                      @if ($transaction->shipping_status == 'PENDING')
-                          Belum Di Kirim
-                      @elseif ($transaction->shipping_status == 'SHIPPING')
-                          Sedang Dalam Perjalanan
-                      @else
-                          Selesai
-                      @endif
-       
-                      </div>
-                    </div>
-                    <div class="col-12 col-md-6">
-                      <div class="product-title">
-                        Tanggal Transaksi
-                      </div>
-                      <div class="product-subtitle">
-                        {{ $transaction->created_at->format('d-m-Y') }}
-                      </div>
-                    </div>
-                    <div class="col-12 col-md-6">
-                      <div class="product-title">
-                        Status Transaksi
-                      </div>
-                      
-                      @if ($transaction->transaction->transaction_status == 'SUCCESS' AND $transaction->transaction->status_transaction_customer == 'SUCCESS')
-                       <div class="product-subtitle text-success">
-                        SUCCESS
-                         </div>
-                        @else
-                          <div class="product-subtitle text-danger">
-                        PENDING
-                         </div>
-                      @endif
+            
 
-                     </div>
-
-                     <div class="col-12 col-md-6">
-                      <div class="product-title">
-                        Total Produk
-                      </div>
-                      <div class="product-subtitle ">
-                        {{ $jumlahproduk}}
-                      </div>
-                    </div>
-                    <div class="col-12 col-md-6">
-                      <div class="product-title">
-                        Total Biaya
-                      </div>
-                      <div class="product-subtitle ">
-                      RP. {{ number_format($transaction->price) }}
-                       
-                      </div>
-                    </div>
                   <div class="col-12">
                     <div class="row">
-                      <div class="col-12 col-md-6">
-                        <div class="product-title">
-                          Lokasi 1
-                        </div>
-                        <div class="product-subtitle">
-                          {{ $transaction->transaction->user->address_one }}
-                        </div>
-                      </div>
-
-                      <div class="col-12 col-md-6">
-                        <div class="product-title">
-                          silahkan melakukan pembayaran ke rekening :
-                        </div>
-                        <div class="product-subtitle">
-                         <img src="/images/bca.png" style="width:70px;" alt=""> 3370968798 a/n Al hilal julianda
-                          
-                        </div>
-                      </div>
-                      
-                      {{-- <div class="col-12 col-md-6">
-                        <div class="product-title">
-                          Province
-                        </div>
-                        <div class="product-subtitle">
-                          {{ App\Models\Province::find($transaction->transaction->user->provinces_id)->name }}
-                        </div>
-                      </div>
-                      <div class="col-12 col-md-6">
-                        <div class="product-title">
-                          City
-                        </div>
-                        <div class="product-subtitle">
-                         {{ App\Models\Regency::find($transaction->transaction->user->regencies_id)->name }}
-                        </div>
-                      </div>
-                      <div class="col-12 col-md-6">
-                        <div class="product-title">
-                          Postal Code
-                        </div>
-                        <div class="product-subtitle">
-                         {{ $transaction->transaction->user->zip_code }}
-                        </div>
-                      </div>
-                      <div class="col-12 col-md-6">
-                        <div class="product-title">
-                          Country
-                        </div>
-                        <div class="product-subtitle">
-                         {{ $transaction->transaction->user->country }}
-                        </div>
-                      </div> --}}
-
-                      @if (Auth::user()->id == $transaction->product->users_id)
-                        <div class="col-12 col-md-3">
+                      <div class="col-12 col-md-3">
                         <div class="product-title">
                           Status Pengiriman
                         </div>
-                        <select name="shipping_status" id="status" class="form-control" v-model=status>
-                          <option value="PENDING">Belum Di Kirim</option>
-                          <option value="SHIPPING">Sedang Dalam Perjalanan</option>
-                          <option value="SUCCESS">Selesai</option>
+                        <select name="transaction_status" id="status" class="form-control" v-model=status>
+                          <option value="PENDING">Belum Bayar</option>
+                          <option value="DP">DP</option>
+                          <option value="SUCCESS">Lunas</option>
                         </select>
                       </div>
-                      {{-- <template v-if="status == 'SHIPPING' ">
-                        <div class="col-md-3">
-                          <div class="product-title">Input Resi</div>
-                          <input type="text" class="form-control" name="resi" v-model="resi">
-                        </div>
-                        <div class="col-md-2">
-                          <button type="submit" class="btn btn-success btn-block mt-4">Update Resi</button>
-                        </div>
-                      </template> --}}
+                 
                     </div>
                   </div>
                 </div>
+
+            
                 <div class="row text-right">
                   <div class="col-12">
                     <button type="submit" class="btn btn-success btn-lg mt-4">UPDATE</button>
                   </div>
                 </div>
-              @endif
+             
                       
             </form>
             </div>
@@ -378,7 +243,7 @@ Store Dashboard Transactions Details Pages
   var transactionDetails = new Vue({
     el: '#transactionDetails',
     data: {
-      status: "{{ $transaction->shipping_status }}",
+      status: "{{ $transaction->transaction->transaction_status }}",
       resi: "{{ $transaction->resi }}",
     },
   });

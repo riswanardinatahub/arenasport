@@ -10,6 +10,7 @@
   <title>@yield('title')</title>
   @stack('prepend-style')
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link href="https://cdn.datatables.net/1.13.3/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
   <link href="/style/main.css" rel="stylesheet" />
    <script src="https://kit.fontawesome.com/069e062e69.js" crossorigin="anonymous"></script>
   @stack('addon-style')
@@ -139,6 +140,10 @@
   </script>
   <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.3/js/dataTables.bootstrap5.min.js"></script>
+
+
   <script>
     AOS.init();
   </script>
@@ -148,6 +153,12 @@
       $('#wrapper').toggleClass('toggled');
     });
   </script>
+
+  <script>
+  $(document).ready(function () {
+    $('#exampless').DataTable();
+  });
+</script>
   @stack('addon-script')
 </body>
 

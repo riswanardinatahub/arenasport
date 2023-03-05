@@ -30,6 +30,7 @@ class CheckoutController extends Controller
         //insert transaction
         $transaction = Transaction::create([
             'users_id'=> Auth::user()->id,
+            'arena_id'=> $request->arena_id,
             'inscurance_price'=> 0,
             'shipping_price'=> 0,
             'total_price'=> $request->total_price,
