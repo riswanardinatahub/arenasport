@@ -36,7 +36,7 @@ class CartController extends Controller
 
 
         $cart->delete();
-        return redirect('/');
+        return redirect()->back()->with(['success' => 'Data Berhasil Di Hapus']);
     }
 
     public function success()

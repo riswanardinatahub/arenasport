@@ -48,15 +48,23 @@ Booking Detail
                               <img src="{{ Storage::url($transaction->product->galleries->first()->photos ?? '') }}"
                                 class="w-75">
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                               {{ $transaction->product->name }}
                             </div>
                             <div class="col-md-3">
                               
                               RP. {{ number_format($transaction->price) }}
                             </div>
-                            <div class="col-md-3">
+                            {{-- <div class="col-md-2">
                               {{ $transaction->total_qty }}
+                            </div> --}}
+
+                            <div class="col-md-2">
+                              {{ $transaction->book_date }} 
+                            </div>
+
+                            <div class="col-md-2">
+                              {{ $transaction->book_time }}
                             </div>
 
                           </div>
@@ -84,8 +92,8 @@ Booking Detail
                                 </div>
                                 <div class="col-12 col-md-3 col-lg-3 pl-md-1">
                               <a target="_blank"
-                                href="https://api.whatsapp.com/send?text=Hallo saya dokter {{ $transaction->product->name }}&phone={{ $transaction->transaction->user->phone_number }}"
-                                type="button" class="btn btn-success d-block ">Whatsupp</a>
+                                href="https://api.whatsapp.com/send?text=Terimakasih Telah Memesan Lapangan ini silahkan {{ $transaction->product->name }}&phone={{ $transaction->transaction->user->phone_number }}"
+                                type="button" class="btn btn-success d-block ">Whatsapp</a>
                                 </div>
                               </div>
                               

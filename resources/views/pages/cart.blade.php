@@ -52,7 +52,7 @@ Arena Cart Page
                             @endphp
                             @forelse ($carts as $cart )
                             <tr>
-                                <td style="width: 20%;">
+                                <td style="width: 15%;">
                                     @if ($cart->product->galleries->count())
                                     <img src="{{ Storage::url($cart->product->galleries->first()->photos) }}" alt=""
                                         class="cart-image ">
@@ -65,11 +65,11 @@ Arena Cart Page
                                     <div class="product-title">{{ $cart->product->name }}</div>
                                     <div class="product-subtitle">{{ $cart->product->user->store_name }}</div>
                                 </td>
-                                <td style="width: 20%;">
+                                <td style="width: 15%;">
                                     <div class="product-title"> {{ number_format($cart->product->price ) }}</div>
                                     <div class="product-subtitle">Rupiah</div>
                                 </td>
-                                <td style="width: 20%;">
+                                <td style="width: 15%;">
                                     <div class="product-title"> {{ $cart->book_date }}</div>
                                     
                                 </td>
@@ -90,12 +90,15 @@ Arena Cart Page
                                         </div>
                                     </div>
                                 </td> --}}
-                                <td style="width: 25%;">
+                                <td style="width: 20%;" class="pt-4">
                                     <form action="{{ route('cart-delete',$cart->id) }}" method="POST">
                                         @method('DELETE')
                                         @csrf
-                                        <button type="submit" class="btn btn-remove-cart btn-sm">Hapus</button>
+                                        <button type="submit" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash-can"></i></button> -
+                                        <a href="{{ route('detail', $cart->product->slug) }}" class="btn btn-success btn-sm"><i class="fa-solid fa-plus"></i></a>
+
                                     </form>
+
                                 </td>
                             </tr>
                             @php
@@ -104,9 +107,7 @@ Arena Cart Page
                             
                             @endphp
 
-                            @php
-                                $totalqty = $cart->qty 
-                            @endphp
+                          
                             @empty
                             Data Kosong
 
@@ -128,11 +129,7 @@ Arena Cart Page
             <form action="{{ route('checkout') }}" id="locations" enctype="multipart/form-data" method="POST">
             @csrf
             <input type="hidden"  name="total_price" value={{ $totalPrice }}>
-                @if ($totalqty)
-                    <input type="hidden"  name="total_qty" value={{ $totalqty }}>
-                @else
-                    
-                @endif
+               
             
             
                 <div class="row mb-2" data-aos="fade-up" data-aos-delay="200">

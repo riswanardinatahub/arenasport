@@ -67,6 +67,17 @@ line-height: 1;
   font-size:12px;
 }
 
+.nav-tabs {
+    padding-left: 15px;
+    margin-bottom: 0;
+    border: none;
+}
+.tab-content {
+    border: 2px solid #358F66;
+    border-radius: 4px;
+    padding: 15px;
+}
+
 
 </style>
 
@@ -308,99 +319,140 @@ line-height: 1;
             
 
        
-          <h1 class="mt-2" style="font-weight: 900; font-size: 21px;
+          <h1 class="mt-3" style="font-weight: 900; font-size: 21px;
                   line-height: 32px;">Jadwal Terbooking</h1>
-            <ul class="nav nav-tabs bordered text-center" id="myTab" role="tablist">
+
+                  @php
+                    $now = \Carbon\Carbon::now();
+                    $monday = $now->startOfWeek();
+                    $tuesday = $monday->copy()->addDay();
+                    $wednesday = $tuesday->copy()->addDay();
+                    $thursday = $wednesday->copy()->addDay();
+                    $friday = $thursday->copy()->addDay();
+                    $saturday = $friday->copy()->addDay();
+                    $sunday = $saturday->copy()->addDay();
+                  @endphp
+            <ul class="nav nav-tabs bordered text-center mt-3" id="myTab" role="tablist">
               <li class="nav-item tina">
-                <a class="nav-link tabs-size active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Senin <br> 10-11-2022</a>
+                <a class="nav-link tabs-size active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Senin <br> {{ $monday->format('Y-m-d') }}</a>
               </li>
               <li class="nav-item tina">
-                <a class="nav-link tabs-size" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Senin <br> 10-11-2022</a>
+                <a class="nav-link tabs-size" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Selasa <br> {{ $tuesday->format('Y-m-d') }}</a>
               </li>
               <li class="nav-item tina">
-                <a class="nav-link tabs-size" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Senin <br> 10-11-2022</a>
+                <a class="nav-link tabs-size" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Rabu <br> {{ $wednesday->format('Y-m-d') }}</a>
               </li>
               <li class="nav-item tina">
-                <a class="nav-link tabs-size" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Senin <br> 10-11-2022</a>
+                <a class="nav-link tabs-size" id="contact-tab1" data-toggle="tab" href="#contact1" role="tab" aria-controls="contact1" aria-selected="false">Kamis <br> {{ $thursday->format('Y-m-d') }}</a>
               </li>
               <li class="nav-item tina">
-                <a class="nav-link tabs-size" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Senin <br> 10-11-2022</a>
+                <a class="nav-link tabs-size" id="contact-tab2" data-toggle="tab" href="#contact2" role="tab" aria-controls="contact2" aria-selected="false">Jumat <br> {{ $friday->format('Y-m-d') }}</a>
               </li>
               <li class="nav-item tina">
-                <a class="nav-link tabs-size" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Senin <br> 10-11-2022</a>
+                <a class="nav-link tabs-size" id="contact-tab3" data-toggle="tab" href="#contact3" role="tab" aria-controls="contact3" aria-selected="false">Sabtu <br> {{ $saturday->format('Y-m-d') }}</a>
               </li>
               <li class="nav-item tina">
-                <a class="nav-link tabs-size" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Senin <br> 10-11-2022</a>
+                <a class="nav-link tabs-size" id="contact-tab4" data-toggle="tab" href="#contact4" role="tab" aria-controls="contact4" aria-selected="false">Minggu <br> {{ $sunday->format('Y-m-d') }}</a>
               </li>
             </ul>
             
             
-       
+       @php
+                    $now = \Carbon\Carbon::now();
+                    $monday = $now->startOfWeek();
+                    $tuesday = $monday->copy()->addDay();
+                    $wednesday = $tuesday->copy()->addDay();
+                    $thursday = $wednesday->copy()->addDay();
+                    $friday = $thursday->copy()->addDay();
+                    $saturday = $friday->copy()->addDay();
+                    $sunday = $saturday->copy()->addDay();
+                  @endphp
+
             <div class="tab-content mt-3 pl-3 pr-4" id="myTabContent">
               <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                 <div class="row">
-                  <div class="col-2 pb-2">
-                    10.00 - 11.00
+
+                @foreach ($transactiondetailmonday as $datamonday)
+                <div class="col-2 pb-2">
+                    {{ $datamonday->book_time }}
                   </div>
-                  <div class="col-2 pb-2">
-                    10.00 - 11.00
-                  </div>
-                  <div class="col-2 pb-2">
-                    10.00 - 11.00
-                  </div>
-                  <div class="col-2 pb-2">
-                    10.00 - 11.00
-                  </div>
-                  <div class="col-2 pb-2">
-                    10.00 - 11.00
-                  </div>
-                  <div class="col-2 pb-2">
-                    10.00 - 11.00
-                  </div>
-                  <div class="col-2 pb-2">
-                    10.00 - 11.00
-                  </div>
-                  <div class="col-2 pb-2">
-                    10.00 - 11.00
-                  </div>
+                @endforeach
+                  
                 </div>
               </div>
-              <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+              <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                <div class="row">
+
+                  @foreach ($transactiondetailtuesday as $datatuesday)
+                  <div class="col-2 pb-2">
+                      {{ $datatuesday->book_time }}
+                    </div>
+                  @endforeach
+                    
+                  </div>
+              </div>
               <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-              <div class="row">
-                  <div class="col-2 pb-2">
-                    10.00 - 11.00
+                <div class="row">
+
+                @foreach ($transactiondetailwednesday as $datawednesday)
+                <div class="col-2 pb-2">
+                    {{ $datawednesday->book_time }}
                   </div>
-                  <div class="col-2 pb-2">
-                    10.00 - 11.00
-                  </div>
-                  <div class="col-2 pb-2">
-                    10.00 - 11.00
-                  </div>
-                  <div class="col-2 pb-2">
-                    10.00 - 11.00
-                  </div>
-                  <div class="col-2 pb-2">
-                    10.00 - 11.00
-                  </div>
-                  <div class="col-2 pb-2">
-                    10.00 - 11.00
-                  </div>
-                  <div class="col-2 pb-2">
-                    10.00 - 11.00
-                  </div>
-                  <div class="col-2 pb-2">
-                    10.00 - 11.00
-                  </div>
+                @endforeach
+                  
                 </div>
+              </div>
+              <div class="tab-pane fade" id="contact1" role="tabpanel" aria-labelledby="contact-tab1">
+                <div class="row">
+
+                @foreach ($transactiondetailthursday as $datathursday)
+                <div class="col-2 pb-2">
+                    {{ $datathursday->book_time }}
+                  </div>
+                @endforeach
+                  
                 </div>
+              </div>
+              <div class="tab-pane fade" id="contact2" role="tabpanel" aria-labelledby="contact-tab2">
+                <div class="row">
+
+                @foreach ($transactiondetailfriday as $datafriday)
+                <div class="col-2 pb-2">
+                    {{ $datafriday->book_time }}
+                  </div>
+                @endforeach
+                  
+                </div>
+              </div>
+              <div class="tab-pane fade" id="contact3" role="tabpanel" aria-labelledby="contact-tab3">
+                <div class="row">
+
+                @foreach ($transactiondetailsaturday as $datasaturday)
+                <div class="col-2 pb-2">
+                    {{ $datasaturday->book_time }}
+                  </div>
+                @endforeach
+                  
+                </div>
+              </div>
+              <div class="tab-pane fade" id="contact4" role="tabpanel" aria-labelledby="contact-tab4">
+                <div class="row">
+
+                @foreach ($transactiondetailsunday as $datasunday)
+                <div class="col-2 pb-2">
+                    {{ $datasunday->book_time }}
+                  </div>
+                @endforeach
+                  
+                </div>
+              </div>
             </div>
 
         
 
          
 
-              <div  class="row mt-2">
+              <div  class="row mt-5">
 
                     <div class="col-12">
                     @if ($product->user->address_two)

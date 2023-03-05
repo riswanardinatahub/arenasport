@@ -50,8 +50,10 @@ class CheckoutController extends Controller
                     'transactions_id'=> $takeidtarnsaction,
                     'products_id'=> $cart->product->id,
                     'price'=> $request->total_price,
+                    'book_date'=> $cart->book_date,
+                    'book_time'=> $cart->book_time,
                     'shipping_status'=> 'PENDING',
-                    'resi'=> $cart->book_time,
+                    'resi'=> 'PENDING',
                     'total_qty'=> $request->total_qty,
                     'code'=> $trx,
 
