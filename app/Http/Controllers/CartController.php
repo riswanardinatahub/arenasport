@@ -19,9 +19,19 @@ class CartController extends Controller
     {
         $carts = Cart::with(['product.galleries','user'])
                      ->where('users_id', Auth::user()->id)->get();
-        return view('pages.cart',[
+
+        $test = Cart::with(['product.galleries','user'])
+        ->where('users_id', Auth::user()->id)->count();
+
+        if($test < 1){
+            return view('pages.emptycart');
+        }else{
+             return view('pages.cart',[
             'carts' => $carts
         ]);
+        }
+        // dd($test);
+       
     }
 
     public function delete(Request $request, $id){

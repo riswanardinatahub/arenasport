@@ -60,11 +60,13 @@ Booking Detail
                             </div> --}}
 
                             <div class="col-md-2">
-                              {{ $transaction->book_date }} 
+                              {{ date('d-m-Y', strtotime($transaction->book_date)) }} 
+                              
                             </div>
 
                             <div class="col-md-2">
                               {{ $transaction->book_time }}
+                              
                             </div>
 
                           </div>

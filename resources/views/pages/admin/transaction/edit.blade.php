@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-Transaction
+Transaksi
 @endsection
 
 @section('content')
@@ -9,10 +9,10 @@ Transaction
     <div class="container-fluid">
         <div class="dashboard-heading">
             <h2 class="dashboard-title">
-                Transaction
+                Transaksi
             </h2>
             <p class="dashboard-subtitle">
-                Edit Transaction
+                Edit Transaksi
             </p>
         </div>
         <div class="dashboard-content">
@@ -36,13 +36,19 @@ Transaction
 
                                      <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Transaction Status</label>
+                                            <label>Status Transaksi</label>
                                             <select name="transaction_status" class="form-control">
-                                            <option value="{{ $item->transaction_status }}" selected>{{ $item->transaction_status }}</option>
+                                            @if ($item->transaction_status == 'PENDING')
+                                            <option value="{{ $item->transaction_status }}" selected>Belum Bayar</option>
+                                            @elseif($item->transaction_status == 'DP')
+                                            <option value="{{ $item->transaction_status }}" selected>DP</option>
+                                            @else
+                                            <option value="{{ $item->transaction_status }}" selected>Lunas</option>
+                                            @endif
                                             <option value="" disabled>---------------------------</option>
-                                            <option value="PENDING">PENDING</option>
-                                            <option value="SHIPPING">SHIPPING</option>
-                                            <option value="SUCCESS">SUCCESS</option>
+                                            <option value="PENDING">Belum Bayar</option>
+                                            <option value="DP">DP</option>
+                                            <option value="SUCCESS">Lunas</option>
                                             </select>
                                            
                                         </div>

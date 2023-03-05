@@ -27,6 +27,7 @@ Dashboard Transactions Pages
                         <tr>
                           <th scope="col">No</th>
                           <th scope="col">Kode Booking</th>
+                          <th scope="col">Nama Pelanggan</th>
                           <th scope="col">Total Biaya</th>
                           <th scope="col">Tanggal Pesan</th>
                           <th scope="col">status</th>
@@ -41,6 +42,7 @@ Dashboard Transactions Pages
                         <tr>
                           <th scope="row">{{ $no++ }}</th>
                           <td>{{ $data->code }}</td>
+                          <td>{{ $data->user->name }}</td>
                           <td>Rp. {{ number_format($data->total_price,0,',','.') }}</td>
                           <td>{{ $data->created_at->format('d-m-Y') }}</td>
                           <td>

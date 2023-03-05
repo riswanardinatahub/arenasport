@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-Transaction
+Transaksi
 @endsection
 
 @section('content')
@@ -9,10 +9,10 @@ Transaction
     <div class="container-fluid">
         <div class="dashboard-heading">
             <h2 class="dashboard-title">
-               Transaction
+               Transaksi
             </h2>
             <p class="dashboard-subtitle">
-               Transaction
+               Transaksi
             </p>
         </div>
         <div class="dashboard-content">
@@ -26,7 +26,8 @@ Transaction
                                     <thead>
                                         <tr>
                                             <th>ID</th>
-                                            <th>Name</th>
+                                            <th>Nama Pelanggan</th>
+                                            <th>Nama Arena</th>
                                             <th>Harga</th>
                                             <th>Status</th>
                                             <th>Dibuat</th>
@@ -57,9 +58,10 @@ Transaction
         columns: [
             { data: 'id', name: 'id' },
             { data: 'user.name', name: 'user.name' },
+            { data: 'arena.store_name', name: 'arena.store_name' },
             { data: 'total_price', name: 'total_price' },
-            { data: 'transaction_status', name: 'transaction_status' },
-            { data: 'created_at', name: 'created_at' },
+            { data: 'status', name: 'transaction_status' },
+            { data: 'time', name: 'created_at' },
             {
                 data: 'action',
                 name: 'action',

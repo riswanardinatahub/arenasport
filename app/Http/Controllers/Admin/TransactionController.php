@@ -17,7 +17,7 @@ class TransactionController extends Controller
     public function index()
     {
         if(request()->ajax()){
-            $query = Transaction::with(['user']); //->withTrashed(); untuk memanggil data yang telah dihapus
+            $query = Transaction::with(['user','arena']); //->withTrashed(); untuk memanggil data yang telah dihapus
 
             return DataTables::of($query)
             ->addColumn('action', function($item){
@@ -40,7 +40,17 @@ class TransactionController extends Controller
                             </div>
                             </div>
                         </div>';
-            })->rawColumns(['action'])->make(); 
+            })->rawColumns(['action'])->editColumn('status', function ($inquiry) {
+                if ($inquiry->transaction_status == 'PENDING') return 'Belum Bayar';
+                if ($inquiry->transaction_status == 'SUCCESS') return 'Lunas';
+                return 'DP';
+                })->editColumn('time', function ($user) 
+                {
+                    //change over here
+                    return date('d-m-Y', strtotime($user->created_at) );
+                })
+            
+            ->make(); 
         }
 
         

@@ -67,13 +67,22 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        $messages = [
+                'required' => ':attribute wajib diisi cuy!!!',
+                'min' => ':attribute harus diisi minimal :min karakter ya cuy!!!',
+                'max' => ':attribute harus diisi maksimal :max karakter ya cuy!!!',
+            ];
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'phone_number' => ['required', 'min:10','max:12'],
             'store_name' => ['nullable', 'string', 'max:255'],
             'categories_id' => ['nullable', 'integer', 'exists:categories,id'],
             'is_store_open' => ['required']
+
+
+           
             
         ]);
     }

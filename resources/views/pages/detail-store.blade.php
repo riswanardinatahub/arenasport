@@ -48,7 +48,8 @@ Detail Arena
 
                     </div>
                     <div class="col-12 col-md-3 mt-4">
-                      <span style="font-size: 13px; color: black;"><i class="fa-solid fa-street-view mr-1"></i> Lihat Peta </span>
+                    <a href="https://goo.gl/maps/AhrfJKB7r62KFg2M7"><span style="font-size: 13px; color: black;"><i class="fa-solid fa-street-view mr-1"></i> Lihat Peta </span></a>
+                     
 
                     </div>
                     {{-- <div class="col-6 col-md-6">

@@ -275,7 +275,7 @@ line-height: 1;
                                 <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-calendar-days"></i></span>
 
                             </div>
-                            <input type="date" class="form-control" name="book_date" placeholder="Pilih Tanggal" aria-label="Pilih Tanggal" aria-describedby="basic-addon1">
+                            <input type="date" required class="form-control" name="book_date" placeholder="Pilih Tanggal" aria-label="Pilih Tanggal" aria-describedby="basic-addon1">
                         </div>
                     </div>
                     <div class="col-12 col-md-4 col-lg-4">
@@ -287,7 +287,7 @@ line-height: 1;
                               
                                    
                                     
-                                <select name="book_time" id="" class="form-control">
+                                <select name="book_time" id="" class="form-control" required>
                                     <option value="" selected> Pilih Jadwal</option>
                                     @foreach ($schedule as $schedule)
                                     <option value="{{ $schedule->time }}">{{ $schedule->time }}</option>

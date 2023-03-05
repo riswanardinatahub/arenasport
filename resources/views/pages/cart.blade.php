@@ -129,7 +129,10 @@ Arena Cart Page
             <form action="{{ route('checkout') }}" id="locations" enctype="multipart/form-data" method="POST">
             @csrf
             <input type="hidden"  name="total_price" value={{ $totalPrice }}>
-            <input type="hidden"  name="arena_id" value={{ $cart->product->users_id }}>
+                <input type="hidden"  name="arena_id" value={{ $cart->product->users_id }}>
+
+
+         
 
             
             {{-- <input type="hidden"  name="total_qty" value="0"> --}}

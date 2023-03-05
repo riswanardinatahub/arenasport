@@ -40,7 +40,7 @@ class DashboardTransactionController extends Controller
             $transaction->where('users_id', Auth::user()->id);
         })->get();
 
-        $transaction = Transaction::where('arena_id', Auth::user()->id)->get();
+        $transaction = Transaction::where('arena_id', Auth::user()->id)->latest()->get();
 
         return view('pages.dashboard-transactions',[
             'selltransaction' => $selltransaction,

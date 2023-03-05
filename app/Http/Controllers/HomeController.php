@@ -208,7 +208,7 @@ class HomeController extends Controller
     }
 
     public function bookinglist(){
-        $transaction = Transaction::where('users_id', Auth::user()->id)->get();
+        $transaction = Transaction::where('users_id', Auth::user()->id)->latest()->get();
 
         return view('pages.bookinglist',compact('transaction'));
     }
