@@ -89,12 +89,12 @@ Booking Detail
                             <div class="product-subtitle ">
                               <div class="row">
                                 <div class="col-12 col-md-9 col-lg-9 pr-md-0">
-                             <input disabled  value="{{ $transaction->product->user->phone_number }}" type="text" class="form-control" >
+                             <input disabled  value="0{{ $transaction->product->user->phone_number }}" type="text" class="form-control" >
 
                                 </div>
                                 <div class="col-12 col-md-3 col-lg-3 pl-md-1">
                               <a target="_blank"
-                                href="https://api.whatsapp.com/send?text=Terimakasih Telah Memesan Lapangan ini silahkan {{ $transaction->product->name }}&phone={{ $transaction->product->user->phone_number }}"
+                                href="https://api.whatsapp.com/send?text=Hallo {{ $transaction->product->user->store_name }} berikut kode booking saya {{ $transaction->code }}&phone=62{{ $transaction->product->user->phone_number }}"
                                 type="button" class="btn btn-success d-block ">Whatsapp</a>
                                 </div>
                               </div>
