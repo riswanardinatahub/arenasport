@@ -372,77 +372,107 @@ line-height: 1;
               <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                 <div class="row">
 
-                @foreach ($transactiondetailmonday as $datamonday)
+                @forelse ($transactiondetailmonday as $datamonday)
                 <div class="col-2 pb-2">
                     {{ $datamonday->book_time }}
                   </div>
-                @endforeach
+                 @empty
+                 <div class="row">
+                  Data Tidak Ada
+                 </div> 
+                @endforelse
+
+               
                   
                 </div>
               </div>
               <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                 <div class="row">
 
-                  @foreach ($transactiondetailtuesday as $datatuesday)
+                  @forelse ($transactiondetailtuesday as $datatuesday)
                   <div class="col-2 pb-2">
                       {{ $datatuesday->book_time }}
                     </div>
-                  @endforeach
+                   @empty
+                   <div class="row px-5 mx-5">
+                    Data Tidak Ada
+                   </div> 
+                  @endforelse
                     
                   </div>
               </div>
               <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                 <div class="row">
 
-                @foreach ($transactiondetailwednesday as $datawednesday)
+                @forelse ($transactiondetailwednesday as $datawednesday)
                 <div class="col-2 pb-2">
                     {{ $datawednesday->book_time }}
                   </div>
-                @endforeach
+                 @empty
+                 <div class="row px-5 mx-5">
+                  Data Tidak Ada
+                 </div> 
+                @endforelse
                   
                 </div>
               </div>
               <div class="tab-pane fade" id="contact1" role="tabpanel" aria-labelledby="contact-tab1">
                 <div class="row">
 
-                @foreach ($transactiondetailthursday as $datathursday)
+                @forelse ($transactiondetailthursday as $datathursday)
                 <div class="col-2 pb-2">
                     {{ $datathursday->book_time }}
                   </div>
-                @endforeach
+                 @empty
+                 <div class="row px-5 mx-5">
+                  Data Tidak Ada
+                 </div> 
+                @endforelse
                   
                 </div>
               </div>
               <div class="tab-pane fade" id="contact2" role="tabpanel" aria-labelledby="contact-tab2">
                 <div class="row">
 
-                @foreach ($transactiondetailfriday as $datafriday)
+                @forelse ($transactiondetailfriday as $datafriday)
                 <div class="col-2 pb-2">
                     {{ $datafriday->book_time }}
                   </div>
-                @endforeach
+                 @empty
+                 <div class="row px-5 mx-5">
+                  Data Tidak Ada
+                 </div> 
+                @endforelse
                   
                 </div>
               </div>
               <div class="tab-pane fade" id="contact3" role="tabpanel" aria-labelledby="contact-tab3">
                 <div class="row">
 
-                @foreach ($transactiondetailsaturday as $datasaturday)
+                @forelse ($transactiondetailsaturday as $datasaturday)
                 <div class="col-2 pb-2">
                     {{ $datasaturday->book_time }}
                   </div>
-                @endforeach
+                 @empty
+                 <div class="row px-5 mx-5">
+                  Data Tidak Ada
+                 </div> 
+                @endforelse
                   
                 </div>
               </div>
               <div class="tab-pane fade" id="contact4" role="tabpanel" aria-labelledby="contact-tab4">
                 <div class="row">
 
-                @foreach ($transactiondetailsunday as $datasunday)
+                @forelse ($transactiondetailsunday as $datasunday)
                 <div class="col-2 pb-2">
                     {{ $datasunday->book_time }}
                   </div>
-                @endforeach
+                 @empty
+                 <div class="row px-5 mx-5">
+                  Data Tidak Ada
+                 </div> 
+                @endforelse
                   
                 </div>
               </div>
