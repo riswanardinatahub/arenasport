@@ -94,7 +94,7 @@ Booking Detail
                                 </div>
                                 <div class="col-12 col-md-3 col-lg-3 pl-md-1">
                               <a target="_blank"
-                                href="https://api.whatsapp.com/send?text=Terimakasih Telah Memesan Lapangan ini silahkan {{ $transaction->product->name }}&phone={{ $transaction->transaction->user->phone_number }}"
+                                href="https://api.whatsapp.com/send?text=Terimakasih Telah Memesan Lapangan ini silahkan {{ $transaction->product->name }}&phone={{ $transaction->product->user->phone_number }}"
                                 type="button" class="btn btn-success d-block ">Whatsapp</a>
                                 </div>
                               </div>
