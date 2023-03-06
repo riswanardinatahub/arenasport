@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use App\Product;
+use App\Transaction;
 use App\TransactionDetail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -46,13 +47,15 @@ class DashboardController extends Controller
 
          $totalproduct = Product::with('user')->where('users_id',Auth::user()->id)->count();
 
-
+        $totattransaksi = Transaction::where('arena_id',Auth::user()->id)->sum('total_price');
+        // dd($totattransaksi);
         return view('pages.dashboard',[
             'trasaction_count' => $transaction->count(),
             'trasaction_data' => $transaction->get(),
             'revenue' => $revenue,
             'customer' => $customer,
             'hasil' => $hasil,
+            'totalproduct' => $totalproduct,
             'totalproduct' => $totalproduct,
 
         ]);

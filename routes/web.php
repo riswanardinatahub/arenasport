@@ -1,5 +1,6 @@
 <?php
 
+use App\Transaction;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
@@ -18,7 +19,12 @@ Route::post('autoLogin','AuthController@autoLogin');
 
 Route::get('/coba', function(){
 
-    return view('invoice');
+    // return view('invoice');
+
+    $result = Transaction::selectRaw('year(created_at) year, month(created_at) month,  count(*) data')
+                ->groupBy('year', 'month')
+                ->orderBy('year', 'desc')
+                ->get();
 
     $codes = array('tn', 'us', 'fr');
     $names = array('Tunisia', 'United States', 'France');

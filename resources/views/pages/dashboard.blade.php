@@ -60,7 +60,7 @@ Store Dashboard
                                 Transaksi
                             </div>
                             <div class="dashboard-card-subtitle">
-                                {{ number_format($trasaction_count) }}
+                                {{ number_format($totalproduct) }}
                             </div>
                         </div>
                     </div>
