@@ -21,7 +21,7 @@ Route::get('/coba', function(){
 
     // return view('invoice');
 
-    $result = Transaction::selectRaw('year(created_at) year, month(created_at) month,  count(*) data')
+    $result = Transaction::selectRaw('year(created_at) year, monthname(created_at) month,  count(*) data')
                 ->groupBy('year', 'month')
                 ->orderBy('year', 'desc')
                 ->get();
