@@ -26,6 +26,8 @@ Route::get('/coba', function(){
                 ->orderBy('year', 'desc')
                 ->get();
 
+    dd($result);
+
     $codes = array('tn', 'us', 'fr');
     $names = array('Tunisia', 'United States', 'France');
     foreach($codes as $key => $value) {

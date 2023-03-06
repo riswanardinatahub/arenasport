@@ -48,7 +48,7 @@ Store Dashboard
                                 Penghasilan
                             </div>
                             <div class="dashboard-card-subtitle">
-                                {{ number_format($totalproduct) }}
+                                {{ number_format($totattransaksi) }}
                             </div>
                         </div>
                     </div>

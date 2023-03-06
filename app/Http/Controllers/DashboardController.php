@@ -56,7 +56,7 @@ class DashboardController extends Controller
             'customer' => $customer,
             'hasil' => $hasil,
             'totalproduct' => $totalproduct,
-            'totalproduct' => $totalproduct,
+            'totattransaksi' => $totattransaksi,
 
         ]);
     }
