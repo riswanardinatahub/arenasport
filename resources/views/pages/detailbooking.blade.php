@@ -140,33 +140,46 @@ Booking Detail
                             </div>
                           </div>
 
-                          <div class="col-12 col-md-6 mb-3">
-                            <div class="product-title">
-                              Status Transaksi  
-                            
-
-                            @if ($transaction->transaction->transaction_status== 'SUCCESS' )
-                            <div class="product-subtitle font-weight-bold text-success">
-                            LUNAS
-                              
-                             {{-- <input disabled  value="SUCCESS" type="text" class="form-control text-success" > --}}
-
+                          <div class="col-12 col-md-12 mb-3">
+                          <div class="row">
+                            <div class="col">
+                                <div class="product-title">
+                                  Status Transaksi
+                                  @if ($transaction->transaction->transaction_status== 'SUCCESS' )
+                                  <div class="product-subtitle font-weight-bold text-success">
+                                    LUNAS
+                                
+                                    {{-- <input disabled value="SUCCESS" type="text" class="form-control text-success"> --}}
+                                
+                                  </div>
+                                  @elseif ( $transaction->transaction->transaction_status == 'PENDING')
+                                  <div class="product-subtitle font-weight-bold text-danger">
+                                    {{-- <input disabled value="PENDING" type="text" class="form-control"> --}}
+                                    BELUM BAYAR
+                                  </div>
+                                  @else
+                                  <div class="product-subtitle font-weight-bold text-warning">
+                                    {{-- <input disabled value="DP" type="text" class="form-control"> --}}
+                                    DP
+                                  </div>
+                                  @endif
+                                
+                                </div>
                             </div>
-                            @elseif ( $transaction->transaction->transaction_status == 'PENDING')
-                            <div class="product-subtitle font-weight-bold text-danger">
-                             {{-- <input disabled  value="PENDING" type="text" class="form-control" > --}}
-                            BELUM BAYAR
+                            <div class="col">
+                                <div class="text-right">
+                                  <a href="{{ route('downoadpdf',$transaction->transaction->id) }}" class="btn btn-success">Cetak Pesanan</a>
+                                </div>
                             </div>
-                            @else
-                            <div class="product-subtitle font-weight-bold text-warning">
-                             {{-- <input disabled  value="DP" type="text" class="form-control" > --}}
-                            DP
-                            </div>
-                            @endif
-
                           </div>
+                        
+
+                          
                           
                         </div>
+
+
+
                         
                         
 

@@ -18,6 +18,8 @@ Route::post('autoLogin','AuthController@autoLogin');
 
 Route::get('/coba', function(){
 
+    return view('invoice');
+
     $codes = array('tn', 'us', 'fr');
     $names = array('Tunisia', 'United States', 'France');
     foreach($codes as $key => $value) {
@@ -182,6 +184,14 @@ Route::prefix('adminstore')
 
     
 });
+
+
+
+
+//PDF
+Route::get('/pdfgenerate', 'PdfController@pdfgenerate')->name('pdfgenerate');
+Route::get('/downloadpdf/{id}', 'PdfController@downoadpdf')->name('downoadpdf');
+
 
 
 
