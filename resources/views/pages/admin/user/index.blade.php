@@ -66,7 +66,8 @@ $(document).ready( function () {
             { data: 'email', name: 'email' },
             { data: 'store_name', name: 'store_name' },
             { data: 'roles', name: 'roles' },
-            { data: 'namadesa', name: 'namadesa' },
+            { data: 'regencies.name', name: 'regencies.name' },
+            
             {
                 data: 'action',
                 name: 'action',

@@ -52,7 +52,7 @@ class User extends Authenticatable
 
      public function regencies()
     {
-        return $this->belongsTo(Regency::class, 'regencies_id','id');
+        return $this->belongsTo(Regency::class, 'regencies_id','id')->withDefault(['name' => '']);
     }
 
     public function districts()
