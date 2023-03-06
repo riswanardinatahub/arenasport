@@ -173,13 +173,23 @@
                 <td colspan="4">
                     <table>
                         <tr>
-                            <td>
+                            <td><span style="
+                font-weight: bold;">Arena</span>  <br>
                                 {{ $data->arena->store_name }} <br>
-                                {{ $data->arena->phone_number }} <br>
+                                0{{ $data->arena->phone_number }} <br>
+                            </td>
+                            <td>
+                               
+                            </td>
+                            <td>
+                               
                             </td>
 
                             <td>
-                               
+                            <span style="
+                                        font-weight: bold;">Pemesan</span>  <br>
+                               {{ $data->user->name }} <br>
+                                0{{ $data->user->phone_number }} <br>
                             </td>
                         </tr>
                     </table>
