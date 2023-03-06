@@ -26,8 +26,8 @@ Dashboard Transactions Reports
                       <thead>
                         <tr>
                           <th scope="col">No</th>
-                          <th scope="col">Tahun</th>
                           <th scope="col">Bulan</th>
+                          <th scope="col">Tahun</th>
                           <th scope="col">Total</th>
                          
                         </tr>
@@ -39,8 +39,9 @@ Dashboard Transactions Reports
                       @foreach ($result as $data)
                         <tr>
                           <th scope="row">{{ $no++ }}</th>
-                          <td>{{ $data->year }}</td>
                           <td>{{ $data->month }}</td>
+
+                          <td>{{ $data->year }}</td>
                           <td>Rp. {{ number_format($data->data,0,',','.') }}</td>
                           
                         </tr>

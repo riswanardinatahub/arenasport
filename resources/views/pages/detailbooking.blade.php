@@ -112,7 +112,7 @@ Booking Detail
                               Tanggal Transaksi
                             </div>
                             <div class="product-subtitle">
-                             <input disabled  value="{{ $transaction->created_at->format('d-m-Y') }}" type="text" class="form-control" >
+                             <input disabled  value="{{ $transaction->transaction->created_at->format('d-m-Y') }}" type="text" class="form-control" >
 
                             </div>
                           </div>

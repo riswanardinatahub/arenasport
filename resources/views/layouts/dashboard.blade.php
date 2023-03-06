@@ -161,6 +161,7 @@
     $('#exampless').DataTable();
   });
 </script>
+
   @stack('addon-script')
 </body>
 
