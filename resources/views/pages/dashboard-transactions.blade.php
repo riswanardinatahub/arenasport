@@ -29,7 +29,7 @@ Dashboard Transactions Pages
                           <th scope="col">Kode Booking</th>
                           <th scope="col">Nama Pemesan</th>
                           <th scope="col">Total Biaya</th>
-                          <th scope="col">Tanggal Pesan</th>
+                          <th scope="col">Tanggal Transaksi</th>
                           <th scope="col">Status</th>
                           <th scope="col">Aksi</th>
                         </tr>
