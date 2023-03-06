@@ -21,25 +21,38 @@ class TransactionController extends Controller
 
             return DataTables::of($query)
             ->addColumn('action', function($item){
-                return '<div class="btn-group">
-                            <div class="dropdown">
-                            <button class="btn btn-primary dropdown-toggle mr-1 mb-1" type="button" data-toggle="dropdown">
-                                Action
-                            </button>
-                            <div class="dropdown-menu">
-                                <a href="'.route('transaction.edit', $item->id).'" class="dropdown-item">
-                                Sunting
+                return '
+                        
+                        <div class="row  m-0  p-0">
+                            <div class="col-6 m-0">
+                            
+                                <a href="'.route('transaction.edit', $item->id).'" class="btn btn-warning">
+                                Edit
                                 </a>
+                                
+                            </div>
+
+                            <div class="col-6 m-0 p-0">
+                             
+
                                 <form action="'. route('transaction.destroy', $item->id).'" method="POST">
                                 '.method_field('delete'). csrf_field() .'
 
-                                <button type="submit" class="dropdown-item text-danger">
+                                <button type="submit" class="btn btn-danger">
                                     Hapus
                                 </button>
                                 </form>
+                                
                             </div>
+
+                           
                             </div>
-                        </div>';
+                        
+                        
+                        
+                        
+                        
+                        ';
             })->rawColumns(['action'])->editColumn('status', function ($inquiry) {
                 if ($inquiry->transaction_status == 'PENDING') return 'Belum Bayar';
                 if ($inquiry->transaction_status == 'SUCCESS') return 'Lunas';

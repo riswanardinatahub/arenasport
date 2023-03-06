@@ -26,7 +26,7 @@ Transaksi
                                     <thead>
                                         <tr>
                                             <th>ID</th>
-                                            <th>Nama Pelanggan</th>
+                                            <th>Nama Pemesan</th>
                                             <th>Nama Arena</th>
                                             <th>Harga</th>
                                             <th>Status</th>

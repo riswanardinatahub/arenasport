@@ -9,10 +9,10 @@ Dashboard Transactions Pages
     <div class="container-fluid">
         <div class="dashboard-heading">
             <h2 class="dashboard-title">
-               Transaction
+               Transaksi
             </h2>
             <p class="dashboard-subtitle">
-               Transaction
+               List Transaksi
             </p>
         </div>
         <div class="dashboard-content">
@@ -27,10 +27,10 @@ Dashboard Transactions Pages
                         <tr>
                           <th scope="col">No</th>
                           <th scope="col">Kode Booking</th>
-                          <th scope="col">Nama Pelanggan</th>
+                          <th scope="col">Nama Pemesan</th>
                           <th scope="col">Total Biaya</th>
                           <th scope="col">Tanggal Pesan</th>
-                          <th scope="col">status</th>
+                          <th scope="col">Status</th>
                           <th scope="col">Aksi</th>
                         </tr>
                       </thead>

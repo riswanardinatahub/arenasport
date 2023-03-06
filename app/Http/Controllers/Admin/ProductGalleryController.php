@@ -28,23 +28,16 @@ class ProductGalleryController extends Controller
 
             return DataTables::of($query)
             ->addColumn('action', function($item){
-                return '<div class="btn-group">
-                            <div class="dropdown">
-                            <button class="btn btn-primary dropdown-toggle mr-1 mb-1" type="button" data-toggle="dropdown">
-                                Action
-                            </button>
-                            <div class="dropdown-menu">
-                               
-                                <form action="'. route('product-gallery.destroy', $item->id).'" method="POST">
+                return '
+                        <form action="'. route('product-gallery.destroy', $item->id).'" method="POST">
                                 '.method_field('delete'). csrf_field() .'
 
-                                <button type="submit" class="dropdown-item text-danger">
+                                <button type="submit" class="btn btn-danger">
                                     Hapus
                                 </button>
                                 </form>
-                            </div>
-                            </div>
-                        </div>';
+                        
+                        ';
             })->editColumn('photos', function($item){
                  return $item->photos ? '<img src="'. Storage::url($item->photos) .'" style="max-height: 40px;"/>' : '';
             })
@@ -53,6 +46,24 @@ class ProductGalleryController extends Controller
 
         
         return view('pages.admin.product-gallery.index');
+
+        // <div class="btn-group">
+        //                     <div class="dropdown">
+        //                     <button class="btn btn-primary dropdown-toggle mr-1 mb-1" type="button" data-toggle="dropdown">
+        //                         Action
+        //                     </button>
+        //                     <div class="dropdown-menu">
+                               
+        //                         <form action="'. route('product-gallery.destroy', $item->id).'" method="POST">
+        //                         '.method_field('delete'). csrf_field() .'
+
+        //                         <button type="submit" class="dropdown-item text-danger">
+        //                             Hapus
+        //                         </button>
+        //                         </form>
+        //                     </div>
+        //                     </div>
+        //                 </div>
     }
 
     /**

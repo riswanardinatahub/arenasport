@@ -214,8 +214,8 @@ Dashboard Transactions Details Pages
             
                 <div class="row text-right">
                   <div class="col-12">
-                    <button type="submit" class="btn btn-success  mt-4">UPDATE</button>
-                    <a href="{{ route('downoadpdf',$transactionss->id) }}" class="btn btn-info  mt-4">Cetak Invoice</a>
+                    <button type="submit" class="btn btn-success  mt-4">Simpan Perubahan</button>
+                    <a href="{{ route('downoadpdf',$transactionss->id) }}" class="btn btn-warning  mt-4">Cetak Invoice</a>
                   </div>
                 </div>
              

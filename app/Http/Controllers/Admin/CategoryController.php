@@ -23,25 +23,29 @@ class CategoryController extends Controller
 
             return DataTables::of($query)
             ->addColumn('action', function($item){
-                return '<div class="btn-group">
-                            <div class="dropdown">
-                            <button class="btn btn-primary dropdown-toggle mr-1 mb-1" type="button" data-toggle="dropdown">
-                                Action
-                            </button>
-                            <div class="dropdown-menu">
-                                <a href="'.route('category.edit', $item->id).'" class="dropdown-item">
+                return '
+                            <div class="row  m-0  p-0">
+                            <div class="col-6 m-0">
+                            <a href="'.route('category.edit', $item->id).'" class="btn btn-warning">
                                 Edit
                                 </a>
-                                <form action="'. route('category.destroy', $item->id).'" method="POST">
+                                
+                            </div>
+
+                            <div class="col-6 m-0 p-0">
+                             <form action="'. route('category.destroy', $item->id).'" method="POST">
                                 '.method_field('delete'). csrf_field() .'
 
-                                <button type="submit" class="dropdown-item text-danger">
+                                <button type="submit" class="btn btn-danger">
                                     Hapus
                                 </button>
                                 </form>
+                                
                             </div>
-                            </div>
-                        </div>';
+
+                           
+                            </div>     
+                            ';
             })->editColumn('photo',function($item){
                 return $item->photo ? '<img src="'. Storage::url($item->photo) .'" style="max-height: 40px;"/>' : '';
             })->rawColumns(['action','photo'])->make(); 
