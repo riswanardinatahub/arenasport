@@ -26,7 +26,7 @@ class UserController extends Controller
                     // dd($query);
             
        if(request()->ajax()){
-            $query = User::with(['regencies'])->where('roles','USER')->get();
+            $query = User::with(['regencies'])->get();
         //    $query = DB::table('users')
         //             ->join('regencies', 'regencies.id', '=','users.regencies_id')
         //             ->select('users.id as id','users.name as name','users.email as email','users.roles as roles','regencies.name as namadesa','users.store_name as store_name')
