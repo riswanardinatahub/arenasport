@@ -87,7 +87,7 @@ Dashboard Transactions Details Pages
       <div class="col-12 col-md-8">
                     <div class="row mt-3">
                         <div class="col-12 mt-2">
-                        <h5 class="mb-3">Detail Transaction </h5>
+                        <h5 class="mb-3">Transaksi Detail </h5>
                          
                         </div>
                     </div>
