@@ -21,7 +21,7 @@ Route::get('/coba', function(){
 
     // return view('invoice');
 
-    $result = Transaction::selectRaw('year(created_at) year, monthname(created_at) month,  count(*) data')
+    $result = Transaction::where('transaction_status','SUCCESS')->selectRaw('year(created_at) year, monthname(created_at) month,  sum(total_price) data')
                 ->groupBy('year', 'month')
                 ->orderBy('year', 'desc')
                 ->get();
@@ -128,6 +128,8 @@ Route::get('/dashboard/transactions', 'DashboardTransactionController@index')->n
 Route::get('/dashboard/transactions/{id}', 'DashboardTransactionController@details')->name('dashboard-transaction-details');
 Route::post('/dashboard/transactions/{id}', 'DashboardTransactionController@update')->name('dashboard-transaction-update');
 
+Route::get('/dashboard/transactionsreport', 'DashboardTransactionController@transactionsreport')->name('transactionsreport');
+
 
 Route::get('/konfirmasistatuscustomer/{id}', 'DashboardTransactionController@konfirmasistatuscustomer')->name('konfirmasistatuscustomer');
 Route::get('/konfirmasistatuspenjual/{id}', 'DashboardTransactionController@konfirmasistatuspenjual')->name('konfirmasistatuspenjual');
@@ -185,6 +187,9 @@ Route::prefix('adminstore')
     Route::post('/adminstore/tambahproduk/add', 'ProductController@store')->name('addproduk');
     Route::get('/adminstore/editproduk/{id}', 'ProductController@edit')->name('editproduk');
     Route::post('/adminstore/updateproduk/{id}', 'ProductController@update')->name('updateproduk');
+
+
+
 
     Route::resource('adminstore-transaction', 'TransactionController');
     Route::resource('adminstore-product-gallery', 'ProductGalleryController');

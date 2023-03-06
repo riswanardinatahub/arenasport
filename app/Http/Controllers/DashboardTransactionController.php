@@ -112,5 +112,18 @@ class DashboardTransactionController extends Controller
         return redirect()->back();
     }
 
+    public function transactionsreport(){
+
+        $result = Transaction::where('transaction_status','SUCCESS')
+                                ->where('arena_id',Auth::user()->id)
+                                ->selectRaw('year(created_at) year, monthname(created_at) month,  sum(total_price) data')
+                                ->groupBy('year', 'month')
+                                ->orderBy('year', 'desc')
+                                ->get();
+
+        // dd($result);
+        return view('pages.dashboard-report-transactions', compact('result'));
+    }
+
 
 }
