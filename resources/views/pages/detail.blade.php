@@ -264,6 +264,11 @@ line-height: 1;
 
             
             @auth
+            @if ($message = Session::get('success'))
+                        <div class="alert alert-danger" role="alert">
+                        {{ $message }}
+                        </div>
+	                @endif
             <form action="{{ route('detail-add', $product->id) }}" method="POST" enctype="multipart/form-data">
               @csrf
               <div  class="row mt-2">
@@ -275,7 +280,10 @@ line-height: 1;
                                 <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-calendar-days"></i></span>
 
                             </div>
-                            <input type="date" required class="form-control" name="book_date" placeholder="Pilih Tanggal" aria-label="Pilih Tanggal" aria-describedby="basic-addon1">
+                            {{-- max="2023-12-31" --}}
+
+                            
+                            <input  min="{{ date('Y-m-d') }}" type="date" required class="form-control" name="book_date" placeholder="Pilih Tanggal" aria-label="Pilih Tanggal" aria-describedby="basic-addon1">
                         </div>
                     </div>
                     <div class="col-12 col-md-4 col-lg-4">

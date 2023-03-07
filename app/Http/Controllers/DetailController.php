@@ -65,6 +65,14 @@ class DetailController extends Controller
     public function add(Request $request, $id){
         // dd($request->all());
 
+        $detailtransaction = TransactionDetail::where('products_id',$id)->get();
+        // dd($detailtransaction->products_id,$detailtransaction->book_date,$detailtransaction->book_date,$id);
+        foreach($detailtransaction as $rowdata){
+            if($rowdata->products_id == $id &&$rowdata->book_time == $request->book_time && $rowdata->book_date == $request->book_date){
+             return redirect()->back()->with(['success' => 'Jadwal Tidak Tersedia Silahkan Pilih Jadwal Lain']);
+            }
+        }
+
         $datacart = Cart::where('users_id',Auth::user()->id)->first();
         $datacartproduct = Cart::where('users_id',Auth::user()->id)->get();
 
@@ -77,9 +85,6 @@ class DetailController extends Controller
             }
 
         }
-
-
-        
 
 
         $data = [
