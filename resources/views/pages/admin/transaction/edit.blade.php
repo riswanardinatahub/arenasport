@@ -45,7 +45,6 @@ Transaksi
                                             @else
                                             <option value="{{ $item->transaction_status }}" selected>Lunas</option>
                                             @endif
-                                            <option value="" disabled>---------------------------</option>
                                             <option value="PENDING">Belum Bayar</option>
                                             <option value="DP">DP</option>
                                             <option value="SUCCESS">Lunas</option>
