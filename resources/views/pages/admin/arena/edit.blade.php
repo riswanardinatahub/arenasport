@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-User
+Arena
 @endsection
 
 @section('content')
@@ -9,10 +9,10 @@ User
     <div class="container-fluid">
         <div class="dashboard-heading">
             <h2 class="dashboard-title">
-                User
+                Arena
             </h2>
             <p class="dashboard-subtitle">
-                Edit User
+                Edit Arena
             </p>
         </div>
         <div class="dashboard-content">
@@ -29,13 +29,20 @@ User
                     @endif
                     <div class="card">
                         <div class="card-body">
-                            <form action="{{ route('user.update', $item->id) }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('arena.update', $item->id) }}" method="POST" enctype="multipart/form-data">
                                 @method('PUT')
                                 @csrf
-                               <div class="col-md-12">
+                                    <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Nama User</label>
+                                            <label>Nama</label>
                                             <input type="text" name="name" class="form-control" value="{{ $item->name }}" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Nama Arena</label>
+                                            <input type="text" name="store_name" class="form-control" value="{{ $item->store_name }}" required>
                                         </div>
                                     </div>
 
@@ -54,7 +61,7 @@ User
                                         </div>
                                     </div>
 
-                                    <div class="col-md-12 d-none">
+                                    {{-- <div class="col-md-12 d-none">
                                         <div class="form-group">
                                             <label>Roles</label>
                                             <select name="roles" required class="form-control">
@@ -63,7 +70,7 @@ User
                                                 <option value="USER">User</option>
                                             </select>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 <div class="row">
                                     <div class="col text-right">
                                         <button type="submit" class="btn btn-success px-5">

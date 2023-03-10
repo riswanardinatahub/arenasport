@@ -88,7 +88,11 @@ class ArenaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $item = User::findOrFail($id);
+
+        return view('pages.admin.arena.edit',[
+            'item' => $item
+        ]);
     }
 
     /**
@@ -100,7 +104,18 @@ class ArenaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+      
+        $item = User::findOrfail($id);
+          if($request->password){
+              $data['password'] = bcrypt($request->password);
+          }else{
+              unset($data['password']);
+          }
+          
+        $item->update($data);
+
+        return redirect()->route('arena.index');
     }
 
     /**

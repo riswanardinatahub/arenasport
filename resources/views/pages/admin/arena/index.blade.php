@@ -28,9 +28,9 @@ Arena
                                     <thead>
                                         <tr>
                                             <th>ID</th>
-                                            <th>Nama</th>
+                                            <th>Pemilik</th>
                                             <th>Email</th>
-                                            <th>Nama Toko</th>
+                                            <th>Nama Arena</th>
                                             <th>Lokasi</th>
                                             <th>Action</th>
                                         </tr>
