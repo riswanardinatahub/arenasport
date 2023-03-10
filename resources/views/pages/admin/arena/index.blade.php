@@ -31,7 +31,6 @@ Arena
                                             <th>Nama</th>
                                             <th>Email</th>
                                             <th>Nama Toko</th>
-                                            <th>Roles</th>
                                             <th>Lokasi</th>
                                             <th>Action</th>
                                         </tr>
@@ -65,7 +64,6 @@ $(document).ready( function () {
             { data: 'name', name: 'name' },
             { data: 'email', name: 'email' },
             { data: 'store_name', name: 'store_name' },
-            { data: 'roles', name: 'roles' },
             { data: 'regencies.name', name: 'regencies.name' },
             
             {
