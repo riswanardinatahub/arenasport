@@ -55,14 +55,14 @@ Arena
 
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>emAil</label>
+                                            <label>Email</label>
                                             <input type="email" name="email" class="form-control" required>
                                         </div>
                                     </div>
 
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Password Aja</label>
+                                            <label>Password</label>
                                             <input type="password" name="password" class="form-control" required>
                                         </div>
                                     </div>
