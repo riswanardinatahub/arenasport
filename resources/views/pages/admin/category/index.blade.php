@@ -21,7 +21,7 @@ Category
                     <div class="card">
                         <div class="card-body">
                             <a href="{{ route('category.create') }}" class="btn btn-primary mb-3">
-                                + Tambah kategori
+                                + Tambah Kategori
                             </a>
                             <div class="table-responsive">
                                 <table class="table table-hover scroll-horizontal-vertical w-100" id="crudTable">
@@ -31,7 +31,7 @@ Category
                                             <th>Nama</th>
                                             <th>Foto</th>
                                             <th>Slug</th>
-                                            <th>Action</th>
+                                            <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody></tbody>

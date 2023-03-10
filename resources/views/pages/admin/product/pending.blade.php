@@ -32,7 +32,7 @@ Lapangan
                                             <th>Harga</th>
                                             <th>Status</th>
                                             <th>Foto</th>
-                                            <th>Action</th>
+                                            <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody></tbody>

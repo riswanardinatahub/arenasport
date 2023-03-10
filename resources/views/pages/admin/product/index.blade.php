@@ -33,7 +33,7 @@ Lapangan
                                             <th>Kategori</th>
                                             <th>Harga</th>
                                             <th>Foto</th>
-                                            <th>Action</th>
+                                            <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody></tbody>

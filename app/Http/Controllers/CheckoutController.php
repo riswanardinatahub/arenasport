@@ -24,7 +24,7 @@ class CheckoutController extends Controller
     //  $user->update($request->except('total_price','total_qty'));
 
      //proses checkout
-     $code = 'STORE-'. mt_rand(000000, 999999);
+     $code = 'ARENA-'. mt_rand(000000, 999999);
      $carts = Cart::with(['product','user'])->where('users_id', Auth::user()->id)->get();
 
         //insert transaction

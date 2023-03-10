@@ -28,12 +28,12 @@ User
                                     <thead>
                                         <tr>
                                             <th>ID</th>
-                                            <th>Nama</th>
+                                            <th>Pemilik</th>
                                             <th>Email</th>
-                                            <th>Nama Toko</th>
+                                            <th>Nama Arena</th>
                                             <th>Roles</th>
                                             <th>Lokasi</th>
-                                            <th>Action</th>
+                                            <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody></tbody>

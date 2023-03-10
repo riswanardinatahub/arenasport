@@ -32,7 +32,7 @@ class ArenaController extends Controller
                                 Edit
                                 </a>
                         <a href="javascript:void(0)" data-toggle="tooltip" onClick="Delete(this.id)" id="'.$item->id.'" data-original-title="Delete"
-                        class="btn btn-danger"> hapus </a>
+                        class="btn btn-danger"> Hapus </a>
                         
                          ';
 

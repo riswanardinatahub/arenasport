@@ -12,7 +12,7 @@ Admin Dashboard
                       Admin  Dashboard
                     </h2>
                     <p class="dashboard-subtitle">
-                        Halaman ini di akses oleh super admin Lapangan
+                        Halaman ini di akses oleh super admin
                     </p>
                     @if ($lapanganpending >=1)
                         <p class="dashboard-subtitle">

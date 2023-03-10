@@ -31,7 +31,7 @@ Transaksi
                                             <th>Harga</th>
                                             <th>Status</th>
                                             <th>Dibuat</th>
-                                            <th>Action</th>
+                                            <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody></tbody>

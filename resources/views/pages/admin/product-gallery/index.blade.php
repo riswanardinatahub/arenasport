@@ -30,7 +30,7 @@ Product Gallery
                                             <th>ID</th>
                                             <th>Lapangan</th>
                                             <th>Foto</th>
-                                            <th>Action</th>
+                                            <th>Aksi</th>
 
                            
                                         </tr>

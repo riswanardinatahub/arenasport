@@ -32,7 +32,7 @@ Arena
                                             <th>Email</th>
                                             <th>Nama Arena</th>
                                             <th>Lokasi</th>
-                                            <th>Action</th>
+                                            <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody></tbody>

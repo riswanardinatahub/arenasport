@@ -34,7 +34,7 @@ Arena
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Nama User</label>
+                                            <label>Nama Pemilik</label>
                                             <input type="text" name="name" class="form-control" required>
                                         </div>
                                     </div>

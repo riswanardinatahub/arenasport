@@ -38,7 +38,7 @@ Booking List
                 <th scope="col">Arena</th>
                 <th scope="col">Total Biaya</th>
                 <th scope="col">Tanggal Pesan</th>
-                <th scope="col">status</th>
+                <th scope="col">Status</th>
                 <th scope="col">Aksi</th>
               </tr>
             </thead>

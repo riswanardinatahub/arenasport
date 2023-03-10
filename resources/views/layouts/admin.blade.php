@@ -68,7 +68,7 @@
                     <a href="/dashboard-account.html" class="dropdown-item">Settings</a> --}}
                     <div class="dropdown-divider"></div>
                     <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                        document.getElementById('logout-form').submit();" class="dropdown-item">Logout</a>
+                        document.getElementById('logout-form').submit();" class="dropdown-item">Keluar</a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                           @csrf
                         </form>
