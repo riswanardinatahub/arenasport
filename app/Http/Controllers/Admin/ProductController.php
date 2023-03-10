@@ -80,7 +80,11 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $users = User::where('store_name', '<>', '')->get();
+
+        $users = User::where('store_name', '<>', '')->where('phone_number', '<>', '')
+                            ->where('address_one', '<>', '')->where('categories_id', '<>', '')
+                            ->where('provinces_id', '<>', '')->where('regencies_id', '<>', '')
+                            ->where('arena_photos', '<>', '')->get();
         
         $categories = Category::all();
         return view('pages.admin.product.create',[
