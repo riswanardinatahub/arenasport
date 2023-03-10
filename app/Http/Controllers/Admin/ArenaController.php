@@ -28,7 +28,7 @@ class ArenaController extends Controller
             ->addColumn('action', function($item){
                 return '
                 
-                        <a href="'.route('user.edit', $item->id).'" class="btn btn-warning">
+                        <a href="'.route('arena.edit', $item->id).'" class="btn btn-warning">
                                 Edit
                                 </a>
                         <a href="javascript:void(0)" data-toggle="tooltip" onClick="Delete(this.id)" id="'.$item->id.'" data-original-title="Delete"
