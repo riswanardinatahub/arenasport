@@ -94,8 +94,27 @@ line-height: 1;
         </div>
     </section>
 
+
+    <section class="store-breadcrumbs" data-aos="fade-down" data-aos-delay="100">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="/">Halaman Utama</a>
+                            </li>
+                           
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
   <!-- Store new Produk -->
-  <section class="store-new-products">
+  {{-- <body class="" > --}}
+  <section class="store-new-products min-vh-100" >
     <div class="container">
       <div class="row">
         <div class="col-12" data-aos="fade-up">

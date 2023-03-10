@@ -154,6 +154,7 @@ Route::prefix('admin')
     Route::get('/', 'DashboardController@index')->name('admin-dashboard');
     Route::resource('category', 'CategoryController');
     Route::resource('user', 'UserController');
+    Route::resource('arena', 'ArenaController');
     Route::resource('admin-store-user', 'AdminStoreController');
     Route::resource('product', 'ProductController');
     Route::get('/admin/pending', 'ProductController@pending')->name('admin-product-pending');

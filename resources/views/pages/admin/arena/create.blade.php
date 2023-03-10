@@ -12,7 +12,7 @@ Arena
                 Arena
             </h2>
             <p class="dashboard-subtitle">
-                Create New Arena
+                Tambah Arena
             </p>
         </div>
         <div class="dashboard-content">
@@ -29,7 +29,7 @@ Arena
                     @endif
                     <div class="card">
                         <div class="card-body">
-                            <form action="{{ route('user.store') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('arena.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="row">
                                     <div class="col-md-12">
@@ -41,14 +41,28 @@ Arena
 
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>email</label>
+                                            <label>Nama Arena</label>
+                                            <input type="text" name="store_name" class="form-control" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>No Telpon</label>
+                                            <input type="number" name="number_phone" class="form-control" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>emAil</label>
                                             <input type="email" name="email" class="form-control" required>
                                         </div>
                                     </div>
 
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Password User</label>
+                                            <label>Password Aja</label>
                                             <input type="password" name="password" class="form-control" required>
                                         </div>
                                     </div>
@@ -56,7 +70,7 @@ Arena
                                     <div class="col-md-12" id="locations">
                                         <div class="form-group">
                                             <div class="form-group">
-                                                <label for="provinces_id">Province</label>
+                                                <label for="provinces_id">Provinsi</label>
                                                 <select name="provinces_id" id="provinces_id" class="form-control"
                                                     v-if="provinces" v-model="provinces_id">
                                                     <option v-for="province in provinces" :value="province.id">@{{
@@ -86,24 +100,16 @@ Arena
                                             <select v-else class="form-control"></select>
                                         </div>
 
-                                        <div class="form-group">
-                                            <label for="villages_id">Desa</label>
-                                            <select name="villages_id" id="villages_id" class="form-control"
-                                                v-if="villages" v-model="villages_id">
-                                                <option v-for="village in villages" :value="village.id">@{{ village.name
-                                                    }}</option>
-                                            </select>
-                                            <select v-else class="form-control"></select>
-                                        </div>
+                                       
                                     </div>
 
-                                    <div class="col-md-12">
+                                    <div class="col-md-12 d-none">
                                         <div class="form-group">
                                             <label>Roles</label>
                                             <select name="roles" required class="form-control">
-                                                <option value="ADMIN">Admin</option>
-                                                <option value="USER">User</option>
-                                                <option value="ADMINSTORE">Admin Store</option>
+                                                <option value="USER">USER</option>
+                                                {{-- <option value="USER">User</option>
+                                                <option value="ADMINSTORE">Admin Store</option> --}}
                                             </select>
                                         </div>
                                     </div>
@@ -158,7 +164,7 @@ Arena
 
       getRegenciesData() {
         var self = this;
-        axios.get('{{ url('api/regencies') }}/' + self.provinces_id)
+        axios.get('{{ url('api/regencies') }}/')
           .then(function (response) {
             self.regencies = response.data;
           })

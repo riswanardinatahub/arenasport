@@ -48,7 +48,8 @@ class DashboardProductController extends Controller
         $data['photos'] = $request->file('photos')->store('assets/product','public');
         ProductGallery::create($data);
 
-        return redirect()->route('dashboard-product-details',$request->products_id);
+        // return redirect()->route('dashboard-product-details',$request->products_id);
+        return redirect()->back();
     }
 
     public function deleteGallery(Request $request, $id){
@@ -59,10 +60,14 @@ class DashboardProductController extends Controller
             
             unlink($path.$image);
             $item->delete();
-            return redirect()->route('dashboard-product-details',$item->products_id);
+            // return redirect()->route('dashboard-product-details',$item->products_id);
+        return redirect()->back();
+
         }else{
             $item->delete();
-            return redirect()->route('dashboard-product-details',$item->products_id);
+            // return redirect()->route('dashboard-product-details',$item->products_id);
+        return redirect()->back();
+
         }
         
         
@@ -149,7 +154,7 @@ class DashboardProductController extends Controller
         $data['slug'] = Str::slug($request->name);
         $item->update($data);
 
-        return redirect()->route('dashboard-product');
+        return redirect()->back();
     }
 
     public function scheduleudapte($id){

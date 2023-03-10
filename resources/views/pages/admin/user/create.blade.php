@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-User
+Arena
 @endsection
 
 @section('content')
@@ -9,7 +9,7 @@ User
     <div class="container-fluid">
         <div class="dashboard-heading">
             <h2 class="dashboard-title">
-                Admin Store
+                Arena 
             </h2>
             <p class="dashboard-subtitle">
                 Tambah Admin Store

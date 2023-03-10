@@ -14,7 +14,7 @@
                 <div class="col-lg-12" id="register">
                       <div class="form-group">
                         <label for="">Nama Lengkap</label>
-                        <input id="name" v-model="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name"
+                        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name"
                           value="{{ old('name') }}" required autocomplete="name" autofocus>
                         @error('name')
                         <span class="invalid-feedback" role="alert">
@@ -22,6 +22,20 @@
                         </span>
                         @enderror
                       </div>
+{{-- 
+                      <div class="form-group row">
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+
+                                @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div> --}}
                       <div class="form-group">
                         <label for="">No Telpon</label>
                         <input id="phone_number"  type="text" class="form-control @error('phone_number') is-invalid @enderror" name="phone_number"
@@ -36,8 +50,8 @@
                       <div class="form-group">
                         <label for="">Email</label>
                         <input type="email" name="email" @change="checkForEmail()" class="form-control  @error('email') is-invalid @enderror"
-                          :class="{ 'is-invalid' : this.email_unavailable }" aria-describedby="emailHelp" placeholder="Masukan Email"
-                          v-model="email" autocomplete="email" />
+                          :class="{ 'is-invalid' : this.email_unavailable }" value="{{ old('email') }}" aria-describedby="emailHelp" placeholder="Masukan Email"
+                           autocomplete="email" />
                         @error('email')
                         <span class="invalid-feedback" role="alert">
                           <strong>{{ $message }}</strong>

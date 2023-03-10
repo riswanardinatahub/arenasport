@@ -1,16 +1,17 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-use App\Product;
 use App\User;
+use App\Product;
 use App\Category;
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
-use App\Http\Requests\Admin\ProductRequest;
+use App\Schedule;
 use App\ProductGallery;
 use Illuminate\Support\Str;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 use Yajra\DataTables\Facades\DataTables;
+use App\Http\Requests\Admin\ProductRequest;
 
 class ProductController extends Controller
 {
@@ -79,7 +80,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $users = User::all();
+        $users = User::where('store_name', '<>', '')->get();
+        
         $categories = Category::all();
         return view('pages.admin.product.create',[
             'users' => $users,
@@ -99,7 +101,36 @@ class ProductController extends Controller
         $data = $request->all();
 
         $data['slug'] = Str::slug($request->name);
-        Product::create($data);
+        $product = Product::create($data);
+
+
+       $gallery = [
+           'products_id' =>$product->id,
+           'photos' => $request->file('photo')->store('assets/product','public'),
+       ];
+
+        ProductGallery::create($gallery);
+
+    $test = array('00.00 - 01.00','00.10 - 02.00','02.00 - 03.00','03.00 - 04.00','04.00 - 05.00','05.00 - 06.00','06.00 - 07.00','07.00 - 08.00','08.00 - 09.00'
+            ,'09.00 - 10.00','10.00 - 11.00','11.00 - 12.00','12.00 - 13.00','13.00 - 14.00',
+            '14.00 - 15.00','15.00 - 16.00','16.00 - 17.00','17.00 - 18.00','18.00 - 19.00',
+            '19.00 - 20.00','20.00 - 21.00','21.00 - 22.00','22.00 - 23.00','23.00 - 24.00',);
+            
+    $datajadwal = array($request->time1,$request->time2,$request->time3,$request->time4,$request->time5,$request->time6,$request->time7,$request->time8
+                        ,$request->time9,$request->time10,$request->time11,$request->time12,$request->time13,$request->time14,$request->time15,$request->time16
+                        ,$request->time17,$request->time18,$request->time19,$request->time20,$request->time21,$request->time22,$request->time23,$request->time24);
+   
+                        // $datajadwaltostring = implode(", ", $datajadwal);
+
+    // $codes = array('tn', 'us', 'fr');
+    // $names = array('Tunisia', 'United States', 'France');
+    foreach($test as $key => $value) {
+        // echo "Code is: " . $test[$key] . " - " . "and Name: " . $datajadwal[$key] . "<br>";
+        $data = array('products_id' => $product->id,
+                    'time' => $test[$key], 
+                    'status' => $datajadwal[$key]);
+        Schedule::insert($data);
+    }
 
         return redirect()->route('product.index');
     }
@@ -123,14 +154,19 @@ class ProductController extends Controller
      */
     public function edit($id)
     {   
+         
+
+      
         $users = User::all();
+        $product = Product::with(['galleries','user','category'])->findOrFail($id);
         $categories = Category::all();
-        $item = Product::findOrFail($id);
+        $schadules = Schedule::where('products_id',$id)->get();
 
         return view('pages.admin.product.edit',[
-            'item' => $item,
+            'product' => $product,
              'users' => $users,
             'categories' => $categories,
+            'schadules' => $schadules,
 
             
         ]);
@@ -151,7 +187,7 @@ class ProductController extends Controller
         $data['slug'] = Str::slug($request->name);
         $item->update($data);
 
-        return redirect()->route('product.index');
+        return redirect()->back();
     }
 
     /**

@@ -121,10 +121,15 @@ class DashboardController extends Controller
         $customer = User::count();
         $transaction = Transaction::count();
         $revenue = Transaction::where('transaction_status','SUCCESS')->sum('total_price');
+
+        $lapanganpending = Product::where('status','PENDING')->count();
+
+        // dd($lapanganpending);
         return view('pages.admin/dashboard',[
             'customer' => $customer,
             'transaction' => $transaction,
             'revenue' => $revenue,
+            'lapanganpending' => $lapanganpending,
             'statistikuser' => $statistikuser,
             'statistiktransaksi' => $statistiktransaksi,
             'transaction_data' => $transactiondata->take(5)->latest()->get(),

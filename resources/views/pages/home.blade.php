@@ -175,7 +175,7 @@ Arena
     </section> --}}
 
     <!-- Store new Produk -->
-    <section class="store-new-products mt-3">
+    <section class="store-new-products mt-3 min-vh-50">
         <div class="container">
             <div class="row">
                 <div class="col-12">

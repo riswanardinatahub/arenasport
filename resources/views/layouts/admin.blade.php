@@ -12,6 +12,7 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <link href="/style/main.css" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.24/datatables.min.css"/>
+   <script src="https://kit.fontawesome.com/069e062e69.js" crossorigin="anonymous"></script>
   @stack('addon-style')
 </head>
 
@@ -26,9 +27,10 @@
         </div>
         <div class="list-group list-group-flush">
           <a href="{{ route('admin-dashboard') }}" class="list-group-item list-group-item-action">Dashboard</a>
+          <a href="{{ route('arena.index') }}" class="list-group-item list-group-item-action {{ (request()->is('admin/arena')) ? 'active' : ''}}  ">Arena</a>
           <a href="{{ route('product.index') }}" class="list-group-item list-group-item-action {{ (request()->is('admin/product')) ? 'active' : ''}}  ">Lapangan</a>
-          <a href="{{ route('admin-product-pending') }}" class="list-group-item list-group-item-action {{ (request()->is('admin/admin/pending*')) ? 'active' : ''}}  ">Lapangan Pending</a>
-           <a href="{{ route('product-gallery.index') }}" class="list-group-item list-group-item-action {{ (request()->is('admin/product-gallery*')) ? 'active' : ''}}"> Gallery Lapangan</a>
+          <a href="{{ route('admin-product-pending') }}" class="list-group-item list-group-item-action {{ (request()->is('admin/admin/pending*')) ? 'active' : ''}}  ">Persetujuan Lapangan</a>
+          <a href="{{ route('product-gallery.index') }}" class="list-group-item list-group-item-action {{ (request()->is('admin/product-gallery*')) ? 'active' : ''}}"> Gallery Lapangan</a>
           <a href="{{ route('category.index') }}" class="list-group-item list-group-item-action {{ (request()->is('admin/category*')) ? 'active' : ''}}">Kategori</a>
           <a href="{{ route('transaction.index') }}" class="list-group-item list-group-item-action {{ (request()->is('admin/transaction*')) ? 'active' : ''}}">Transaksi</a>
           <a href="{{ route('user.index') }}" class="list-group-item list-group-item-action {{ (request()->is('admin/user*')) ? 'active' : ''}} ">Users</a>

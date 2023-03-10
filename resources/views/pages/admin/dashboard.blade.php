@@ -14,6 +14,14 @@ Admin Dashboard
                     <p class="dashboard-subtitle">
                         Halaman ini di akses oleh super admin Lapangan
                     </p>
+                    @if ($lapanganpending >=1)
+                        <p class="dashboard-subtitle">
+                       <a href="{{ route('admin-product-pending') }}" class="btn btn-warning text-white">
+                       Lapangan perlu persetujuan mohon segera lakukan pengecekan total {{ $lapanganpending }}
+                       </a>
+                    </p>
+                    @else 
+                    @endif
                     </div>
                     <div class="dashboard-content">
                     <div class="row">

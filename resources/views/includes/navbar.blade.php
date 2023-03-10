@@ -48,6 +48,7 @@
 </script>
 
 
+
 <nav class="navbar navbar-custom navbar-expand-lg navbar-light navbar-store fixed-top navbar-fixed-top" data-aos="fade-down">
   <div class="container-fluid">
     <a href="{{ route('home') }}" class="navbar-brand">
