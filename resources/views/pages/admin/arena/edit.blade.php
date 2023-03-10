@@ -34,7 +34,7 @@ Arena
                                 @csrf
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Nama</label>
+                                            <label>Nama Pemilik</label>
                                             <input type="text" name="name" class="form-control" value="{{ $item->name }}" required>
                                         </div>
                                     </div>
@@ -55,7 +55,7 @@ Arena
 
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Password User</label>
+                                            <label>Password</label>
                                             <input type="password" name="password" class="form-control" >
                                             <small> Kosongkan Jika Tidak Mau ganti Password<smalll>
                                         </div>
