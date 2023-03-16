@@ -25,9 +25,12 @@ class UserRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:50',
+            'number_phone' => 'required|min:10|max:12',
             // 'email' => 'required|email|unique:users',
             'email' => 'required|email|unique:users,email,' .  $this->route('user'),                    
             'roles' => 'nullable|string|in:ADMIN,USER,ADMINSTORE'
         ];
+
+      
     }
 }
