@@ -110,8 +110,8 @@ class UserController extends Controller
         //             'email'    =>  $request->email,
         //         ])->json();
 
-        
 
+    
         $data = $request->all();
 
         $data['password']= bcrypt($request->password);

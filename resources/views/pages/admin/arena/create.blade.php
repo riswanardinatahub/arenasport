@@ -35,7 +35,7 @@ Arena
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Nama Pemilik</label>
-                                            <input type="text" name="name" class="form-control" required>
+                                            <input type="text" name="name" value="{{ old('name') }}" class="form-control" required>
                                         </div>
                                     </div>
 
@@ -49,14 +49,14 @@ Arena
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>No Telpon</label>
-                                            <input type="number" name="number_phone" class="form-control" required>
+                                            <input type="number" name="number_phone" value="{{ old('number_phone') }}" class="form-control" required>
                                         </div>
                                     </div>
 
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Email</label>
-                                            <input type="email" name="email" class="form-control" required>
+                                            <input type="email" name="email" value="{{ old('email') }}" class="form-control" required>
                                         </div>
                                     </div>
 
