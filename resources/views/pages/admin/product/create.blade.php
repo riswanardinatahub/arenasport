@@ -152,10 +152,16 @@ Tambah Lapangan
                           <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Pemilik Lapangan</label>
-                                            <select name="users_id" class="form-control">
-                                                @foreach ( $users as $user)
-                                                    <option value="{{ $user->id }}">{{ $user->name }}</option>
+                                            <select name="users_id" class="form-control" >
+                                              
+                                                @foreach ( $users as $key => $val)
+                                                  @if (old('users_id') == $val->id)
+                                                      <option value="{{ $val->id }}" selected>{{ $val->name }}</option>
+                                                  @else
+                                                      <option value="{{ $val->id }}">{{ $val->name }}</option>
+                                                  @endif
                                                 @endforeach
+
                                             </select>
                                             
                                         </div>
@@ -164,12 +170,18 @@ Tambah Lapangan
                             <div class="form-group">
                               <label>Kategori Lapangan</label>
                                 <select name="categories_id" class="form-control" required>
-                                      @foreach ( $categories as $category)
-                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                      @foreach ( $categories as $key => $val)
+                                        @if (old('categories_id') == $val->id)
+                                            <option value="{{ $val->id }}" selected>{{ $val->name }}</option>
+                                        @else
+                                            <option value="{{ $val->id }}">{{ $val->name }}</option>
+                                        @endif
                                       @endforeach
                                 </select>
                             </div>
                           </div>
+
+                          
 
                           <div class="col-md-12">
                             <div class="form-group">
