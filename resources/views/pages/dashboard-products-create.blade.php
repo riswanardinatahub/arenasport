@@ -36,13 +36,13 @@ Dashboard Lapangan Details Pages
                           <div class="col-md-6">
                             <div class="form-group">
                               <label for="">Nama Lapangan</label>
-                              <input type="text" class="form-control" name="name" required>
+                              <input type="text" class="form-control" name="name" value="{{ old('name') }}" required>
                             </div>
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
                               <label for="">Harga</label>
-                              <input type="number" class="form-control" name="price" required>
+                              <input type="number" class="form-control" name="price" value="{{ old('price') }}" required>
                             </div>
                           </div>
                           {{-- <div class="col-md-6">
@@ -72,7 +72,7 @@ Dashboard Lapangan Details Pages
                           <div class="col-md-12">
                             <div class="form-group">
                               <label for="">Thumbnails</label>
-                              <input type="file" class="form-control" name="photo" required>
+                              <input type="file" class="form-control" name="photo" value="{{ old('photo') }}" required>
                               <p class="text-muted">
                                 kamu dapat memilih lebih dari satu file
                               </p>

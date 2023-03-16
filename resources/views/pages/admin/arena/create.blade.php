@@ -72,8 +72,8 @@ Arena
                                             <div class="form-group">
                                                 <label for="provinces_id">Provinsi</label>
                                                 <select name="provinces_id" id="provinces_id" class="form-control"
-                                                    v-if="provinces" v-model="provinces_id">
-                                                    <option v-for="province in provinces" :value="province.id">@{{
+                                                    v-if="provinces" v-model="provinces_id" required>
+                                                    <option v-for="province in provinces" :value="province.id" >@{{
                                                         province.name }}</option>
                                                 </select>
                                                 <select v-else class="form-control"></select>
@@ -83,7 +83,7 @@ Arena
                                         <div class="form-group">
                                             <label for="regencies_id">Kabupaten</label>
                                             <select name="regencies_id" id="regencies_id" class="form-control"
-                                                v-if="regencies" v-model="regencies_id">
+                                                v-if="regencies" v-model="regencies_id" required>
                                                 <option v-for="regency in regencies" :value="regency.id">@{{
                                                     regency.name }}</option>
                                             </select>
@@ -93,7 +93,7 @@ Arena
                                         <div class="form-group">
                                             <label for="districts_id">Kecamatan/Kelurahan</label>
                                             <select name="districts_id" id="districts_id" class="form-control"
-                                                v-if="districts" v-model="districts_id">
+                                                v-if="districts" v-model="districts_id" required>
                                                 <option v-for="district in districts" :value="district.id">@{{
                                                     district.name }}</option>
                                             </select>

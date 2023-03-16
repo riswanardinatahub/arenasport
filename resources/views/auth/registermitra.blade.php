@@ -14,8 +14,8 @@
                 <div class="col-12" id="register">
                       <div class="form-group">
                         <label for="">Nama Lengkap</label>
-                        <input id="name" v-model="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name"
-                          value="{{ old('name') }}" required autocomplete="name" autofocus>
+                        <input id="name" value="{{ old('name') }}" type="text" class="form-control @error('name') is-invalid @enderror" name="name"
+                           required autocomplete="name" autofocus>
                         @error('name')
                         <span class="invalid-feedback" role="alert">
                           <strong>{{ $message }}</strong>
@@ -36,8 +36,8 @@
                       <div class="form-group">
                         <label for="">Email</label>
                         <input type="email" name="email" @change="checkForEmail()" class="form-control  @error('email') is-invalid @enderror"
-                          :class="{ 'is-invalid' : this.email_unavailable }" aria-describedby="emailHelp" placeholder="Masukan Email"
-                          v-model="email" autocomplete="email" />
+                          :class="{ 'is-invalid' : this.email_unavailable }" aria-describedby="emailHelp" value="{{ old('email') }}" placeholder="Masukan Email"
+                           required autocomplete="email" />
                         @error('email')
                         <span class="invalid-feedback" role="alert">
                           <strong>{{ $message }}</strong>
@@ -62,7 +62,7 @@
                       
                       <div class="form-group" v-if="is_store_open">
                         <label for="">Nama Arena</label>
-                        <input type="text" v-model="store_name" id="store_name" class="form-control @error('store_name') is-invalid @enderror"
+                        <input type="text" value="{{ old('store_name') }}" id="store_name" class="form-control @error('store_name') is-invalid @enderror"
                           name="store_name" required autocomplete autofocus>
                         @error('store_name')
                         <span class="invalid-feedback" role="alert">
