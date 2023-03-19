@@ -38,7 +38,7 @@ Arena Cart Page
                         <thead>
                             <tr>
                                 <td>Foto</td>
-                                <td>Arena &amp; Toko</td>
+                                <td>Arena &amp; Lapangan</td>
                                 <td>Harga</td>
                                 <td>Tanggal</td>
                                 <td>Waktu</td>
