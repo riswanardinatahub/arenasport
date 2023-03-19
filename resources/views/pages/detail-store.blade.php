@@ -73,11 +73,10 @@ Detail Arena
               </div>
             </div>
 
-            <div class="col-md-6 col-lg-6 d-sm-none mt-2">
+            <div class="col-12 col-md-6 col-lg-6 mt-2">
               <div class=" card " style="height: 15rem;">
                 <img class="card-img-top img-fluid " src="{{ Storage::url($user->arena_photos)  }}" alt="Card image cap">
 
-                
               </div>
             </div>
 
