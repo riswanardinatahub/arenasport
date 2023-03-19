@@ -90,7 +90,11 @@ Detail Arena
         </div>
       </section>
 
-      <section class="store-new-products mt-3">
+      
+
+    </div>
+
+    <section class="store-new-products mt-3">
         <div class="container">
           <div class="row">
             <div class="col-12 mb-3" data-aos="fade-up">
@@ -306,8 +310,6 @@ Detail Arena
 
         </div>
       </section>
-
-    </div>
 
   </div>
 
