@@ -25,7 +25,7 @@ class CheckoutController extends Controller
                                 ->where('book_date',$rowdata->book_date)->count();
             // dd($detailtransaction);
             if($detailtransaction >=1){
-             return redirect()->back()->with(['success' => 'Mohon maaf jadwal anda telah terpesan akan berwarna abu2 silahkan hapus dan pilih jadwal lain']);
+             return redirect()->back()->with(['success' => 'Mohon maaf jadwal anda telah dipesan oleh orang lain, silahkan hapus dan pilih jadwal lain']);
             }
         }
     
