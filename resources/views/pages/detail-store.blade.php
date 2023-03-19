@@ -73,7 +73,7 @@ Detail Arena
               </div>
             </div>
 
-            <div class="col-lg-6 mt-2">
+            <div class="col-md-6 col-lg-6 d-sm-none mt-2">
               <div class=" card " style="height: 15rem;">
                 <img class="card-img-top img-fluid " src="{{ Storage::url($user->arena_photos)  }}" alt="Card image cap">
 
@@ -90,11 +90,7 @@ Detail Arena
         </div>
       </section>
 
-      
-
-    </div>
-
-    <section class="store-new-products mt-3">
+      <section class="store-new-products mt-3">
         <div class="container">
           <div class="row">
             <div class="col-12 mb-3" data-aos="fade-up">
@@ -310,6 +306,8 @@ Detail Arena
 
         </div>
       </section>
+
+    </div>
 
   </div>
 
