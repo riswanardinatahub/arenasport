@@ -17,7 +17,17 @@ class CheckoutController extends Controller
 {
     public function process(Request $request){
 
-    // dd($request->total_price);
+    $checkifdatahavebeenchaeckout = Cart::with(['product','user'])->where('users_id', Auth::user()->id)->get();
+        foreach($checkifdatahavebeenchaeckout as $rowdata){
+             $detailtransaction = TransactionDetail::
+                                  where('products_id',$rowdata->products_id)
+                                ->where('book_time',$rowdata->book_time)
+                                ->where('book_date',$rowdata->book_date)->count();
+            // dd($detailtransaction);
+            if($detailtransaction >=1){
+             return redirect()->back()->with(['success' => 'Mohon maaf jadwal anda telah terpesan akan berwarna abu2 silahkan hapus dan pilih jadwal lain']);
+            }
+        }
     
      //ambil user   
      $user = Auth::user();

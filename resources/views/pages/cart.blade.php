@@ -13,7 +13,7 @@ Arena Cart Page
                     <nav>
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item">
-                                <a href="/index.html">Home</a>
+                                <a href="/">Home</a>
                             </li>
                             <li class="breadcrumb-item active">
                                 Cart
@@ -51,6 +51,70 @@ Arena Cart Page
                             $totalPrice = 0
                             @endphp
                             @forelse ($carts as $cart )
+                                @php
+                                    $detailtransaction = App\TransactionDetail::
+                                    where('products_id',$cart->products_id)
+                                    ->where('book_time',$cart->book_time)
+                                    ->where('book_date',$cart->book_date)->count();
+                                @endphp
+                            @if ($detailtransaction >= 1)
+
+                            <tr style="background-color: #e0e1e1;">
+                                <td style="width: 15%;">
+                                    @if ($cart->product->galleries->count())
+                                    <img src="{{ Storage::url($cart->product->galleries->first()->photos) }}" alt=""
+                                        class="cart-image ">
+
+                                    @else
+
+                                    @endif
+                                </td>
+                                <td style="width: 20%;">
+                                    <div class="product-title">{{ $cart->product->name }}</div>
+                                    <div class="product-subtitle">{{ $cart->product->user->store_name }}</div>
+                                </td>
+                                <td style="width: 15%;">
+                                    <div class="product-title"> {{ number_format($cart->product->price ) }}</div>
+                                    <div class="product-subtitle">Rupiah</div>
+                                </td>
+                                <td style="width: 15%;">
+                                    <div class="product-title"> {{ $cart->book_date }}</div>
+                                    
+                                </td>
+                                <td style="width: 20%;">
+                                    <div class="product-title">{{ $cart->book_time }}</div>
+                                    
+                                </td>
+                                {{-- <td style="width: 20%;">
+                                    <div class="row mt-3 pt-1">
+                                        <div class="col-2">
+                                            <a href="{{ route('kurangqty', $cart->id) }}" class="btn btn-danger btn-sm">-</a>
+                                        </div>
+                                        <div class="ml-2 col-2">
+                                            {{ $cart->qty }}
+                                        </div>
+                                        <div class="col-2">
+                                            <a href="{{ route('tambahqty', $cart->id) }}" class="btn btn-success btn-sm">+</a>
+                                        </div>
+                                    </div>
+                                </td> --}}
+                                <td style="width: 20%;" class="pt-4">
+                                    <form action="{{ route('cart-delete',$cart->id) }}" method="POST">
+                                        @method('DELETE')
+                                        @csrf
+                                        <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
+                                       
+
+                                    </form>
+
+                                </td>
+                                
+                            </tr>
+                            
+                            
+
+
+                            @else
                             <tr>
                                 <td style="width: 15%;">
                                     @if ($cart->product->galleries->count())
@@ -101,6 +165,8 @@ Arena Cart Page
 
                                 </td>
                             </tr>
+                            @endif
+                            
                             @php
                             $totalPrice += $cart->qty * $cart->product->price
                             
