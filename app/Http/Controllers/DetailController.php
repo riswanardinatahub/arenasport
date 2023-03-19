@@ -58,7 +58,7 @@ class DetailController extends Controller
             'transactiondetailthursday' => $transactiondetailthursday,
             'transactiondetailfriday' => $transactiondetailfriday,
             'transactiondetailsaturday' => $transactiondetailsaturday,
-            'transactiondetailsunday' => $transactiondetailmonday,
+            'transactiondetailsunday' => $transactiondetailsunday,
         ]);
     }
 
