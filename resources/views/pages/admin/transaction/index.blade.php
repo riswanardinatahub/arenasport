@@ -29,7 +29,7 @@ Transaksi
                                             <th>Nama Pemesan</th>
                                             <th>Nama Arena</th>
                                             <th>Harga</th>
-                                            <th>Status</th>
+                                            <th>Status Transaksi</th>
                                             <th>Dibuat</th>
                                             <th>Aksi</th>
                                         </tr>

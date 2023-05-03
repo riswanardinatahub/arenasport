@@ -32,12 +32,20 @@ class ProductGalleryController extends Controller
                         <form action="'. route('product-gallery.destroy', $item->id).'" method="POST">
                                 '.method_field('delete'). csrf_field() .'
 
-                                <button type="submit" class="btn btn-danger">
+                                <button type="submit" class="btn btn-danger" Onclick="return ConfirmDelete()">
                                     Hapus
                                 </button>
                                 </form>
-                        
-                        ';
+                                
+                            </div>
+
+                            </div>
+                            <script>
+                                function ConfirmDelete()
+                                {
+                                    return confirm("Apakah kamu yakin ingin menghapus data ini ? ");
+                                }
+                            </script>';
             })->editColumn('photos', function($item){
                  return $item->photos ? '<img src="'. Storage::url($item->photos) .'" style="max-height: 40px;"/>' : '';
             })

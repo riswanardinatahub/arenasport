@@ -295,7 +295,7 @@ Arena Cart Page
                         <div class="product-subtitle">Total</div>
                     </div>
                     <div class="col-8 col-md-3">
-                        <button type="submit" class="btn btn-success mt-4 px-4 btn-block"> Checkout Now</button>
+                        <button type="submit" class="btn btn-success mt-4 px-4 btn-block"> Pesan Sekarang</button>
                     </div>
                 </div>
             </form>

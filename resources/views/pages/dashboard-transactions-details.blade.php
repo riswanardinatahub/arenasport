@@ -198,7 +198,7 @@ Dashboard Transactions Details Pages
                     <div class="row">
                       <div class="col-12 col-md-3">
                         <div class="product-title">
-                          Status Pengiriman
+                          Status transaksi
                         </div>
                         <select name="transaction_status" id="status" class="form-control" v-model=status>
                           <option value="PENDING">Belum Bayar</option>
@@ -215,7 +215,7 @@ Dashboard Transactions Details Pages
                 <div class="row text-right">
                   <div class="col-12">
                     <button type="submit" class="btn btn-success  mt-4">Simpan Perubahan</button>
-                    <a href="{{ route('downoadpdf',$transactionss->id) }}" class="btn btn-warning  mt-4">Cetak Invoice</a>
+                    <a href="{{ route('downoadpdf',$transactionss->id) }}" class="btn btn-warning  mt-4">Cetak Pesanan</a>
                   </div>
                 </div>
              

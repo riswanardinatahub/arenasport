@@ -36,15 +36,20 @@ class CategoryController extends Controller
                              <form action="'. route('category.destroy', $item->id).'" method="POST">
                                 '.method_field('delete'). csrf_field() .'
 
-                                <button type="submit" class="btn btn-danger">
+                                <button type="submit" class="btn btn-danger" Onclick="return ConfirmDelete()">
                                     Hapus
                                 </button>
                                 </form>
                                 
                             </div>
 
-                           
-                            </div>     
+                            </div>
+                            <script>
+                                function ConfirmDelete()
+                                {
+                                    return confirm("Apakah kamu yakin ingin menghapus data ini ? ");
+                                }
+                            </script>    
                             ';
             })->editColumn('photo',function($item){
                 return $item->photo ? '<img src="'. Storage::url($item->photo) .'" style="max-height: 40px;"/>' : '';
