@@ -55,7 +55,7 @@ class DashboardController extends Controller
             $datatransaksi[$month-1]=$transaksi[$index];
         }
         
-        $statistiktransaksi= json_encode($datatransaksi);
+        // $statistiktransaksi= json_encode($datatransaksi);
 
         //dd($datatransaksi);
 
@@ -133,7 +133,7 @@ class DashboardController extends Controller
             'revenue' => $revenue,
             'lapanganpending' => $lapanganpending,
             'statistikuser' => $statistikuser,
-            'statistiktransaksi' => $statistiktransaksi,
+            'datatransaksi' => $datatransaksi,
             'transaction_data' => $transaction_data,
         ]);
     }
