@@ -57,10 +57,10 @@ Store Dashboard
                     <div class="card mb-2">
                         <div class="card-body">
                             <div class="dashboard-card-title">
-                                Transaksi
+                                Total Transaksi
                             </div>
                             <div class="dashboard-card-subtitle">
-                                {{ number_format($trasaction_count) }}
+                                {{ number_format($totaltransaksisemua) }}
                             </div>
                         </div>
                     </div>
@@ -87,18 +87,27 @@ Store Dashboard
                         class="card card-list d-block">
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-md-1">
-                                    <img src="{{ Storage::url($transaction->product->galleries->first()->photos ?? '') }}"
-                                        class="w-75">
+                                <div class="col-md-2">
+                                    {{ $transaction->code }}
                                 </div>
-                                <div class="col-md-4">
-                                    {{ $transaction->product->name }}
+                                <div class="col-md-2">
+                                    {{ $transaction->user->name }}
                                 </div>
-                                <div class="col-md-3">
-                                    {{ $transaction->product->user->name ?? '' }}
+                                <div class="col-md-2">
+                                    Rp. {{ number_format($transaction->total_price,0,',','.') }}
                                 </div>
-                                <div class="col-md-3">
-                                    {{ $transaction->created_at }}
+                                <div class="col-md-2">
+                                    {{ $transaction->created_at->format('d-m-Y') }}
+                                </div>
+                                <div class="col-md-2">
+                                     @if ($transaction->transaction_status == 'PENDING')
+                            <span class="font-weight-bold"  style="color: red;">Belum Bayar</span> 
+                            @elseif ($transaction->transaction_status == 'DP')
+                            <span class="font-weight-bold" style="color: orange;">DP</span>
+                            @else
+                            <span class="font-weight-bold" style="color: green;">Lunas</span>
+                              
+                            @endif
                                 </div>
                                 <div class="col-md-1 d-none d-md-block">
                                     <img src="/images/dashboard-arrow-right.svg" alt="">
@@ -107,7 +116,6 @@ Store Dashboard
                         </div>
                     </a>
                     @endforeach
-
 
                 </div>
             </div>

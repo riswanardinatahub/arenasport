@@ -82,26 +82,37 @@ Admin Dashboard
                         <div class="col-12 mt-2">
                         <h5 class="mb-3"> Transaksi Terakhir </h5>
                          @foreach ($transaction_data as $transaction)
-                    <a href="{{ route('dashboard-transaction-details', $transaction->id) }}"
+                    <a href="#"
                         class="card card-list d-block">
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-md-1">
-                                    <img src="{{ Storage::url($transaction->product->galleries->first()->photos ?? '') }}"
-                                        class="w-75">
+                            
+                                <div class="col-md-2">
+                                    {{ $transaction->code }}
                                 </div>
-                                <div class="col-md-4">
-                                    {{ $transaction->product->name }}
+                                <div class="col-md-2">
+                                    {{ $transaction->arena->store_name }}
                                 </div>
-                                <div class="col-md-3">
-                                    {{ $transaction->product->user->name ?? '' }}
+                                <div class="col-md-2">
+                                    {{ $transaction->user->name }}
                                 </div>
-                                <div class="col-md-3">
-                                    {{ $transaction->created_at }}
+                                <div class="col-md-2">
+                                    Rp. {{ number_format($transaction->total_price,0,',','.') }}
                                 </div>
-                                <div class="col-md-1 d-none d-md-block">
-                                    <img src="/images/dashboard-arrow-right.svg" alt="">
+                                <div class="col-md-2">
+                                    {{ $transaction->created_at->format('d-m-Y') }}
                                 </div>
+                                <div class="col-md-2">
+                                     @if ($transaction->transaction_status == 'PENDING')
+                            <span class="font-weight-bold"  style="color: red;">Belum Bayar</span> 
+                            @elseif ($transaction->transaction_status == 'DP')
+                            <span class="font-weight-bold" style="color: orange;">DP</span>
+                            @else
+                            <span class="font-weight-bold" style="color: green;">Lunas</span>
+                              
+                            @endif
+                                </div>
+                               
                             </div>
                         </div>
                     </a>

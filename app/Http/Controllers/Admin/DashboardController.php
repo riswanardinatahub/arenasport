@@ -123,16 +123,18 @@ class DashboardController extends Controller
         $revenue = Transaction::where('transaction_status','SUCCESS')->sum('total_price');
 
         $lapanganpending = Product::where('status','PENDING')->count();
+        $transaction_data = Transaction::take(5)->latest()->get();
 
         // dd($lapanganpending);
         return view('pages.admin/dashboard',[
             'customer' => $customer,
             'transaction' => $transaction,
+            'transaction' => $transaction,
             'revenue' => $revenue,
             'lapanganpending' => $lapanganpending,
             'statistikuser' => $statistikuser,
             'statistiktransaksi' => $statistiktransaksi,
-            'transaction_data' => $transactiondata->take(5)->latest()->get(),
+            'transaction_data' => $transaction_data,
         ]);
     }
 }

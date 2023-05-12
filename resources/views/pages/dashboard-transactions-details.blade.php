@@ -148,7 +148,7 @@ Dashboard Transactions Details Pages
                                 </div>
                                 <div class="col-12 col-md-3 col-lg-3 pl-md-1">
                               <a target="_blank"
-                                href="https://api.whatsapp.com/send?text=Terimakasih Terimakasih Telah Melakukan pemesanan {{ $transaction->product->name }} dengan kode booking {{ $transactionss->code }} total biaya {{ $transactionss->total_price }} &phone=62{{ $transaction->transaction->user->phone_number }}"
+                                href="https://api.whatsapp.com/send?text=Terimakasih Telah Melakukan pemesanan {{ $transaction->product->name }} dengan kode booking {{ $transactionss->code }} total biaya {{ $transactionss->total_price }} &phone=62{{ $transaction->transaction->user->phone_number }}"
                                 type="button" class="btn btn-success d-block ">Whatsapp</a>
                                 </div>
                               </div>
