@@ -145,19 +145,15 @@
          
         </li>
       </ul>
-      <!-- Mobile Menu -->
+      @if (Auth::user()->store_name)
+           <!-- Mobile Menu -->
       <ul class="navbar-nav d-block d-lg-none">
         <li class="nav-item">
           <a href="" class="nav-link">
             {{ Auth::user()->name }}
           </a>
         </li>
-        <li class="nav-item">
-          <a href="" class="nav-link d-inline-block">
-            Keranjang
-          </a>
-          
-        </li>
+
         <li class="nav-item">
           <a href="{{ route('dashboard') }}" class="nav-link d-inline-block">
             Dashboard
@@ -179,6 +175,56 @@
           
         </li>
       </ul>
+      @else
+
+         <!-- Mobile Menu -->
+      <ul class="navbar-nav d-block d-lg-none">
+        <li class="nav-item">
+          <a href="" class="nav-link">
+            {{ Auth::user()->name }}
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href=" {{ route('cart') }}" class="nav-link d-inline-block">
+            Keranjang
+          </a>
+
+          @php
+            $cart = \App\Cart::where('users_id', Auth::user()->id)->count();
+            @endphp
+
+            @if ($cart > 0)
+            <img src="/images/icon-cart-filled.svg"  style="width: 30px;" alt="">
+            <div class="card-badge">{{ $cart }}</div>
+            @else
+            <img src="/images/icon-cart-empty.svg" alt="">
+            @endif
+          
+        </li>
+        <li class="nav-item">
+          <a href="{{ route('profil') }}" class="nav-link d-inline-block">
+            Profil
+          </a>
+          
+        </li>
+        <li class="nav-item">
+          <a href="{{ route('bookinglist') }}" class="nav-link d-inline-block">
+            Daftar Booking
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link d-inline-block" href="{{ route('logout') }}" onclick="event.preventDefault(); 
+                document.getElementById('logout-form').submit();" class="dropdown-item">Keluar</a>
+                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                  @csrf
+                </form>
+          
+        </li>
+      </ul>
+     
+      @endif
+      
       @endauth
 
     </div>
