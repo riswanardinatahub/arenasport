@@ -147,10 +147,17 @@ Dashboard Transactions Details Pages
 
                                 </div>
                                 <div class="col-12 col-md-3 col-lg-3 pl-md-1">
+                              @php
+                                  $no=1;
+                                @endphp
                               <a target="_blank"
-                                href="https://api.whatsapp.com/send?text=Terimakasih Telah Melakukan pemesanan {{ $transaction->product->name }} dengan kode booking {{ $transactionss->code }} total biaya {{ $transactionss->total_price }} &phone=62{{ $transaction->transaction->user->phone_number }}"
+                                href="https://api.whatsapp.com/send?text=Terimakasih telah melakukan pemesanan pada {{ $transaction->product->user->store_name }}.%0aKode Booking {{ $transactionss->code }}%0aTotal Biaya : Rp. {{ number_format($transactionss->total_price) }} %0a%0aDengan detail pesanan :%0a @foreach($transactiondetails as $transaction) {{ $no++ }}. {{$transaction->product->name }} pada tanggal : {{ date('d-m-Y', strtotime($transaction->book_date)) }}  dan jam : {{ $transaction->book_time }}%0a @endforeach %0aTerimakasih. &phone=62{{ $transaction->transaction->user->phone_number }}"
                                 type="button" class="btn btn-success d-block ">Whatsapp</a>
                                 </div>
+
+
+                                
+
                               </div>
                               
                                
