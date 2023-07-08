@@ -124,7 +124,7 @@ class DashboardController extends Controller
 
         $lapanganpending = Product::where('status','PENDING')->count();
         $transaction_data = Transaction::take(5)->latest()->get();
-        dd($transaction_data);
+        //dd($transaction_data);
 
         // dd($lapanganpending);
         return view('pages.admin/dashboard',[
