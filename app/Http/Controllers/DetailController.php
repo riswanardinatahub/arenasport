@@ -64,6 +64,12 @@ class DetailController extends Controller
 
     public function add(Request $request, $id){
         // dd($request->all());
+        $dataproduk = Product::find($id);
+
+        
+        if($dataproduk->user->store_status == 0){
+            return redirect()->back()->with(['error' => 'Jadwal Tidak Tersedia Silahkan Pilih Jadwal Lain']);
+        }
 
         $detailtransaction = TransactionDetail::where('products_id',$id)->get();
         // dd($detailtransaction->products_id,$detailtransaction->book_date,$detailtransaction->book_date,$id);

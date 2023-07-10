@@ -586,6 +586,20 @@ line-height: 1;
     </script>
 @endif
 
+@if ($message = Session::get('error'))
+    <script>
+      swal({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Mohon Maaf Arena Sedang Tutup',
+            footer: '<a href="/">Why do I have this issue?</a>'
+          }).then(function() {
+               window.location = "/";
+          });
+
+    </script>
+@endif
+
 <script src="/vendor/vue/vue.js"></script>
 <script>
   var gallery = new Vue({
