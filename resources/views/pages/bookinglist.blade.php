@@ -39,6 +39,7 @@ Booking List
                 <th scope="col">Total Biaya</th>
                 <th scope="col">Tanggal Pesan</th>
                 <th scope="col">Status</th>
+                <th scope="col">Total DP</th>
                 <th scope="col">Aksi</th>
               </tr>
             </thead>
@@ -65,6 +66,8 @@ Booking List
               
                 
                 </td>
+                <td>Rp. {{ number_format($data->down_payment,0,',','.') }}</td>
+
                 <td><a href="{{ route('detailbooking', $data->id) }}" class="btn btn-sm btn-success">Detail</a></td>
               </tr>
             @endforeach

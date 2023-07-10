@@ -78,6 +78,39 @@ Store Dashboard
                     </div>
                 </div>
             </div>
+
+            <div class="row mt-3">
+                <div class="col-8 mt-2">
+                    <h5 class="mb-3">Lapangan Terlaris</h5>
+                    <table class="table table-hover table-borderless" style="background-color: white">
+                        <thead>
+                            <tr>
+                            <th scope="col" class="text-center">Rangking</th>
+                            <th scope="col" class="text-center">Nama Lapangan</th>
+                            <th scope="col" class="text-center">Total Transaksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        @php
+                        $no=1;
+                    @endphp
+                        @foreach ($produkterlaris as $row)
+
+                            <tr>
+                                <th scope="row" class="text-center">{{ $no++}}</th>
+                                <td class="text-center">{{ $row->name }}</td>
+                                <td class="text-center">{{ $row->jumlah_terjual }}</td>
+                           
+                            </tr>
+
+                        @endforeach
+                            
+                        </tbody>
+                    </table>
+                    
+
+                </div>
+            </div>
             <div class="row mt-3">
                 <div class="col-12 mt-2">
                     <h5 class="mb-3"> Transaksi Terakhir</h5>

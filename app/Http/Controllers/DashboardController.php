@@ -51,6 +51,20 @@ class DashboardController extends Controller
         $totaltransaksisemua = Transaction::where('arena_id',Auth::user()->id)->count();
 
         $transaction_data = Transaction::where('arena_id', Auth::user()->id)->take(5)->latest()->get();
+
+
+        $produkterlaris = DB::table('transaction_details')
+            ->join('products', 'products.id', '=', 'transaction_details.products_id')
+            ->where('products.users_id',Auth::user()->id)
+            ->select('products_id as id_produk','products.*', DB::raw('COUNT(products_id) as jumlah_terjual'), 'products_id')
+            ->groupBy('products_id')
+            ->orderBy('jumlah_terjual','DESC')
+            ->take(5)->get();
+
+            //dd($produkterlaris);
+
+
+
         // dd($totattransaksi);
         return view('pages.dashboard',[
             'trasaction_count' => $transaction->count(),
@@ -60,6 +74,7 @@ class DashboardController extends Controller
             'hasil' => $hasil,
             'totalproduct' => $totalproduct,
             'totattransaksi' => $totattransaksi,
+            'produkterlaris' => $produkterlaris,
             'totaltransaksisemua' => $totaltransaksisemua,
 
         ]);

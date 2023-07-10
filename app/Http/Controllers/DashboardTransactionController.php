@@ -83,7 +83,8 @@ class DashboardTransactionController extends Controller
         $item = Transaction::find($id);
 
         $item->update([
-            'transaction_status' => $request->transaction_status
+            'transaction_status' => $request->transaction_status,
+            'down_payment' => $request->down_payment
         ]);
 
         return redirect()->back();

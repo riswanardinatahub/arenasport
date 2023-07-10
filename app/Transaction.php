@@ -17,6 +17,7 @@ class Transaction extends Model
         'inscurance_price', 
         'shipping_price',
         'total_price',
+        'down_payment',
         'transaction_status',
         'status_transaction_customer',
         'code',

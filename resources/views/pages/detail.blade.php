@@ -264,11 +264,11 @@ line-height: 1;
 
             
             @auth
-            @if ($message = Session::get('success'))
+            {{-- @if ($message = Session::get('success'))
                         <div class="alert alert-danger" role="alert">
                         {{ $message }}
                         </div>
-	                @endif
+	                @endif --}}
             <form action="{{ route('detail-add', $product->id) }}" method="POST" enctype="multipart/form-data">
               @csrf
               <div  class="row mt-2">
@@ -573,6 +573,18 @@ line-height: 1;
 @endsection
 
 @push('addon-script')
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+@if ($message = Session::get('success'))
+    <script>
+      swal({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Jadwal Tidak Tersedia Silahkan Pilih Jadwal Lain',
+            footer: '<a href="">Why do I have this issue?</a>'
+          })
+    </script>
+@endif
 
 <script src="/vendor/vue/vue.js"></script>
 <script>

@@ -201,7 +201,7 @@ Dashboard Transactions Details Pages
 
             
 
-                  <div class="col-12">
+                  <div class="col-6">
                     <div class="row">
                       <div class="col-12 col-md-3">
                         <div class="product-title">
@@ -212,6 +212,25 @@ Dashboard Transactions Details Pages
                           <option value="DP">DP</option>
                           <option value="SUCCESS">Lunas</option>
                         </select>
+                      </div>
+                 
+                    </div>
+                  </div>
+
+                  <div class="col-6">
+                    <div class="row">
+                      <div class="col-12 col-md-3">
+                        <div class="product-title">
+                          Total DP
+                        </div>
+                        
+                        @if ($transactionss->down_payment)
+                             <input name="down_payment" type="number" value="{{ $transactionss->down_payment }}" class="form-control" >
+                          
+                        @else
+                             <input name="down_payment" type="number" class="form-control" >
+                          
+                        @endif
                       </div>
                  
                     </div>

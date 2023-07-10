@@ -31,6 +31,7 @@ Dashboard Transactions Pages
                           <th scope="col">Total Biaya</th>
                           <th scope="col">Tanggal Transaksi</th>
                           <th scope="col">Status Transaksi</th>
+                          <th scope="col">Total DP</th>
                           <th scope="col">Aksi</th>
                         </tr>
                       </thead>
@@ -57,6 +58,9 @@ Dashboard Transactions Pages
                         
                           
                           </td>
+
+                          <td>{{ $data->down_payment }}</td>
+
                           <td><a href="{{ route('dashboard-transaction-details', $data->id) }}" class="btn btn-sm btn-success">Detail</a></td>
                         </tr>
                       @endforeach
